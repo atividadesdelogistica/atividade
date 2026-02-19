@@ -5,111 +5,106 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu Principal - Cursos de Logística</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
 
-  body { background-color: #f7f8fa; color: #333; }
+  body { background-color: #f4f6f8; color: #333; }
 
   header {
-    background-color: #2d3e50;
+    background: linear-gradient(90deg,#1f4e79,#16395a);
     color: #fff;
+    text-align: center;
     padding: 20px 10px;
-    text-align: center;
     position: sticky;
-    top: 0;
-    z-index: 1000;
+    top:0;
+    z-index:1000;
   }
 
-  header h1 { font-size: 1.8em; margin-bottom: 5px; }
-  header p { font-size: 0.9em; color: #f1c40f; }
+  header h1 { font-size: 2em; margin-bottom: 5px; }
+  header p { font-size: 0.95em; color: #c0c0c0; }
 
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    gap: 15px;
+  main {
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+    padding: 0 10px;
   }
 
-  nav a {
-    display: block;
-    text-decoration: none;
-    color: #2d3e50;
-    background-color: #e2e8f0;
-    padding: 12px 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 300px;
+  .card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+  }
+
+  .card a {
+    text-decoration: none;
+    color: #1f4e79;
     font-weight: bold;
-    transition: transform 0.15s ease, background-color 0.3s, color 0.3s;
-    -webkit-tap-highlight-color: transparent; /* evita efeito azul no iOS */
+    font-size: 1.1em;
   }
 
-  /* Efeito ao passar o mouse / toque */
-  nav a:hover {
-    background-color: #2d3e50;
-    color: #fff;
-    transform: scale(1.05);
+  .developers {
+    max-width: 800px;
+    margin: 40px auto 20px auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.95em;
+    color: #555;
   }
 
-  /* Efeito ao clicar / tocar */
-  nav a:active {
-    transform: scale(0.97);
-    transition: transform 0.1s ease;
+  .developers a {
+    color: #1f4e79;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s;
   }
+
+  .developers a:hover { color: #16395a; }
 
   footer {
-    text-align: center;
-    font-size: 0.9em;
-    color: #777;
-    padding: 15px;
-  }
-
-  .socials {
-    margin-top: 5px;
-  }
-
-  .socials a {
-    text-decoration: none;
-    color: #2d3e50;
-    font-weight: bold;
-    margin: 0 5px;
-  }
-
-  .socials a:hover { color: #f1c40f; }
-
-  @media(min-width: 600px){
-    nav {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    nav a { margin: 5px; }
+    text-align:center;
+    padding:15px;
+    font-size:0.9em;
+    color:#777;
   }
 </style>
 </head>
 <body>
-  <header>
-    <h1>Cursos de Logística</h1>
-    <p>Desenvolvido por Fabiano & João Molina</p>
-  </header>
 
-  <nav>
-    <a href="compras.html">Compras e Suprimentos</a>
-    <a href="comercio.html">Comércio Exterior</a>
-    <a href="logistica.html">Logística Reversa</a>
-    <a href="automacao.html">Automação Logística</a>
-    <a href="transporte.html">Transporte e Distribuição</a>
-    <a href="projeto.html">Projeto Multidisciplinar</a>
-  </nav>
+<header>
+  <h1>Cursos de Logística</h1>
+  <p>Aprenda tudo sobre logística de forma prática e organizada</p>
+</header>
 
-  <footer>
-    © 2026 Fabiano & João Molina
-    <div class="socials">
-      Instagram:
-      <a href="https://www.instagram.com/biano_bispo?igsh=M2pnbmgycDR6d2Z2" target="_blank">Cebola</a> |
-      <a href="https://www.instagram.com/eae_mol1na?igsh=Z3FmNHhwMmdpZ251" target="_blank">Molina</a>
-    </div>
-  </footer>
+<main>
+  <div class="card"><a href="compras.html">Compras e Suprimentos</a></div>
+  <div class="card"><a href="comercio.html">Comércio Exterior</a></div>
+  <div class="card"><a href="logistica.html">Logística Reversa, Qualidade e Meio Ambiente</a></div>
+  <div class="card"><a href="automacao.html">Automação Logística</a></div>
+  <div class="card"><a href="transporte.html">Transporte e Distribuição</a></div>
+  <div class="card"><a href="projeto.html">Projeto Multidisciplinar em Logística</a></div>
+</main>
+
+<div class="developers">
+  Desenvolvido por Fabiano/Cebola & João Molina | 
+  <a href="https://www.instagram.com/biano_bispo" target="_blank">Instagram Fabiano</a> | 
+  <a href="https://www.instagram.com/eae_mol1na" target="_blank">Instagram João</a>
+</div>
+
+<footer>
+  © 2026 Cursos de Logística
+</footer>
+
 </body>
 </html>
