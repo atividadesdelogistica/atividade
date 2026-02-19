@@ -5,84 +5,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu Principal - Cursos de Logística</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-  body { background-color: #f4f6f8; color: #333; }
+  body {
+    background-color: #f7f8fa;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 
   header {
-    background: linear-gradient(90deg,#1f4e79,#16395a);
+    background-color: #2d3e50;
     color: #fff;
     text-align: center;
     padding: 20px 10px;
     position: sticky;
-    top:0;
-    z-index:1000;
+    top: 0;
+    z-index: 1000;
   }
 
-  header h1 { font-size: 2em; margin-bottom: 5px; }
-  header p { font-size: 0.95em; color: #c0c0c0; }
+  header h1 { font-size: 1.8em; margin-bottom: 5px; }
+  header p { font-size: 0.9em; color: #c0c0c0; }
 
-  main {
-    max-width: 1000px;
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 20px;
-    padding: 0 10px;
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 15px;
+    flex-grow: 1;
   }
 
-  .card {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 25px 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.2s;
-    cursor: pointer;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-  }
-
-  .card a {
+  nav a {
+    display: block;
     text-decoration: none;
-    color: #1f4e79;
-    font-weight: bold;
-    font-size: 1.1em;
-  }
-
-  /* Classe que adiciona a animação de clique */
-  .card.clicked {
-    background-color: #cfe3ff; /* cor temporária de clique */
-    transition: background-color 0.2s;
-  }
-
-  .developers {
-    max-width: 800px;
-    margin: 40px auto 20px auto;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 350px;
     text-align: center;
-    padding: 10px;
-    font-size: 0.95em;
-    color: #555;
-  }
-
-  .developers a {
-    color: #1f4e79;
-    text-decoration: none;
     font-weight: bold;
-    margin: 0 10px;
-    transition: color 0.3s;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
-  .developers a:hover { color: #16395a; }
+  /* Cores diferentes por matéria */
+  .compras { background-color: #1f4e79; }
+  .comercio { background-color: #8b1f4e; }
+  .logistica { background-color: #4e791f; }
+  .automacao { background-color: #794e1f; }
+  .transporte { background-color: #1f798b; }
+  .projeto { background-color: #79791f; }
+
+  nav a:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
 
   footer {
-    text-align:center;
-    padding:15px;
-    font-size:0.9em;
-    color:#777;
+    background-color: #2d3e50;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+  }
+
+  footer p { margin: 5px 0; }
+  footer a { color: #4fc3f7; text-decoration: none; margin: 0 5px; }
+  footer a:hover { text-decoration: underline; }
+
+  @media(min-width: 600px){
+    nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    nav a { margin: 5px; }
   }
 </style>
 </head>
@@ -90,44 +84,26 @@
 
 <header>
   <h1>Cursos de Logística</h1>
-  <p>Aprenda tudo sobre logística de forma prática e organizada</p>
+  <p>Desenvolvido por Fabiano & João Molina</p>
 </header>
 
-<main>
-  <div class="card" data-link="compras.html"><a href="#">Compras e Suprimentos</a></div>
-  <div class="card" data-link="comercio.html"><a href="#">Comércio Exterior</a></div>
-  <div class="card" data-link="logistica.html"><a href="#">Logística Reversa, Qualidade e Meio Ambiente</a></div>
-  <div class="card" data-link="automacao.html"><a href="#">Automação Logística</a></div>
-  <div class="card" data-link="transporte.html"><a href="#">Transporte e Distribuição</a></div>
-  <div class="card" data-link="projeto.html"><a href="#">Projeto Multidisciplinar em Logística</a></div>
-</main>
-
-<div class="developers">
-  Desenvolvido por Fabiano/Cebola & João Molina | 
-  <a href="https://www.instagram.com/biano_bispo" target="_blank">Instagram Cebola</a> | 
-  <a href="https://www.instagram.com/eae_mol1na" target="_blank">Instagram Molina</a>
-</div>
+<nav>
+  <a href="compras.html" class="compras">Compras e Suprimentos</a>
+  <a href="comercio.html" class="comercio">Comércio Exterior</a>
+  <a href="logistica.html" class="logistica">Logística Reversa, Qualidade e Meio Ambiente</a>
+  <a href="automacao.html" class="automacao">Automação Logística</a>
+  <a href="transporte.html" class="transporte">Transporte e Distribuição</a>
+  <a href="projeto.html" class="projeto">Projeto Multidisciplinar em Logística</a>
+</nav>
 
 <footer>
-  © 2026 Cursos de Logística
+  <p>Desenvolvido por Fabiano/Cebola & João Molina</p>
+  <p>
+    Instagram: 
+    <a href="https://www.instagram.com/biano_bispo" target="_blank">@biano_bispo</a> | 
+    <a href="https://www.instagram.com/eae_mol1na" target="_blank">@eae_mol1na</a>
+  </p>
 </footer>
-
-<script>
-  const cards = document.querySelectorAll('.card');
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      // Adiciona animação
-      card.classList.add('clicked');
-
-      // Remove a animação e navega após 200ms
-      setTimeout(() => {
-        card.classList.remove('clicked');
-        window.location.href = card.getAttribute('data-link');
-      }, 200);
-    });
-  });
-</script>
 
 </body>
 </html>
