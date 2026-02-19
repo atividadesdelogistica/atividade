@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu Principal - Cursos de Logística</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial,sans-serif; }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
 
   body {
     background-color: #f7f8fa;
     color: #333;
+    transition: background-color 0.5s;
   }
 
   header {
@@ -18,8 +19,8 @@
     padding: 20px 10px;
     text-align: center;
     position: sticky;
-    top:0;
-    z-index:1000;
+    top: 0;
+    z-index: 1000;
   }
 
   header h1 { font-size: 1.8em; margin-bottom: 5px; }
@@ -44,65 +45,90 @@
     max-width: 300px;
     text-align: center;
     font-weight: bold;
-    transition: background-color 0.4s, color 0.4s; /* animação suave */
-    position: relative;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
   }
+
+  nav a:hover { background-color: #2d3e50; color: #fff; transform: scale(1.05); }
 
   footer {
     text-align: center;
     font-size: 0.9em;
-    color: #555;
-    padding: 20px;
+    color: #fff;
+    padding: 15px;
+    background-color: #2d3e50;
+  }
+
+  .insta-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
   }
 
   .insta-links a {
     text-decoration: none;
-    color: #1a73e8;
-    margin: 0 5px;
+    color: #fff;
+    font-weight: bold;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 5px 10px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
 
-  @media(min-width:600px){
+  .insta-links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  .insta-icon { width: 20px; height: 20px; margin-right: 5px; }
+
+  @media(min-width: 600px){
     nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    nav a { margin:5px; }
+    nav a { margin: 5px; }
   }
 </style>
 </head>
 <body>
+
 <header>
   <h1>Cursos de Logística</h1>
-  <p>Desenvolvido por Fabiano/Cebola & João Molina</p>
+  <p>Desenvolvido por Fabiano & João Molina</p>
 </header>
 
 <nav>
-  <a href="compras.html" data-color="#1f4e79" onclick="clickAnim(this)">Compras e Suprimentos</a>
-  <a href="comercio.html" data-color="#9b1f4e" onclick="clickAnim(this)">Comércio Exterior</a>
-  <a href="logistica.html" data-color="#4e791f" onclick="clickAnim(this)">Logística Reversa, Qualidade e Meio Ambiente</a>
-  <a href="automacao.html" data-color="#794e1f" onclick="clickAnim(this)">Automação Logística</a>
-  <a href="transporte.html" data-color="#1f794e" onclick="clickAnim(this)">Transporte e Distribuição</a>
-  <a href="projeto.html" data-color="#4e1f79" onclick="clickAnim(this)">Projeto Multidisciplinar em Logística</a>
+  <a href="compras.html" onclick="delayedRedirect(event,'#1f4e79','compras.html')">Compras e Suprimentos</a>
+  <a href="comercio.html" onclick="delayedRedirect(event,'#3c6e71','comercio.html')">Comércio Exterior</a>
+  <a href="logistica.html" onclick="delayedRedirect(event,'#52616b','logistica.html')">Logística Reversa, Qualidade e Meio Ambiente</a>
+  <a href="automacao.html" onclick="delayedRedirect(event,'#4b6584','automacao.html')">Automação Logística</a>
+  <a href="transporte.html" onclick="delayedRedirect(event,'#6c5ce7','transporte.html')">Transporte e Distribuição</a>
+  <a href="projeto.html" onclick="delayedRedirect(event,'#fd79a8','projeto.html')">Projeto Multidisciplinar em Logística</a>
 </nav>
 
 <footer>
   <div>© 2026 Fabiano/Cebola & João Molina</div>
   <div class="insta-links">
-    <a href="https://www.instagram.com/biano_bispo" target="_blank">@biano_bispo</a>
-    <a href="https://www.instagram.com/eae_mol1na" target="_blank">@eae_mol1na</a>
+    <a href="https://www.instagram.com/biano_bispo" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Biano" class="insta-icon">
+      @biano_bispo
+    </a>
+    <a href="https://www.instagram.com/eae_mol1na" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram Molina" class="insta-icon">
+      @eae_mol1na
+    </a>
   </div>
 </footer>
 
 <script>
-function clickAnim(el){
-  const color = el.getAttribute('data-color');
-  // adiciona a cor da matéria
-  el.style.backgroundColor = color;
-  el.style.color = '#fff';
-  
-  // remove a cor depois de 400ms para efeito de clique suave
-  setTimeout(()=>{
-    el.style.backgroundColor = '';
-    el.style.color = '';
-  }, 400);
-}
+  function delayedRedirect(event, color, url){
+    event.preventDefault(); 
+    document.body.style.backgroundColor = color; 
+    setTimeout(()=>{
+      window.location.href = url;
+    }, 2500); // 2,5 segundos de atraso
+  }
 </script>
+
 </body>
 </html>
