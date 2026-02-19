@@ -53,8 +53,10 @@
     font-size: 1.1em;
   }
 
+  /* Classe que adiciona a animação de clique */
   .card.clicked {
     background-color: #cfe3ff; /* cor temporária de clique */
+    transition: background-color 0.2s;
   }
 
   .developers {
@@ -92,12 +94,12 @@
 </header>
 
 <main>
-  <div class="card"><a href="compras.html">Compras e Suprimentos</a></div>
-  <div class="card"><a href="comercio.html">Comércio Exterior</a></div>
-  <div class="card"><a href="logistica.html">Logística Reversa, Qualidade e Meio Ambiente</a></div>
-  <div class="card"><a href="automacao.html">Automação Logística</a></div>
-  <div class="card"><a href="transporte.html">Transporte e Distribuição</a></div>
-  <div class="card"><a href="projeto.html">Projeto Multidisciplinar em Logística</a></div>
+  <div class="card" data-link="compras.html"><a href="#">Compras e Suprimentos</a></div>
+  <div class="card" data-link="comercio.html"><a href="#">Comércio Exterior</a></div>
+  <div class="card" data-link="logistica.html"><a href="#">Logística Reversa, Qualidade e Meio Ambiente</a></div>
+  <div class="card" data-link="automacao.html"><a href="#">Automação Logística</a></div>
+  <div class="card" data-link="transporte.html"><a href="#">Transporte e Distribuição</a></div>
+  <div class="card" data-link="projeto.html"><a href="#">Projeto Multidisciplinar em Logística</a></div>
 </main>
 
 <div class="developers">
@@ -111,22 +113,18 @@
 </footer>
 
 <script>
-  // Seleciona todos os cards
   const cards = document.querySelectorAll('.card');
 
   cards.forEach(card => {
-    card.addEventListener('click', e => {
-      // Adiciona a classe .clicked para animação
+    card.addEventListener('click', () => {
+      // Adiciona animação
       card.classList.add('clicked');
 
-      // Remove a classe depois de 200ms
-      setTimeout(() => card.classList.remove('clicked'), 200);
-
-      // Se clicou no link, permite seguir normalmente
-      const link = card.querySelector('a');
-      if(link) {
-        window.location.href = link.href;
-      }
+      // Remove a animação e navega após 200ms
+      setTimeout(() => {
+        card.classList.remove('clicked');
+        window.location.href = card.getAttribute('data-link');
+      }, 200);
     });
   });
 </script>
