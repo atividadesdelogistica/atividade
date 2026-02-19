@@ -7,14 +7,14 @@
 <style>
   body {
     font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
+    background-color: #f4f6f8;
     color: #333;
     margin: 0;
     padding: 0;
   }
 
   header {
-    background-color: #8b2be2; /* Cor exclusiva do projeto */
+    background-color: #6a1b9a; /* Cor diferenciada para Projeto */
     color: #fff;
     text-align: center;
     padding: 15px 10px;
@@ -47,11 +47,11 @@
   }
 
   h2 {
-    color: #8b2be2;
+    color: #6a1b9a;
   }
 
   button {
-    background-color: #8b2be2;
+    background-color: #6a1b9a;
     color: #fff;
     border: none;
     padding: 10px 15px;
@@ -63,7 +63,7 @@
   }
 
   button:hover {
-    background-color: #5d1fa3;
+    background-color: #4a148c;
   }
 
   .copy-btn {
@@ -114,7 +114,7 @@
   <div class="week active" id="week1">
     <h2>Semana 1</h2>
     <p><strong>Atividade 1:</strong> Ideias para o Projeto</p>
-    <p>Resposta: O projeto pode focar na integração entre logística e sustentabilidade (Logística Reversa), no uso de tecnologias como WMS/IoT para controle de estoque ou na automação de armazéns para reduzir custos e atrasos operacionais.</p>
+    <p>Resposta: O projeto pode focar na integração entre logística e sustentabilidade (Logística Reversa), uso de tecnologias como WMS/IoT para controle de estoque ou automação de armazéns para reduzir custos e atrasos.</p>
     <button class="copy-btn" onclick="copyText('week1-1')">Copiar Resposta</button>
 
     <p><strong>Atividade 2:</strong> Em qual fase é desenvolvido o Termo de Abertura do Projeto (TAP)?</p>
@@ -139,7 +139,7 @@
   <div class="week" id="week2">
     <h2>Semana 2</h2>
     <p><strong>Atividade 1:</strong> Matriz CSD</p>
-    <p>Resposta: Organiza Certezas, Suposições e Dúvidas para validar hipóteses e reduzir incertezas.</p>
+    <p>Resposta: Organiza o que sabemos (Certezas), o que supomos (Suposições) e o que ainda precisamos descobrir (Dúvidas) para validar hipóteses no início do projeto.</p>
     <button class="copy-btn" onclick="copyText('week2-1')">Copiar Resposta</button>
 
     <p><strong>Atividade 2:</strong> Qual é o principal objetivo da fase de Empatia?</p>
@@ -172,7 +172,7 @@
     <button class="copy-btn" onclick="copyText('week3-2')">Copiar Resposta</button>
 
     <p><strong>Atividade 3:</strong> Método SMART</p>
-    <p>Resposta: O objetivo do projeto deve ser SMART: Específico, Mensurável, Atingível, Relevante e Temporal.</p>
+    <p>Resposta: Específico, Mensurável, Atingível, Relevante e Temporal. Ex: "Reduzir o tempo de picking em 15% até dezembro de 2026".</p>
     <button class="copy-btn" onclick="copyText('week3-3')">Copiar Resposta</button>
 
     <p><strong>Atividade 4:</strong> Qual exemplo segue o método SMART?</p>
@@ -189,7 +189,7 @@
   <div class="week" id="week4">
     <h2>Semana 4</h2>
     <p><strong>Atividade 1:</strong> Mapeamento de Stakeholders</p>
-    <p>Resposta: Estratégias para manter todos informados e engajados conforme seu nível de impacto no sucesso do projeto.</p>
+    <p>Resposta: Mapear stakeholders conforme sua influência e interesse.</p>
     <button class="copy-btn" onclick="copyText('week4-1')">Copiar Resposta</button>
 
     <p><strong>Atividade 2:</strong> Qual o objetivo da descrição do produto no escopo?</p>
@@ -222,7 +222,7 @@
     <button class="copy-btn" onclick="copyText('week5-2')">Copiar Resposta</button>
 
     <p><strong>Atividade 3:</strong> Matriz MoSCoW</p>
-    <p>Resposta: Priorização do que DEVE, DEVERIA, PODERIA e NÃO TERÁ, ajudando a gerenciar tempo e recursos.</p>
+    <p>Resposta: Priorização do que o projeto DEVE ter, DEVERIA ter, PODERIA ter e NÃO TERÁ.</p>
     <button class="copy-btn" onclick="copyText('week5-3')">Copiar Resposta</button>
 
     <p><strong>Atividade 4:</strong> Qual opção de coleta entende as prioridades dos stakeholders?</p>
@@ -239,7 +239,7 @@
   <div class="week" id="week6">
     <h2>Semana 6</h2>
     <p><strong>Atividade 1:</strong> Plano de Ação para Riscos</p>
-    <p>Resposta: Estratégia de mitigação, responsável definido e prazo para todo risco.</p>
+    <p>Resposta: Estratégia de mitigação, responsável definido e prazo claro.</p>
     <button class="copy-btn" onclick="copyText('week6-1')">Copiar Resposta</button>
 
     <p><strong>Atividade 2:</strong> Qual é a definição de risco segundo o PMBOK?</p>
@@ -276,7 +276,7 @@
     <button class="copy-btn" onclick="copyText('week7-3')">Copiar Resposta</button>
 
     <p><strong>Atividade 4:</strong> Cronograma e Gráfico de Gantt</p>
-    <p>Resposta: Representação visual mostrando datas de início/fim, responsáveis e custos estimados para controle do projeto.</p>
+    <p>Resposta: Representação visual com datas, responsáveis e custos, permitindo controlar o avanço do projeto.</p>
     <button class="copy-btn" onclick="copyText('week7-4')">Copiar Resposta</button>
 
     <div>
@@ -301,8 +301,7 @@ function showWeek(n){
   }
   document.getElementById('week'+n).classList.add('active');
   currentWeek = n;
-  // Scroll para o topo da semana
-  document.getElementById('week'+n).scrollTop = 0;
+  window.scrollTo({ top: 0, behavior: 'smooth' }); // volta pro topo
 }
 
 function nextWeek(){
