@@ -5,24 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menu Principal - Cursos de Logística</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial,sans-serif; }
 
   body {
     background-color: #f7f8fa;
     color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
   }
 
   header {
     background-color: #2d3e50;
     color: #fff;
-    text-align: center;
     padding: 20px 10px;
+    text-align: center;
     position: sticky;
-    top: 0;
-    z-index: 1000;
+    top:0;
+    z-index:1000;
   }
 
   header h1 { font-size: 1.8em; margin-bottom: 5px; }
@@ -34,76 +31,78 @@
     align-items: center;
     padding: 20px 0;
     gap: 15px;
-    flex-grow: 1;
   }
 
   nav a {
     display: block;
     text-decoration: none;
-    color: #fff;
-    padding: 15px 25px;
-    border-radius: 10px;
+    color: #2d3e50;
+    background-color: #e2e8f0;
+    padding: 12px 20px;
+    border-radius: 8px;
     width: 80%;
-    max-width: 350px;
+    max-width: 300px;
     text-align: center;
     font-weight: bold;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  /* Cores diferentes por matéria */
-  .compras { background-color: #1f4e79; }
-  .comercio { background-color: #8b1f4e; }
-  .logistica { background-color: #4e791f; }
-  .automacao { background-color: #794e1f; }
-  .transporte { background-color: #1f798b; }
-  .projeto { background-color: #79791f; }
-
-  nav a:active {
-    transform: scale(0.97);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.4s, color 0.4s; /* animação suave */
+    position: relative;
   }
 
   footer {
-    background-color: #2d3e50;
-    color: #fff;
     text-align: center;
-    padding: 15px 10px;
+    font-size: 0.9em;
+    color: #555;
+    padding: 20px;
   }
 
-  footer p { margin: 5px 0; }
-  footer a { color: #4fc3f7; text-decoration: none; margin: 0 5px; }
-  footer a:hover { text-decoration: underline; }
+  .insta-links a {
+    text-decoration: none;
+    color: #1a73e8;
+    margin: 0 5px;
+  }
 
-  @media(min-width: 600px){
+  @media(min-width:600px){
     nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    nav a { margin: 5px; }
+    nav a { margin:5px; }
   }
 </style>
 </head>
 <body>
-
 <header>
   <h1>Cursos de Logística</h1>
-  <p>Desenvolvido por Fabiano & João Molina</p>
+  <p>Desenvolvido por Fabiano/Cebola & João Molina</p>
 </header>
 
 <nav>
-  <a href="compras.html" class="compras">Compras e Suprimentos</a>
-  <a href="comercio.html" class="comercio">Comércio Exterior</a>
-  <a href="logistica.html" class="logistica">Logística Reversa, Qualidade e Meio Ambiente</a>
-  <a href="automacao.html" class="automacao">Automação Logística</a>
-  <a href="transporte.html" class="transporte">Transporte e Distribuição</a>
-  <a href="projeto.html" class="projeto">Projeto Multidisciplinar em Logística</a>
+  <a href="compras.html" data-color="#1f4e79" onclick="clickAnim(this)">Compras e Suprimentos</a>
+  <a href="comercio.html" data-color="#9b1f4e" onclick="clickAnim(this)">Comércio Exterior</a>
+  <a href="logistica.html" data-color="#4e791f" onclick="clickAnim(this)">Logística Reversa, Qualidade e Meio Ambiente</a>
+  <a href="automacao.html" data-color="#794e1f" onclick="clickAnim(this)">Automação Logística</a>
+  <a href="transporte.html" data-color="#1f794e" onclick="clickAnim(this)">Transporte e Distribuição</a>
+  <a href="projeto.html" data-color="#4e1f79" onclick="clickAnim(this)">Projeto Multidisciplinar em Logística</a>
 </nav>
 
 <footer>
-  <p>Desenvolvido por Fabiano/Cebola & João Molina</p>
-  <p>
-    Instagram: 
-    <a href="https://www.instagram.com/biano_bispo" target="_blank">@biano_bispo</a> | 
+  <div>© 2026 Fabiano/Cebola & João Molina</div>
+  <div class="insta-links">
+    <a href="https://www.instagram.com/biano_bispo" target="_blank">@biano_bispo</a>
     <a href="https://www.instagram.com/eae_mol1na" target="_blank">@eae_mol1na</a>
-  </p>
+  </div>
 </footer>
 
+<script>
+function clickAnim(el){
+  const color = el.getAttribute('data-color');
+  // adiciona a cor da matéria
+  el.style.backgroundColor = color;
+  el.style.color = '#fff';
+  
+  // remove a cor depois de 400ms para efeito de clique suave
+  setTimeout(()=>{
+    el.style.backgroundColor = '';
+    el.style.color = '';
+  }, 400);
+}
+</script>
 </body>
 </html>
