@@ -3,347 +3,376 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compras e Suprimentos - Cursos de Logística</title>
+<title>Compras e Suprimentos - Completo</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
 
-  header {
-    background-color: #1f4e79;
-    color: #fff;
-    text-align: center;
-    padding: 15px 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
 
-  header h1 {
-    margin-bottom: 5px;
-  }
+header h1 { margin-bottom: 5px; font-size: 1.5em; }
+header p { font-size: 0.9em; color: #e0e0e0; }
 
-  main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 10px;
-  }
+.week { display: none; padding: 15px; }
+.week.active { display: block; }
 
-  .week {
-    display: none;
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
+.activity {
+  background-color: #e2e8f0;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 
-  .week.active {
-    display: block;
-  }
+.answer {
+  background-color: #dff0d8;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 5px;
+  white-space: pre-line;
+}
 
-  h2 {
-    color: #1f4e79;
-  }
+button.copy-btn {
+  margin-top: 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  button {
-    background-color: #1f4e79;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    margin: 5px 2px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
+button.copy-btn:hover { background-color: #357ab8; }
 
-  button:hover {
-    background-color: #16395a;
-  }
+.nav-weeks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 
-  .copy-btn {
-    background-color: #4caf50;
-  }
+.nav-weeks button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  .copy-btn:hover {
-    background-color: #3e8e41;
-  }
+.nav-weeks button:hover { background-color: #357ab8; }
 
-  #copied-msg {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.5s, transform 0.5s;
-    transform: translateY(-20px);
-    z-index: 1000;
-  }
+#copied-msg {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: 9999;
+}
 
-  footer {
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
-    color: #555;
-  }
-
-  @media(min-width: 600px) {
-    button {
-      margin: 10px 5px;
-    }
-  }
+@media(min-width:600px){
+  .activity { max-width: 600px; margin: 10px auto; }
+}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Compras e Suprimentos</h1>
-  <p>Desenvolvido por Fabiano & João Molina</p>
+<h1>Compras e Suprimentos</h1>
+<p>Desenvolvido por Fabiano & João Molina</p>
 </header>
-
-<main>
-  <!-- Semana 1 -->
-  <div class="week active" id="week1">
-    <h2>Semana 1</h2>
-    <p><strong>Atividade 1:</strong> Qual é o primeiro passo no processo de seleção de fornecedores?</p>
-    <p>Resposta: Identificação das necessidades de fornecimento.</p>
-    <button class="copy-btn" onclick="copyText('week1-1')">Copiar Resposta</button>
-    
-    <p><strong>Atividade 2:</strong> Qual das seguintes informações NÃO é essencial para o cadastro de um fornecedor?</p>
-    <p>Resposta: Preferências pessoais do gerente de compras.</p>
-    <button class="copy-btn" onclick="copyText('week1-2')">Copiar Resposta</button>
-
-    <p><strong>Atividade 3:</strong> Critérios de seleção de fornecedores (Checklist de Qualidade e Pontualidade)</p>
-    <p>✔ Produtos dentro das especificações solicitadas<br>
-       ✔ Integridade da embalagem<br>
-       ✔ Validade adequada<br>
-       ✔ Conformidade com normas e certificações<br>
-       ✔ Quantidade correta entregue<br>
-       ✔ Cumprimento do prazo de entrega<br>
-       ✔ Frequência de atrasos<br>
-       ✔ Condições de transporte adequadas<br>
-       ✔ Comunicação prévia em caso de imprevistos</p>
-    <p>Justificativa: Esses pontos garantem produtos dentro do padrão de qualidade, evitam prejuízos e retrabalho, mantêm o estoque organizado e asseguram a satisfação do cliente.</p>
-    <button class="copy-btn" onclick="copyText('week1-3')">Copiar Resposta</button>
-
-    <p><strong>Atividade 4:</strong> Qual dos seguintes indicadores NÃO é comumente utilizado para avaliar a pontualidade dos fornecedores?</p>
-    <p>Resposta: Taxa de devoluções.</p>
-    <button class="copy-btn" onclick="copyText('week1-4')">Copiar Resposta</button>
-
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
-
-  <!-- Semana 2 -->
-  <div class="week" id="week2">
-    <h2>Semana 2</h2>
-    <p><strong>Atividade 1:</strong> Análise Comparativa de Cotações</p>
-    <p>Produto/Serviço: ____________________________________________<br>
-       Quantidade: ________________________________________________<br>
-       Critérios: Preço, Custo total, Prazo de entrega, Condições de pagamento, Qualidade, Frete, Garantia, Certificações e Confiabilidade.</p>
-    <button class="copy-btn" onclick="copyText('week2-1')">Copiar Resposta</button>
-
-    <p><strong>Atividade 2:</strong> Qual é o elemento mais importante a ser incluído em uma RFQ?</p>
-    <p>Resposta: Descrição do produto/serviço.</p>
-    <button class="copy-btn" onclick="copyText('week2-2')">Copiar Resposta</button>
-
-    <p><strong>Atividade 3:</strong> Qual destes itens é essencial no edital de uma tomada de preços?</p>
-    <p>Resposta: Especificações técnicas detalhadas.</p>
-    <button class="copy-btn" onclick="copyText('week2-3')">Copiar Resposta</button>
-
-    <p><strong>Atividade 4:</strong> Qual é o principal objetivo da licitação?</p>
-    <p>Resposta: Garantir competitividade e transparência.</p>
-    <button class="copy-btn" onclick="copyText('week2-4')">Copiar Resposta</button>
-
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
-
-  <!-- Semana 3 -->
-  <div class="week" id="week3">
-    <h2>Semana 3</h2>
-    <p><strong>Atividade 1:</strong> Contrato de Fornecimento: Preços, Prazos, Condições de Pagamento</p>
-    <p>Preços: Definição por produto/volume, descontos, reajustes e sazonalidade.<br>
-       Prazos: Frequência de entregas, horários, prazos máximos e penalidades.<br>
-       Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.</p>
-    <button class="copy-btn" onclick="copyText('week3-1')">Copiar Resposta</button>
-
-    <p><strong>Atividade 2:</strong> Qual é o principal benefício de definir termos claros de pagamento em um contrato de fornecimento?</p>
-    <p>Resposta: Garantia de previsibilidade financeira e fluxo de caixa.</p>
-    <button class="copy-btn" onclick="copyText('week3-2')">Copiar Resposta</button>
-
-    <p><strong>Atividade 3:</strong> Qual é a principal vantagem de incluir cláusulas de penalidade em contratos de fornecimento?</p>
-    <p>Resposta: Conformidade contratual e menor risco financeiro.</p>
-    <button class="copy-btn" onclick="copyText('week3-3')">Copiar Resposta</button>
-
-    <p><strong>Atividade 4:</strong> Qual, dos itens abaixo, representa um impacto positivo da aplicação de sanções?</p>
-    <p>Resposta: Cumprimento das obrigações contratuais.</p>
-    <button class="copy-btn" onclick="copyText('week3-4')">Copiar Resposta</button>
-
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
-
-  <!-- Semana 4 -->
-  <div class="week" id="week4">
-    <h2>Semana 4</h2>
-    <p><strong>Atividade 1:</strong> Qual é um dos principais benefícios de se manter uma parceria estratégica de longo prazo com fornecedores?</p>
-    <p>Resposta: Reduzir custos operacionais.</p>
-    <button class="copy-btn" onclick="copyText('week4-1')">Copiar Resposta</button>
-
-    <p><strong>Atividade 2:</strong> Interfaceamento entre sistemas: mapeamento de informações</p>
-    <p>Benefícios: Integração de dados em tempo real e redução de erros nos pedidos.<br>
-       Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.</p>
-    <button class="copy-btn" onclick="copyText('week4-2')">Copiar Resposta</button>
-
-    <p><strong>Atividade 3:</strong> Qual é a principal vantagem de usar APIs para integrar sistemas de diferentes fornecedores?</p>
-    <p>Resposta: Facilitar a comunicação e a troca de dados de forma segura e estruturada.</p>
-    <button class="copy-btn" onclick="copyText('week4-3')">Copiar Resposta</button>
-
-    <p><strong>Atividade 4:</strong> Qual é a vantagem de utilizar indicadores de desempenho (KPIs) na avaliação de fornecedores?</p>
-    <p>Resposta: Fornecer uma base objetiva para tomar decisões.</p>
-    <button class="copy-btn" onclick="copyText('week4-4')">Copiar Resposta</button>
-
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
-
-  <!-- Semana 5 -->
-  <div class="week" id="week5">
-    <h2>Semana 5</h2>
-    <p><strong>Atividade 1:</strong> Qual alternativa abaixo não é uma ferramenta para auditorias de fornecedores?</p>
-    <p>Resposta: Relatório do prazo de pagamento.</p>
-    <button class="copy-btn" onclick="copyText('week5-1')">Copiar Resposta</button>
-
-    <p><strong>Atividade 2:</strong> Auditorias dos fornecedores: conceitos de melhoria contínua</p>
-    <p>Benefícios: Eficiência operacional e redução de retrabalho.<br>
-       Motivo: Processos mais rápidos, econômicos e redução de desperdícios.</p>
-    <button class="copy-btn" onclick="copyText('week5-2')">Copiar Resposta</button>
-
-    <p><strong>Atividade 3:</strong> Entre as alternativas abaixo, qual não é um método de avaliação da melhoria contínua?</p>
-    <p>Resposta: Diagnóstico da situação atual.</p>
-    <button class="copy-btn" onclick="copyText('week5-3')">Copiar Resposta</button>
-
-    <p><strong>Atividade 4:</strong> Qual das seguintes estratégias é mais eficaz para mitigar riscos relacionados à dependência excessiva de um fornecedor exclusivo?</p>
-    <p>Resposta: Diversificar a base de fornecedores.</p>
-    <button class="copy-btn" onclick="copyText('week5-4')">Copiar Resposta</button>
-
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
-
-  <!-- Semana 6 -->
-  <div class="week" id="week6">
-    <h2>Semana 6</h2>
-    <p><strong>Atividade 1:</strong> Qual delas está relacionada à gestão de estoques e não à Qualidade de fornecedores?</p>
-    <p>Resposta: Giro de estoque.</p>
-    <button class="copy-btn" onclick="copyText('week6-1')">Copiar Resposta</button>
-
-    <p><strong>Atividade 2:</strong> Qual dos seguintes é um benefício da inovação nos processos de fornecimento?</p>
-    <p>Resposta: Redução de custos e otimização dos recursos.</p>
-    <button class="copy-btn" onclick="copyText('week6-2')">Copiar Resposta</button>
-
-    <p><strong>Atividade 3:</strong> Qualidade, inovação e sustentabilidade: fornecedores</p>
-    <p>Práticas: Uso de embalagens retornáveis e otimização de rotas para reduzir CO2.</p>
-    <button class="copy-btn" onclick="copyText('week6-3')">Copiar Resposta</button>
-
-    <p><strong>Atividade 4:</strong> Qual dos seguintes é um dos principais benefícios da implementação de logística reversa?</p>
-    <p>Resposta: Redução de custos com novos materiais e menor impacto ambiental.</p>
-    <button class="copy-btn" onclick="copyText('week6-4')">Copiar Resposta</button>
-
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
-
-  <!-- Semana 7 -->
-  <div class="week" id="week7">
-    <h2>Semana 7</h2>
-    <p><strong>Atividade 1:</strong> Estruturação de processo de compra e contrato de curto prazo</p>
-    <p>Benefícios: Flexibilidade e menor compromisso financeiro.<br>
-       Riscos: Instabilidade de fornecimento e preços possivelmente mais altos.</p>
-    <button class="copy-btn" onclick="copyText('week7-1')">Copiar Resposta</button>
-
-    <p><strong>Atividade 2:</strong> Qual das seguintes alternativas descreve uma característica do contrato de curto prazo?</p>
-    <p>Resposta: Duração limitada, ideal para demandas sazonais.</p>
-    <button class="copy-btn" onclick="copyText('week7-2')">Copiar Resposta</button>
-
-    <p><strong>Atividade 3:</strong> Qual alternativa apresenta características associadas a contratos de médio prazo?</p>
-    <p>Resposta: Fornecimento estável com renegociação após 1-3 anos.</p>
-    <button class="copy-btn" onclick="copyText('week7-3')">Copiar Resposta</button>
-
-    <p><strong>Atividade 4:</strong> Qual alternativa apresenta uma característica associada a contratos de longo prazo?</p>
-    <p>Resposta: Fornecimento contínuo garantido por mais de 3 anos.</p>
-    <button class="copy-btn" onclick="copyText('week7-4')">Copiar Resposta</button>
-
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-    </div>
-  </div>
-</main>
 
 <div id="copied-msg">Resposta copiada!</div>
 
-<footer>
-  <button onclick="window.location.href='index.html'">Voltar ao Menu</button>
-</footer>
+<!-- Semana 1 -->
+<div class="week active" id="week1">
+<h2>Semana 1</h2>
+
+<div class="activity">
+  <strong>Atividade 1:</strong> Qual é o primeiro passo no processo de seleção de fornecedores?
+  <p class="answer" id="w1a1">Resposta: Identificação das necessidades de fornecimento.</p>
+  <button class="copy-btn" onclick="copyText('w1a1')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 2:</strong> Qual das seguintes informações NÃO é essencial para o cadastro de um fornecedor?
+  <p class="answer" id="w1a2">Resposta: Preferências pessoais do gerente de compras.</p>
+  <button class="copy-btn" onclick="copyText('w1a2')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 3:</strong> Durante uma auditoria de qualidade, o auditor verifica se:
+  <p class="answer" id="w1a3">Resposta: As tarefas seguem o passo a passo da Instrução de Trabalho.</p>
+  <button class="copy-btn" onclick="copyText('w1a3')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 4:</strong> Por que as instruções de trabalho são importantes na Logística?
+  <p class="answer" id="w1a4">Resposta: Elas garantem que tudo seja feito corretamente e com qualidade.</p>
+  <button class="copy-btn" onclick="copyText('w1a4')">Copiar Resposta</button>
+</div>
+
+<div class="nav-weeks">
+  <button onclick="prevWeek(1)">Anterior</button>
+  <button onclick="nextWeek(1)">Próxima Semana</button>
+</div>
+</div>
+
+<!-- Semana 2 -->
+<div class="week" id="week2">
+<h2>Semana 2</h2>
+
+<div class="activity">
+  <strong>Atividade 1:</strong> Mapeamento do ciclo de vida do produto (Pneu)
+  <p class="answer" id="w2a1">Resposta: O ciclo envolve extração de borracha e petróleo, produção fabril, distribuição, uso pelo cliente e logística reversa. A logística otimiza rotas, reduz emissões e garante que pneus usados virem matéria-prima, cumprindo a ISO 14001.</p>
+  <button class="copy-btn" onclick="copyText('w2a1')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 2:</strong> O que é a Avaliação do Ciclo de Vida (ACV) de um produto?
+  <p class="answer" id="w2a2">Resposta: Ferramenta para medir impactos ambientais de um produto ao longo do seu ciclo de vida.</p>
+  <button class="copy-btn" onclick="copyText('w2a2')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 3:</strong> Qual das etapas envolve a transformação de matérias-primas em produtos?
+  <p class="answer" id="w2a3">Resposta: Produção.</p>
+  <button class="copy-btn" onclick="copyText('w2a3')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 4:</strong> Por que seguir uma Instrução de Trabalho na Logística reduz impacto ambiental?
+  <p class="answer" id="w2a4">Resposta: Minimiza falhas operacionais e reduz impactos ambientais nos processos logísticos.</p>
+  <button class="copy-btn" onclick="copyText('w2a4')">Copiar Resposta</button>
+</div>
+
+<div class="nav-weeks">
+  <button onclick="prevWeek(2)">Anterior</button>
+  <button onclick="nextWeek(2)">Próxima Semana</button>
+</div>
+</div>
+
+<!-- Semana 3 -->
+<div class="week" id="week3">
+<h2>Semana 3</h2>
+
+<div class="activity">
+  <strong>Atividade 1:</strong> Classificando os Resíduos na Empresa
+  <p class="answer" id="w3a1">Resposta: Garrafas PET são resíduos recicláveis, podendo retornar à cadeia produtiva como fibras têxteis ou novas embalagens. Separadas corretamente, contribuem para sustentabilidade.</p>
+  <button class="copy-btn" onclick="copyText('w3a1')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 2:</strong> Qual é a principal diferença entre lixo e resíduo?
+  <p class="answer" id="w3a2">Resposta: Lixo não tem valor; resíduo pode ser reaproveitado.</p>
+  <button class="copy-btn" onclick="copyText('w3a2')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 3:</strong> Como os resíduos podem ser classificados?
+  <p class="answer" id="w3a3">Resposta: Industriais, hospitalares e domésticos.</p>
+  <button class="copy-btn" onclick="copyText('w3a3')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 4:</strong> Exemplo de produção consciente
+  <p class="answer" id="w3a4">Resposta: Produção que reduz desperdícios e utiliza recursos de forma ética.</p>
+  <button class="copy-btn" onclick="copyText('w3a4')">Copiar Resposta</button>
+</div>
+
+<div class="nav-weeks">
+  <button onclick="prevWeek(3)">Anterior</button>
+  <button onclick="nextWeek(3)">Próxima Semana</button>
+</div>
+</div>
+
+<!-- Semana 4 -->
+<div class="week" id="week4">
+<h2>Semana 4</h2>
+
+<div class="activity">
+  <strong>Atividade 1:</strong> Principal objetivo da Política da Qualidade conforme ISO 9001:2015
+  <p class="answer" id="w4a1">Resposta: Elevar a satisfação do cliente com processos contínuos.</p>
+  <button class="copy-btn" onclick="copyText('w4a1')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 2:</strong> Procedimento na fase de recebimento
+  <p class="answer" id="w4a2">Resposta: Verificar conformidade das mercadorias com os requisitos.</p>
+  <button class="copy-btn" onclick="copyText('w4a2')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 3:</strong> Prática alinhada com a Política da Qualidade durante distribuição
+  <p class="answer" id="w4a3">Resposta: Garantir uso da embalagem correta e entregas no prazo.</p>
+  <button class="copy-btn" onclick="copyText('w4a3')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 4:</strong> Implementação de ESG com foco no cliente
+  <p class="answer" id="w4a4">Resposta: ESG atua de forma ética. Na logística: reduz desperdícios (Ambiental), garante segurança dos funcionários (Social) e segue checklists rigorosos (Governança), gerando confiança e fidelização.</p>
+  <button class="copy-btn" onclick="copyText('w4a4')">Copiar Resposta</button>
+</div>
+
+<div class="nav-weeks">
+  <button onclick="prevWeek(4)">Anterior</button>
+  <button onclick="nextWeek(4)">Próxima Semana</button>
+</div>
+</div>
+
+<!-- Semana 5 -->
+<div class="week" id="week5">
+<h2>Semana 5</h2>
+
+<div class="activity">
+  <strong>Atividade 1:</strong> O que fazer com o aço
+  <p class="answer" id="w5a1">Resposta: O aço é 100% reciclável e pode ser fundido infinitamente sem perder qualidade. No transporte, deve estar limpo e seguro para evitar acidentes e manter eficiência na economia circular.</p>
+  <button class="copy-btn" onclick="copyText('w5a1')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 2:</strong> Característica da economia linear
+  <p class="answer" id="w5a2">Resposta: Extrair → produzir → consumir → descartar.</p>
+  <button class="copy-btn" onclick="copyText('w5a2')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 3:</strong> Principal objetivo da economia circular
+  <p class="answer" id="w5a3">Resposta: Prolongar vida dos produtos e fechar ciclo produtivo.</p>
+  <button class="copy-btn" onclick="copyText('w5a3')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 4:</strong> Cuidados essenciais no transporte de recicláveis
+  <p class="answer" id="w5a4">Resposta: Assegurar materiais separados para evitar contaminação.</p>
+  <button class="copy-btn" onclick="copyText('w5a4')">Copiar Resposta</button>
+</div>
+
+<div class="nav-weeks">
+  <button onclick="prevWeek(5)">Anterior</button>
+  <button onclick="nextWeek(5)">Próxima Semana</button>
+</div>
+</div>
+
+<!-- Semana 6 -->
+<div class="week" id="week6">
+<h2>Semana 6</h2>
+
+<div class="activity">
+  <strong>Atividade 1:</strong> Guia prático para pequenas empresas
+  <p class="answer" id="w6a1">Resposta: Implementar devolução de embalagens, parcerias com cooperativas e uso de ecobags, reduzindo custos e melhorando imagem sustentável.</p>
+  <button class="copy-btn" onclick="copyText('w6a1')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 2:</strong> Principal impacto ambiental das embalagens não retornáveis
+  <p class="answer" id="w6a2">Resposta: Poluem solo, águas e sobrecarregam aterros.</p>
+  <button class="copy-btn" onclick="copyText('w6a2')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 3:</strong> Maior desafio no uso de embalagens retornáveis
+  <p class="answer" id="w6a3">Resposta: Rastreamento das embalagens no transporte.</p>
+  <button class="copy-btn" onclick="copyText('w6a3')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 4:</strong> Desafio das embalagens de agrotóxicos
+  <p class="answer" id="w6a4">Resposta: Mau descarte, risco de contaminação do solo e saúde.</p>
+  <button class="copy-btn" onclick="copyText('w6a4')">Copiar Resposta</button>
+</div>
+
+<div class="nav-weeks">
+  <button onclick="prevWeek(6)">Anterior</button>
+  <button onclick="nextWeek(6)">Próxima Semana</button>
+</div>
+</div>
+
+<!-- Semana 7 -->
+<div class="week" id="week7">
+<h2>Semana 7</h2>
+
+<div class="activity">
+  <strong>Atividade 1:</strong> Sistema de logística reversa do Decreto 10.240/2020
+  <p class="answer" id="w7a1">Resposta: Regulamenta o fluxo reverso de eletroeletrônicos.</p>
+  <button class="copy-btn" onclick="copyText('w7a1')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 2:</strong> Principal motivo da destinação correta de resíduos eletrônicos
+  <p class="answer" id="w7a2">Resposta: Prevenir contaminação ambiental por substâncias tóxicas.</p>
+  <button class="copy-btn" onclick="copyText('w7a2')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 3:</strong> Importância da logística reversa em eletroeletrônicos
+  <p class="answer" id="w7a3">Resposta: Orienta ações compartilhadas na logística reversa.</p>
+  <button class="copy-btn" onclick="copyText('w7a3')">Copiar Resposta</button>
+</div>
+
+<div class="activity">
+  <strong>Atividade 4:</strong> Guia de gestão de resíduos eletrônicos
+  <p class="answer" id="w7a4">Resposta: Eletroeletrônicos possuem metais pesados. Devem ser descartados em ecopontos ou via programas de logística reversa. Nunca no lixo comum.</p>
+  <button class="copy-btn" onclick="copyText('w7a4')">Copiar Resposta</button>
+</div>
+
+<div class="nav-weeks">
+  <button onclick="prevWeek(7)">Anterior</button>
+</div>
+</div>
 
 <script>
-let currentWeek = 1;
-const totalWeeks = 7;
-
-function showWeek(n) {
-  for(let i=1;i<=totalWeeks;i++){
-    document.getElementById('week'+i).classList.remove('active');
-  }
-  document.getElementById('week'+n).classList.add('active');
-  currentWeek = n;
-}
-
-function nextWeek(){
-  if(currentWeek < totalWeeks){
-    showWeek(currentWeek+1);
-  }
-}
-
-function prevWeek(){
-  if(currentWeek > 1){
-    showWeek(currentWeek-1);
-  }
-}
-
 function copyText(id){
-  const weekDiv = document.getElementById(id);
-  const text = weekDiv ? weekDiv.innerText : document.querySelector(`#${id}`)?.innerText;
-  navigator.clipboard.writeText(text || '').then(()=>{
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(()=>{
     const msg = document.getElementById('copied-msg');
     msg.style.opacity = '1';
-    msg.style.transform = 'translateY(0)';
+    msg.style.transform = 'translateX(-50%) translateY(0)';
     setTimeout(()=>{
       msg.style.opacity = '0';
-      msg.style.transform = 'translateY(-20px)';
+      msg.style.transform = 'translateX(-50%) translateY(-20px)';
     },1500);
+  }).catch(err=>{
+    alert('Não foi possível copiar a resposta.');
   });
 }
+
+function showWeek(weekNumber){
+  const weeks = document.querySelectorAll('.week');
+  weeks.forEach(w => w.classList.remove('active'));
+  document.getElementById('week'+weekNumber).classList.add('active');
+}
+
+function nextWeek(current){
+  const next = current+1;
+  if(document.getElementById('week'+next)){
+    showWeek(next);
+  }
+}
+
+function prevWeek(current){
+  const prev = current-1;
+  if(document.getElementById('week'+prev)){
+    showWeek(prev);
+  }
+}
 </script>
+
 </body>
 </html>
