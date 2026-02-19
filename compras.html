@@ -3,250 +3,346 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compras e Suprimentos</title>
+<title>Compras e Suprimentos - Cursos de Logística</title>
 <style>
-  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
-  header { background: #e76f51; color: white; text-align: center; padding: 20px; }
-  main { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
-  h2 { color: #e76f51; margin-top: 30px; }
-  pre { background: #f0f0f0; padding: 10px; border-radius: 5px; overflow-x: auto; white-space: pre-wrap; }
-  button { margin: 5px 0; padding: 10px 15px; border: none; background: #2a9d8f; color: white; border-radius: 5px; font-weight: bold; cursor: pointer;}
-  button:hover { background: #21867a; }
-  .voltar { display: block; margin: 30px auto 0 auto; text-align: center; padding: 10px 15px; background: #264653; color: white; text-decoration: none; border-radius: 5px; width: fit-content;}
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: #1f4e79;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header h1 {
+    margin-bottom: 5px;
+  }
+
+  main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .week {
+    display: none;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .week.active {
+    display: block;
+  }
+
+  h2 {
+    color: #1f4e79;
+  }
+
+  button {
+    background-color: #1f4e79;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px 2px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #16395a;
+  }
+
+  .copy-btn {
+    background-color: #4caf50;
+  }
+
+  .copy-btn:hover {
+    background-color: #3e8e41;
+  }
+
+  #copied-msg {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(-20px);
+    z-index: 1000;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  @media(min-width: 600px) {
+    button {
+      margin: 10px 5px;
+    }
+  }
 </style>
 </head>
 <body>
+
 <header>
   <h1>Compras e Suprimentos</h1>
+  <p>Desenvolvido por Fabiano & João Molina</p>
 </header>
+
 <main>
-<!-- Semana 1 -->
-<h2>Semana 1 - Atividade 1</h2>
-<pre id="resposta1">
-Qual é o primeiro passo no processo de seleção de fornecedores?
-Resposta: Identificação das necessidades de fornecimento.
-</pre>
-<button onclick="copiar('resposta1')">Copiar</button>
+  <!-- Semana 1 -->
+  <div class="week active" id="week1">
+    <h2>Semana 1</h2>
+    <p><strong>Atividade 1:</strong> Qual é o primeiro passo no processo de seleção de fornecedores?</p>
+    <p>Resposta: Identificação das necessidades de fornecimento.</p>
+    <button class="copy-btn" onclick="copyText('week1-1')">Copiar Resposta</button>
+    
+    <p><strong>Atividade 2:</strong> Qual das seguintes informações NÃO é essencial para o cadastro de um fornecedor?</p>
+    <p>Resposta: Preferências pessoais do gerente de compras.</p>
+    <button class="copy-btn" onclick="copyText('week1-2')">Copiar Resposta</button>
 
-<h2>Semana 1 - Atividade 2</h2>
-<pre id="resposta2">
-Qual das seguintes informações NÃO é essencial para o cadastro de um fornecedor?
-Resposta: Preferências pessoais do gerente de compras.
-</pre>
-<button onclick="copiar('resposta2')">Copiar</button>
+    <p><strong>Atividade 3:</strong> Critérios de seleção de fornecedores (Checklist de Qualidade e Pontualidade)</p>
+    <p>✔ Produtos dentro das especificações solicitadas<br>
+       ✔ Integridade da embalagem<br>
+       ✔ Validade adequada<br>
+       ✔ Conformidade com normas e certificações<br>
+       ✔ Quantidade correta entregue<br>
+       ✔ Cumprimento do prazo de entrega<br>
+       ✔ Frequência de atrasos<br>
+       ✔ Condições de transporte adequadas<br>
+       ✔ Comunicação prévia em caso de imprevistos</p>
+    <p>Justificativa: Esses pontos garantem produtos dentro do padrão de qualidade, evitam prejuízos e retrabalho, mantêm o estoque organizado e asseguram a satisfação do cliente.</p>
+    <button class="copy-btn" onclick="copyText('week1-3')">Copiar Resposta</button>
 
-<h2>Semana 1 - Atividade 3</h2>
-<pre id="resposta3">
-Critérios de seleção de fornecedores (checklist):
-✔ Produtos dentro das especificações solicitadas
-✔ Integridade da embalagem
-✔ Validade adequada
-✔ Conformidade com normas e certificações
-✔ Quantidade correta entregue
-✔ Cumprimento do prazo de entrega
-✔ Frequência de atrasos
-✔ Condições de transporte adequadas
-✔ Comunicação prévia em caso de imprevistos
+    <p><strong>Atividade 4:</strong> Qual dos seguintes indicadores NÃO é comumente utilizado para avaliar a pontualidade dos fornecedores?</p>
+    <p>Resposta: Taxa de devoluções.</p>
+    <button class="copy-btn" onclick="copyText('week1-4')">Copiar Resposta</button>
 
-Justificativa: Esses pontos garantem qualidade, evitam prejuízos, desperdícios e retrabalho, mantêm estoque organizado, asseguram satisfação do cliente e garantem que o processo produtivo ou de venda não seja prejudicado.
-</pre>
-<button onclick="copiar('resposta3')">Copiar</button>
+    <div>
+      <button onclick="prevWeek()">Semana Anterior</button>
+      <button onclick="nextWeek()">Próxima Semana</button>
+    </div>
+  </div>
 
-<h2>Semana 1 - Atividade 4</h2>
-<pre id="resposta4">
-Qual dos seguintes indicadores NÃO é comumente utilizado para avaliar a pontualidade dos fornecedores?
-Resposta: Taxa de devoluções.
-</pre>
-<button onclick="copiar('resposta4')">Copiar</button>
+  <!-- Semana 2 -->
+  <div class="week" id="week2">
+    <h2>Semana 2</h2>
+    <p><strong>Atividade 1:</strong> Análise Comparativa de Cotações</p>
+    <p>Produto/Serviço: ____________________________________________<br>
+       Quantidade: ________________________________________________<br>
+       Critérios: Preço, Custo total, Prazo de entrega, Condições de pagamento, Qualidade, Frete, Garantia, Certificações e Confiabilidade.</p>
+    <button class="copy-btn" onclick="copyText('week2-1')">Copiar Resposta</button>
 
-<!-- Semana 2 -->
-<h2>Semana 2 - Atividade 1</h2>
-<pre id="resposta5">
-Análise Comparativa de Cotações:
-Produto/Serviço: ____________________________________________
-Quantidade: ________________________________________________
-Critérios: Preço, Custo total, Prazo de entrega, Condições de pagamento, Qualidade, Frete, Garantia, Certificações e Confiabilidade.
-</pre>
-<button onclick="copiar('resposta5')">Copiar</button>
+    <p><strong>Atividade 2:</strong> Qual é o elemento mais importante a ser incluído em uma RFQ?</p>
+    <p>Resposta: Descrição do produto/serviço.</p>
+    <button class="copy-btn" onclick="copyText('week2-2')">Copiar Resposta</button>
 
-<h2>Semana 2 - Atividade 2</h2>
-<pre id="resposta6">
-Qual é o elemento mais importante a ser incluído em uma RFQ?
-Resposta: Descrição do produto/serviço.
-</pre>
-<button onclick="copiar('resposta6')">Copiar</button>
+    <p><strong>Atividade 3:</strong> Qual destes itens é essencial no edital de uma tomada de preços?</p>
+    <p>Resposta: Especificações técnicas detalhadas.</p>
+    <button class="copy-btn" onclick="copyText('week2-3')">Copiar Resposta</button>
 
-<h2>Semana 2 - Atividade 3</h2>
-<pre id="resposta7">
-Qual destes itens é essencial no edital de uma tomada de preços?
-Resposta: Especificações técnicas detalhadas.
-</pre>
-<button onclick="copiar('resposta7')">Copiar</button>
+    <p><strong>Atividade 4:</strong> Qual é o principal objetivo da licitação?</p>
+    <p>Resposta: Garantir competitividade e transparência.</p>
+    <button class="copy-btn" onclick="copyText('week2-4')">Copiar Resposta</button>
 
-<h2>Semana 2 - Atividade 4</h2>
-<pre id="resposta8">
-Qual é o principal objetivo da licitação?
-Resposta: Garantir competitividade e transparência.
-</pre>
-<button onclick="copiar('resposta8')">Copiar</button>
+    <div>
+      <button onclick="prevWeek()">Semana Anterior</button>
+      <button onclick="nextWeek()">Próxima Semana</button>
+    </div>
+  </div>
 
-<!-- Semana 3 -->
-<h2>Semana 3 - Atividade 1</h2>
-<pre id="resposta9">
-Contrato de Fornecimento: Preços, Prazos, Condições de Pagamento:
-- Preços: Definição por produto/volume, descontos, reajustes e sazonalidade.
-- Prazos: Frequência de entregas, horários, prazos máximos e penalidades.
-- Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.
-</pre>
-<button onclick="copiar('resposta9')">Copiar</button>
+  <!-- Semana 3 -->
+  <div class="week" id="week3">
+    <h2>Semana 3</h2>
+    <p><strong>Atividade 1:</strong> Contrato de Fornecimento: Preços, Prazos, Condições de Pagamento</p>
+    <p>Preços: Definição por produto/volume, descontos, reajustes e sazonalidade.<br>
+       Prazos: Frequência de entregas, horários, prazos máximos e penalidades.<br>
+       Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.</p>
+    <button class="copy-btn" onclick="copyText('week3-1')">Copiar Resposta</button>
 
-<h2>Semana 3 - Atividade 2</h2>
-<pre id="resposta10">
-Qual é o principal benefício de definir termos claros de pagamento em um contrato de fornecimento?
-Resposta: Garantia de previsibilidade financeira e fluxo de caixa.
-</pre>
-<button onclick="copiar('resposta10')">Copiar</button>
+    <p><strong>Atividade 2:</strong> Qual é o principal benefício de definir termos claros de pagamento em um contrato de fornecimento?</p>
+    <p>Resposta: Garantia de previsibilidade financeira e fluxo de caixa.</p>
+    <button class="copy-btn" onclick="copyText('week3-2')">Copiar Resposta</button>
 
-<h2>Semana 3 - Atividade 3</h2>
-<pre id="resposta11">
-Qual é a principal vantagem de incluir cláusulas de penalidade em contratos de fornecimento?
-Resposta: Conformidade contratual e menor risco financeiro.
-</pre>
-<button onclick="copiar('resposta11')">Copiar</button>
+    <p><strong>Atividade 3:</strong> Qual é a principal vantagem de incluir cláusulas de penalidade em contratos de fornecimento?</p>
+    <p>Resposta: Conformidade contratual e menor risco financeiro.</p>
+    <button class="copy-btn" onclick="copyText('week3-3')">Copiar Resposta</button>
 
-<h2>Semana 3 - Atividade 4</h2>
-<pre id="resposta12">
-Qual dos itens abaixo representa um impacto positivo da aplicação de sanções?
-Resposta: Cumprimento das obrigações contratuais.
-</pre>
-<button onclick="copiar('resposta12')">Copiar</button>
+    <p><strong>Atividade 4:</strong> Qual, dos itens abaixo, representa um impacto positivo da aplicação de sanções?</p>
+    <p>Resposta: Cumprimento das obrigações contratuais.</p>
+    <button class="copy-btn" onclick="copyText('week3-4')">Copiar Resposta</button>
 
-<!-- Semana 4 -->
-<h2>Semana 4 - Atividade 1</h2>
-<pre id="resposta13">
-Qual é um dos principais benefícios de se manter uma parceria estratégica de longo prazo com fornecedores?
-Resposta: Reduzir custos operacionais.
-</pre>
-<button onclick="copiar('resposta13')">Copiar</button>
+    <div>
+      <button onclick="prevWeek()">Semana Anterior</button>
+      <button onclick="nextWeek()">Próxima Semana</button>
+    </div>
+  </div>
 
-<h2>Semana 4 - Atividade 2</h2>
-<pre id="resposta14">
-Interfaceamento entre sistemas:
-Benefícios: Integração de dados em tempo real e redução de erros nos pedidos.
-Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.
-</pre>
-<button onclick="copiar('resposta14')">Copiar</button>
+  <!-- Semana 4 -->
+  <div class="week" id="week4">
+    <h2>Semana 4</h2>
+    <p><strong>Atividade 1:</strong> Qual é um dos principais benefícios de se manter uma parceria estratégica de longo prazo com fornecedores?</p>
+    <p>Resposta: Reduzir custos operacionais.</p>
+    <button class="copy-btn" onclick="copyText('week4-1')">Copiar Resposta</button>
 
-<h2>Semana 4 - Atividade 3</h2>
-<pre id="resposta15">
-Qual é a principal vantagem de usar APIs para integrar sistemas de diferentes fornecedores?
-Resposta: Facilitar a comunicação e a troca de dados de forma segura e estruturada.
-</pre>
-<button onclick="copiar('resposta15')">Copiar</button>
+    <p><strong>Atividade 2:</strong> Interfaceamento entre sistemas: mapeamento de informações</p>
+    <p>Benefícios: Integração de dados em tempo real e redução de erros nos pedidos.<br>
+       Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.</p>
+    <button class="copy-btn" onclick="copyText('week4-2')">Copiar Resposta</button>
 
-<h2>Semana 4 - Atividade 4</h2>
-<pre id="resposta16">
-Qual é a vantagem de utilizar indicadores de desempenho (KPIs) na avaliação de fornecedores?
-Resposta: Fornecer uma base objetiva para tomar decisões.
-</pre>
-<button onclick="copiar('resposta16')">Copiar</button>
+    <p><strong>Atividade 3:</strong> Qual é a principal vantagem de usar APIs para integrar sistemas de diferentes fornecedores?</p>
+    <p>Resposta: Facilitar a comunicação e a troca de dados de forma segura e estruturada.</p>
+    <button class="copy-btn" onclick="copyText('week4-3')">Copiar Resposta</button>
 
-<!-- Semana 5 -->
-<h2>Semana 5 - Atividade 1</h2>
-<pre id="resposta17">
-Qual alternativa abaixo não é uma ferramenta para auditorias de fornecedores?
-Resposta: Relatório do prazo de pagamento.
-</pre>
-<button onclick="copiar('resposta17')">Copiar</button>
+    <p><strong>Atividade 4:</strong> Qual é a vantagem de utilizar indicadores de desempenho (KPIs) na avaliação de fornecedores?</p>
+    <p>Resposta: Fornecer uma base objetiva para tomar decisões.</p>
+    <button class="copy-btn" onclick="copyText('week4-4')">Copiar Resposta</button>
 
-<h2>Semana 5 - Atividade 2</h2>
-<pre id="resposta18">
-Auditorias dos fornecedores: conceitos de melhoria contínua
-Benefícios: Eficiência operacional e redução de retrabalho.
-Motivo: Processos mais rápidos, econômicos e redução de desperdícios.
-</pre>
-<button onclick="copiar('resposta18')">Copiar</button>
+    <div>
+      <button onclick="prevWeek()">Semana Anterior</button>
+      <button onclick="nextWeek()">Próxima Semana</button>
+    </div>
+  </div>
 
-<h2>Semana 5 - Atividade 3</h2>
-<pre id="resposta19">
-Entre as alternativas abaixo, qual não é um método de avaliação da melhoria contínua?
-Resposta: Diagnóstico da situação atual.
-</pre>
-<button onclick="copiar('resposta19')">Copiar</button>
+  <!-- Semana 5 -->
+  <div class="week" id="week5">
+    <h2>Semana 5</h2>
+    <p><strong>Atividade 1:</strong> Qual alternativa abaixo não é uma ferramenta para auditorias de fornecedores?</p>
+    <p>Resposta: Relatório do prazo de pagamento.</p>
+    <button class="copy-btn" onclick="copyText('week5-1')">Copiar Resposta</button>
 
-<h2>Semana 5 - Atividade 4</h2>
-<pre id="resposta20">
-Qual das seguintes estratégias é mais eficaz para mitigar riscos relacionados à dependência excessiva de um fornecedor exclusivo?
-Resposta: Diversificar a base de fornecedores.
-</pre>
-<button onclick="copiar('resposta20')">Copiar</button>
+    <p><strong>Atividade 2:</strong> Auditorias dos fornecedores: conceitos de melhoria contínua</p>
+    <p>Benefícios: Eficiência operacional e redução de retrabalho.<br>
+       Motivo: Processos mais rápidos, econômicos e redução de desperdícios.</p>
+    <button class="copy-btn" onclick="copyText('week5-2')">Copiar Resposta</button>
 
-<!-- Semana 6 -->
-<h2>Semana 6 - Atividade 1</h2>
-<pre id="resposta21">
-Qual delas está relacionada à gestão de estoques e não à Qualidade de fornecedores?
-Resposta: Giro de estoque.
-</pre>
-<button onclick="copiar('resposta21')">Copiar</button>
+    <p><strong>Atividade 3:</strong> Entre as alternativas abaixo, qual não é um método de avaliação da melhoria contínua?</p>
+    <p>Resposta: Diagnóstico da situação atual.</p>
+    <button class="copy-btn" onclick="copyText('week5-3')">Copiar Resposta</button>
 
-<h2>Semana 6 - Atividade 2</h2>
-<pre id="resposta22">
-Qual dos seguintes é um benefício da inovação nos processos de fornecimento?
-Resposta: Redução de custos e otimização dos recursos.
-</pre>
-<button onclick="copiar('resposta22')">Copiar</button>
+    <p><strong>Atividade 4:</strong> Qual das seguintes estratégias é mais eficaz para mitigar riscos relacionados à dependência excessiva de um fornecedor exclusivo?</p>
+    <p>Resposta: Diversificar a base de fornecedores.</p>
+    <button class="copy-btn" onclick="copyText('week5-4')">Copiar Resposta</button>
 
-<h2>Semana 6 - Atividade 3</h2>
-<pre id="resposta23">
-Qualidade, inovação e sustentabilidade: fornecedores
-Práticas: Uso de embalagens retornáveis e otimização de rotas para reduzir CO2.
-</pre>
-<button onclick="copiar('resposta23')">Copiar</button>
+    <div>
+      <button onclick="prevWeek()">Semana Anterior</button>
+      <button onclick="nextWeek()">Próxima Semana</button>
+    </div>
+  </div>
 
-<h2>Semana 6 - Atividade 4</h2>
-<pre id="resposta24">
-Qual dos seguintes é um dos principais benefícios da implementação de logística reversa?
-Resposta: Redução de custos com novos materiais e menor impacto ambiental.
-</pre>
-<button onclick="copiar('resposta24')">Copiar</button>
+  <!-- Semana 6 -->
+  <div class="week" id="week6">
+    <h2>Semana 6</h2>
+    <p><strong>Atividade 1:</strong> Qual delas está relacionada à gestão de estoques e não à Qualidade de fornecedores?</p>
+    <p>Resposta: Giro de estoque.</p>
+    <button class="copy-btn" onclick="copyText('week6-1')">Copiar Resposta</button>
 
-<!-- Semana 7 -->
-<h2>Semana 7 - Atividade 1</h2>
-<pre id="resposta25">
-Estruturação de processo de compra e contrato de curto prazo
-Benefícios: Flexibilidade e menor compromisso financeiro.
-Riscos: Instabilidade de fornecimento e preços possivelmente mais altos.
-</pre>
-<button onclick="copiar('resposta25')">Copiar</button>
+    <p><strong>Atividade 2:</strong> Qual dos seguintes é um benefício da inovação nos processos de fornecimento?</p>
+    <p>Resposta: Redução de custos e otimização dos recursos.</p>
+    <button class="copy-btn" onclick="copyText('week6-2')">Copiar Resposta</button>
 
-<h2>Semana 7 - Atividade 2</h2>
-<pre id="resposta26">
-Qual das seguintes alternativas descreve uma característica do contrato de curto prazo?
-Resposta: Duração limitada, ideal para demandas sazonais.
-</pre>
-<button onclick="copiar('resposta26')">Copiar</button>
+    <p><strong>Atividade 3:</strong> Qualidade, inovação e sustentabilidade: fornecedores</p>
+    <p>Práticas: Uso de embalagens retornáveis e otimização de rotas para reduzir CO2.</p>
+    <button class="copy-btn" onclick="copyText('week6-3')">Copiar Resposta</button>
 
-<h2>Semana 7 - Atividade 3</h2>
-<pre id="resposta27">
-Qual alternativa apresenta características associadas a contratos de médio prazo?
-Resposta: Fornecimento estável com renegociação após 1-3 anos.
-</pre>
-<button onclick="copiar('resposta27')">Copiar</button>
+    <p><strong>Atividade 4:</strong> Qual dos seguintes é um dos principais benefícios da implementação de logística reversa?</p>
+    <p>Resposta: Redução de custos com novos materiais e menor impacto ambiental.</p>
+    <button class="copy-btn" onclick="copyText('week6-4')">Copiar Resposta</button>
 
-<h2>Semana 7 - Atividade 4</h2>
-<pre id="resposta28">
-Qual alternativa apresenta uma característica associada a contratos de longo prazo?
-Resposta: Fornecimento contínuo garantido por mais de 3 anos.
-</pre>
-<button onclick="copiar('resposta28')">Copiar</button>
+    <div>
+      <button onclick="prevWeek()">Semana Anterior</button>
+      <button onclick="nextWeek()">Próxima Semana</button>
+    </div>
+  </div>
 
-<a href="index.html" class="voltar">Voltar ao Menu</a>
+  <!-- Semana 7 -->
+  <div class="week" id="week7">
+    <h2>Semana 7</h2>
+    <p><strong>Atividade 1:</strong> Estruturação de processo de compra e contrato de curto prazo</p>
+    <p>Benefícios: Flexibilidade e menor compromisso financeiro.<br>
+       Riscos: Instabilidade de fornecimento e preços possivelmente mais altos.</p>
+    <button class="copy-btn" onclick="copyText('week7-1')">Copiar Resposta</button>
+
+    <p><strong>Atividade 2:</strong> Qual das seguintes alternativas descreve uma característica do contrato de curto prazo?</p>
+    <p>Resposta: Duração limitada, ideal para demandas sazonais.</p>
+    <button class="copy-btn" onclick="copyText('week7-2')">Copiar Resposta</button>
+
+    <p><strong>Atividade 3:</strong> Qual alternativa apresenta características associadas a contratos de médio prazo?</p>
+    <p>Resposta: Fornecimento estável com renegociação após 1-3 anos.</p>
+    <button class="copy-btn" onclick="copyText('week7-3')">Copiar Resposta</button>
+
+    <p><strong>Atividade 4:</strong> Qual alternativa apresenta uma característica associada a contratos de longo prazo?</p>
+    <p>Resposta: Fornecimento contínuo garantido por mais de 3 anos.</p>
+    <button class="copy-btn" onclick="copyText('week7-4')">Copiar Resposta</button>
+
+    <div>
+      <button onclick="prevWeek()">Semana Anterior</button>
+    </div>
+  </div>
 </main>
+
+<div id="copied-msg">Resposta copiada!</div>
+
+<footer>
+  <button onclick="window.location.href='index.html'">Voltar ao Menu</button>
+</footer>
+
 <script>
-function copiar(id){
-  const texto = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(texto);
-  alert('Copiado para a área de transferência!');
+let currentWeek = 1;
+const totalWeeks = 7;
+
+function showWeek(n) {
+  for(let i=1;i<=totalWeeks;i++){
+    document.getElementById('week'+i).classList.remove('active');
+  }
+  document.getElementById('week'+n).classList.add('active');
+  currentWeek = n;
+}
+
+function nextWeek(){
+  if(currentWeek < totalWeeks){
+    showWeek(currentWeek+1);
+  }
+}
+
+function prevWeek(){
+  if(currentWeek > 1){
+    showWeek(currentWeek-1);
+  }
+}
+
+function copyText(id){
+  const weekDiv = document.getElementById(id);
+  const text = weekDiv ? weekDiv.innerText : document.querySelector(`#${id}`)?.innerText;
+  navigator.clipboard.writeText(text || '').then(()=>{
+    const msg = document.getElementById('copied-msg');
+    msg.style.opacity = '1';
+    msg.style.transform = 'translateY(0)';
+    setTimeout(()=>{
+      msg.style.opacity = '0';
+      msg.style.transform = 'translateY(-20px)';
+    },1500);
+  });
 }
 </script>
 </body>
