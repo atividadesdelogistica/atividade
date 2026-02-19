@@ -37,7 +37,7 @@
     padding: 25px 15px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.2s;
     cursor: pointer;
   }
 
@@ -51,6 +51,10 @@
     color: #1f4e79;
     font-weight: bold;
     font-size: 1.1em;
+  }
+
+  .card.clicked {
+    background-color: #cfe3ff; /* cor temporária de clique */
   }
 
   .developers {
@@ -98,13 +102,34 @@
 
 <div class="developers">
   Desenvolvido por Fabiano/Cebola & João Molina | 
-  <a href="https://www.instagram.com/biano_bispo" target="_blank">Instagram Fabiano</a> | 
-  <a href="https://www.instagram.com/eae_mol1na" target="_blank">Instagram João</a>
+  <a href="https://www.instagram.com/biano_bispo" target="_blank">Instagram Cebola</a> | 
+  <a href="https://www.instagram.com/eae_mol1na" target="_blank">Instagram Molina</a>
 </div>
 
 <footer>
   © 2026 Cursos de Logística
 </footer>
+
+<script>
+  // Seleciona todos os cards
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', e => {
+      // Adiciona a classe .clicked para animação
+      card.classList.add('clicked');
+
+      // Remove a classe depois de 200ms
+      setTimeout(() => card.classList.remove('clicked'), 200);
+
+      // Se clicou no link, permite seguir normalmente
+      const link = card.querySelector('a');
+      if(link) {
+        window.location.href = link.href;
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
