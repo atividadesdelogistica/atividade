@@ -3,232 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automação Logística</title>
+<title>Automação Logística - Cursos de Logística</title>
 <style>
-  body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
-  header { background: #2a9d8f; color: white; text-align: center; padding: 20px; }
-  main { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
-  h2 { color: #2a9d8f; margin-top: 30px; }
-  pre { background: #f0f0f0; padding: 10px; border-radius: 5px; overflow-x: auto; white-space: pre-wrap; }
-  button { margin: 5px 0; padding: 10px 15px; border: none; background: #e76f51; color: white; border-radius: 5px; font-weight: bold; cursor: pointer;}
-  button:hover { background: #d85b3b; }
-  .voltar { display: block; margin: 30px auto 0 auto; text-align: center; padding: 10px 15px; background: #264653; color: white; text-decoration: none; border-radius: 5px; width: fit-content;}
+  body { font-family: Arial, sans-serif; background-color: #f4f6f8; color: #333; margin: 0; padding: 0; }
+  header { background-color: #1565c0; color: #fff; text-align: center; padding: 15px 10px; position: sticky; top: 0; z-index: 1000; }
+  header h1 { margin-bottom: 5px; }
+  main { max-width: 800px; margin: 20px auto; padding: 10px; }
+  .week { display: none; background-color: #fff; padding: 15px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+  .week.active { display: block; }
+  h2 { color: #1565c0; }
+  button { background-color: #1565c0; color: #fff; border: none; padding: 10px 15px; margin: 5px 2px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background-color 0.3s; }
+  button:hover { background-color: #0d3d84; }
+  .copy-btn { background-color: #4caf50; }
+  .copy-btn:hover { background-color: #3e8e41; }
+  #copied-msg { position: fixed; top: 20px; right: 20px; background-color: #333; color: #fff; padding: 10px 15px; border-radius: 5px; opacity: 0; transition: opacity 0.5s, transform 0.5s; transform: translateY(-20px); z-index: 1000; }
+  footer { text-align: center; padding: 15px; font-size: 0.9em; color: #555; }
+  @media(min-width:600px){ button { margin: 10px 5px; } }
 </style>
 </head>
 <body>
+
 <header>
   <h1>Automação Logística</h1>
+  <p>Desenvolvido por Fabiano & João Molina</p>
 </header>
+
 <main>
 
 <!-- Semana 1 -->
-<h2>Semana 1 - Atividade 1</h2>
-<pre id="resposta1">
-Qual dispositivo é utilizado na identificação de materiais?
-Resposta: Leitor de código de barras.
-</pre>
-<button onclick="copiar('resposta1')">Copiar</button>
+<div class="week active" id="week1">
+<h2>Semana 1</h2>
+<p><strong>Atividade 1:</strong> O que é automação logística?</p>
+<p id="week1-1">Resposta: Automação logística é a aplicação de tecnologias e sistemas automatizados para otimizar processos de armazenamento, movimentação, separação e distribuição de produtos.</p>
+<button class="copy-btn" onclick="copyText('week1-1')">Copiar Resposta</button>
 
-<h2>Semana 1 - Atividade 2</h2>
-<pre id="resposta2">
-Principais funções da logística na cadeia de suprimentos:
-Resposta: Transportes e armazenagem.
-</pre>
-<button onclick="copiar('resposta2')">Copiar</button>
+<p><strong>Atividade 2:</strong> Benefícios da automação logística</p>
+<p id="week1-2">Resposta: Redução de erros, aumento de produtividade, melhor controle de estoque, redução de custos e maior agilidade nos processos.</p>
+<button class="copy-btn" onclick="copyText('week1-2')">Copiar Resposta</button>
 
-<h2>Semana 1 - Atividade 3</h2>
-<pre id="resposta3">
-Atividade fundamental para otimizar fluxos e reduzir gargalos:
-Resposta: Planejamento.
-</pre>
-<button onclick="copiar('resposta3')">Copiar</button>
+<p><strong>Atividade 3:</strong> Exemplos de automação</p>
+<p id="week1-3">Resposta: Esteiras automáticas, robôs de separação, sistemas WMS, transportadores automatizados e leitores de código de barras.</p>
+<button class="copy-btn" onclick="copyText('week1-3')">Copiar Resposta</button>
 
-<h2>Semana 1 - Atividade 4</h2>
-<pre id="resposta4">
-Painel Agronegócio: Integração da logística do campo ao consumidor.
-Desafios: tecnologias integradas, infraestrutura robusta, capacitação de pessoas.
-</pre>
-<button onclick="copiar('resposta4')">Copiar</button>
+<p><strong>Atividade 4:</strong> Indicadores em automação logística</p>
+<p id="week1-4">Resposta: Taxa de acertos nos pedidos, tempo de processamento, produtividade por hora e custo por operação.</p>
+<button class="copy-btn" onclick="copyText('week1-4')">Copiar Resposta</button>
+
+<div>
+<button onclick="prevWeek()">Semana Anterior</button>
+<button onclick="nextWeek()">Próxima Semana</button>
+</div>
+</div>
 
 <!-- Semana 2 -->
-<h2>Semana 2 - Atividade 1</h2>
-<pre id="resposta5">
-Principal característica da Indústria 4.0:
-Resposta: Integração de tecnologias digitais.
-</pre>
-<button onclick="copiar('resposta5')">Copiar</button>
+<div class="week" id="week2">
+<h2>Semana 2</h2>
+<p><strong>Atividade 1:</strong> Sistemas de Gestão</p>
+<p id="week2-1">Resposta: WMS (Warehouse Management System) gerencia estoques e processos internos, enquanto ERP integra toda a operação logística com a empresa.</p>
+<button class="copy-btn" onclick="copyText('week2-1')">Copiar Resposta</button>
 
-<h2>Semana 2 - Atividade 2</h2>
-<pre id="resposta6">
-Tecnologias da Logística 4.0:
-Sistemas WMS/TMS, IoT, sensores, inteligência artificial para monitoramento em tempo real, reduzir erros e melhorar decisões estratégicas.
-</pre>
-<button onclick="copiar('resposta6')">Copiar</button>
+<p><strong>Atividade 2:</strong> Tipos de automação</p>
+<p id="week2-2">Resposta: Automação de armazém, separação de pedidos, transporte interno e controle de inventário.</p>
+<button class="copy-btn" onclick="copyText('week2-2')">Copiar Resposta</button>
 
-<h2>Semana 2 - Atividade 3</h2>
-<pre id="resposta7">
-Tecnologias essenciais da Logística 4.0:
-Resposta: Inteligência Artificial e Análise de Dados.
-</pre>
-<button onclick="copiar('resposta7')">Copiar</button>
+<p><strong>Atividade 3:</strong> Benefícios financeiros</p>
+<p id="week2-3">Resposta: Redução de mão de obra, aumento de produtividade, redução de perdas e melhor utilização do espaço.</p>
+<button class="copy-btn" onclick="copyText('week2-3')">Copiar Resposta</button>
 
-<h2>Semana 2 - Atividade 4</h2>
-<pre id="resposta8">
-Como a Logística 4.0 promove sustentabilidade:
-Resposta: Maior eficiência energética, redução de emissão de poluentes e otimização do transporte.
-</pre>
-<button onclick="copiar('resposta8')">Copiar</button>
+<p><strong>Atividade 4:</strong> Integração com tecnologias</p>
+<p id="week2-4">Resposta: Sensores, IoT, inteligência artificial e softwares de gestão logística.</p>
+<button class="copy-btn" onclick="copyText('week2-4')">Copiar Resposta</button>
+
+<div>
+<button onclick="prevWeek()">Semana Anterior</button>
+<button onclick="nextWeek()">Próxima Semana</button>
+</div>
+</div>
 
 <!-- Semana 3 -->
-<h2>Semana 3 - Atividade 1</h2>
-<pre id="resposta9">
-Módulo de Recebimento do WMS:
-Gerencia dados do fornecedor, NCM, quantidade e condições das mercadorias.
-Varejo: rapidez no abastecimento.
-Combustíveis: segurança e conformidade normativa.
-</pre>
-<button onclick="copiar('resposta9')">Copiar</button>
+<div class="week" id="week3">
+<h2>Semana 3</h2>
+<p><strong>Atividade 1:</strong> Automação e segurança</p>
+<p id="week3-1">Resposta: Sensores de presença, barreiras de segurança e protocolos de operação reduzem riscos de acidentes.</p>
+<button class="copy-btn" onclick="copyText('week3-1')">Copiar Resposta</button>
 
-<h2>Semana 3 - Atividade 2</h2>
-<pre id="resposta10">
-Tipo de armazém para armazenagem de grãos:
-Resposta: Silo.
-</pre>
-<button onclick="copiar('resposta10')">Copiar</button>
+<p><strong>Atividade 2:</strong> Indicadores de desempenho</p>
+<p id="week3-2">Resposta: Taxa de erro, tempo de ciclo, custo por pedido e produtividade do equipamento.</p>
+<button class="copy-btn" onclick="copyText('week3-2')">Copiar Resposta</button>
 
-<h2>Semana 3 - Atividade 3</h2>
-<pre id="resposta11">
-Informação-chave usada no módulo de separação (picking):
-Resposta: Pedido do cliente.
-</pre>
-<button onclick="copiar('resposta11')">Copiar</button>
+<p><strong>Atividade 3:</strong> Vantagens competitivas</p>
+<p id="week3-3">Resposta: Entregas mais rápidas, menor custo operacional e aumento da confiabilidade.</p>
+<button class="copy-btn" onclick="copyText('week3-3')">Copiar Resposta</button>
 
-<h2>Semana 3 - Atividade 4</h2>
-<pre id="resposta12">
-Função principal do WMS na expedição:
-Resposta: Gerar documentação.
-</pre>
-<button onclick="copiar('resposta12')">Copiar</button>
+<p><strong>Atividade 4:</strong> Exemplo prático</p>
+<p id="week3-4">Resposta: Robôs picking em e-commerce aceleram separação de pedidos, reduzindo tempo e erro.</p>
+<button class="copy-btn" onclick="copyText('week3-4')">Copiar Resposta</button>
+
+<div>
+<button onclick="prevWeek()">Semana Anterior</button>
+<button onclick="nextWeek()">Próxima Semana</button>
+</div>
+</div>
 
 <!-- Semana 4 -->
-<h2>Semana 4 - Atividade 1</h2>
-<pre id="resposta13">
-Função do código de barras no recebimento:
-Resposta: Identificação.
-</pre>
-<button onclick="copiar('resposta13')">Copiar</button>
+<div class="week" id="week4">
+<h2>Semana 4</h2>
+<p><strong>Atividade 1:</strong> Planejamento da automação</p>
+<p id="week4-1">Resposta: Mapear processos, identificar gargalos, definir tecnologias e treinar equipe.</p>
+<button class="copy-btn" onclick="copyText('week4-1')">Copiar Resposta</button>
 
-<h2>Semana 4 - Atividade 2</h2>
-<pre id="resposta14">
-Tecnologias em um AGV (Veículo Guiado Automaticamente):
-Sensores LiDAR, câmeras, navegação, inteligência artificial para movimentação autônoma e integração ao WMS.
-</pre>
-<button onclick="copiar('resposta14')">Copiar</button>
+<p><strong>Atividade 2:</strong> Custos envolvidos</p>
+<p id="week4-2">Resposta: Investimento inicial em equipamentos, manutenção e treinamento de pessoal.</p>
+<button class="copy-btn" onclick="copyText('week4-2')">Copiar Resposta</button>
 
-<h2>Semana 4 - Atividade 3</h2>
-<pre id="resposta15">
-Ferramenta de identificação mais utilizada no recebimento:
-Resposta: Código de barras.
-</pre>
-<button onclick="copiar('resposta15')">Copiar</button>
+<p><strong>Atividade 3:</strong> Redução de erros</p>
+<p id="week4-3">Resposta: Sistemas automatizados diminuem falhas humanas e retrabalho.</p>
+<button class="copy-btn" onclick="copyText('week4-3')">Copiar Resposta</button>
+
+<p><strong>Atividade 4:</strong> Integração com transporte</p>
+<p id="week4-4">Resposta: Rastreamento em tempo real e roteirização eficiente reduzem atrasos.</p>
+<button class="copy-btn" onclick="copyText('week4-4')">Copiar Resposta</button>
+
+<div>
+<button onclick="prevWeek()">Semana Anterior</button>
+<button onclick="nextWeek()">Próxima Semana</button>
+</div>
+</div>
 
 <!-- Semana 5 -->
-<h2>Semana 5 - Atividade 1</h2>
-<pre id="resposta16">
-Robótica e AMRs:
-Robôs móveis autônomos agilizam transporte interno e picking, permitindo foco em tarefas estratégicas e aumento da produtividade.
-</pre>
-<button onclick="copiar('resposta16')">Copiar</button>
+<div class="week" id="week5">
+<h2>Semana 5</h2>
+<p><strong>Atividade 1:</strong> Tecnologias emergentes</p>
+<p id="week5-1">Resposta: Robótica avançada, drones, inteligência artificial e análise de big data.</p>
+<button class="copy-btn" onclick="copyText('week5-1')">Copiar Resposta</button>
 
-<h2>Semana 5 - Atividade 2</h2>
-<pre id="resposta17">
-Vantagem dos AMRs:
-Redução no tempo de inatividade.
-</pre>
-<button onclick="copiar('resposta17')">Copiar</button>
+<p><strong>Atividade 2:</strong> Manutenção preditiva</p>
+<p id="week5-2">Resposta: Monitoramento contínuo de equipamentos para prevenir falhas e paradas inesperadas.</p>
+<button class="copy-btn" onclick="copyText('week5-2')">Copiar Resposta</button>
 
-<h2>Semana 5 - Atividade 3</h2>
-<pre id="resposta18">
-Benefício direto da robótica no armazenamento:
-Uso otimizado do espaço e maior capacidade de estoque.
-</pre>
-<button onclick="copiar('resposta18')">Copiar</button>
+<p><strong>Atividade 3:</strong> KPIs importantes</p>
+<p id="week5-3">Resposta: Disponibilidade do equipamento, tempo de ciclo e acuracidade dos pedidos.</p>
+<button class="copy-btn" onclick="copyText('week5-3')">Copiar Resposta</button>
 
-<h2>Semana 5 - Atividade 4</h2>
-<pre id="resposta19">
-Indicador mais impactado pela automação robótica:
-Resposta: Tempo de ciclo de pedidos.
-</pre>
-<button onclick="copiar('resposta19')">Copiar</button>
+<p><strong>Atividade 4:</strong> Benefícios sociais</p>
+<p id="week5-4">Resposta: Reduz esforço físico, aumenta segurança e permite realocação estratégica de colaboradores.</p>
+<button class="copy-btn" onclick="copyText('week5-4')">Copiar Resposta</button>
+
+<div>
+<button onclick="prevWeek()">Semana Anterior</button>
+<button onclick="nextWeek()">Próxima Semana</button>
+</div>
+</div>
 
 <!-- Semana 6 -->
-<h2>Semana 6 - Atividade 1</h2>
-<pre id="resposta20">
-Drones no controle de inventário:
-Realizam contagens rápidas e precisas, acessando locais de difícil alcance, reduzindo erros e necessidade de paralisar operações.
-</pre>
-<button onclick="copiar('resposta20')">Copiar</button>
+<div class="week" id="week6">
+<h2>Semana 6</h2>
+<p><strong>Atividade 1:</strong> Automação e sustentabilidade</p>
+<p id="week6-1">Resposta: Redução de consumo energético e otimização de recursos.</p>
+<button class="copy-btn" onclick="copyText('week6-1')">Copiar Resposta</button>
 
-<h2>Semana 6 - Atividade 2</h2>
-<pre id="resposta21">
-Vantagem do uso de drones:
-Maior precisão no controle de inventário.
-</pre>
-<button onclick="copiar('resposta21')">Copiar</button>
+<p><strong>Atividade 2:</strong> Integração com WMS e ERP</p>
+<p id="week6-2">Resposta: Coordena estoques, pedidos e transportes de forma centralizada.</p>
+<button class="copy-btn" onclick="copyText('week6-2')">Copiar Resposta</button>
 
-<h2>Semana 6 - Atividade 3</h2>
-<pre id="resposta22">
-Vantagem da implementação da IoT:
-Monitoramento em tempo real de operações e inventário.
-</pre>
-<button onclick="copiar('resposta22')">Copiar</button>
+<p><strong>Atividade 3:</strong> Automação e e-commerce</p>
+<p id="week6-3">Resposta: Separação rápida de pedidos, maior acuracidade e redução de tempo de entrega.</p>
+<button class="copy-btn" onclick="copyText('week6-3')">Copiar Resposta</button>
 
-<h2>Semana 6 - Atividade 4</h2>
-<pre id="resposta23">
-Benefício dos óculos de Realidade Virtual/Aumentada:
-Redução no tempo de picking.
-</pre>
-<button onclick="copiar('resposta23')">Copiar</button>
+<p><strong>Atividade 4:</strong> Exemplo de sucesso</p>
+<p id="week6-4">Resposta: Armazéns automatizados da Amazon, com robôs Kiva para picking e transporte interno.</p>
+<button class="copy-btn" onclick="copyText('week6-4')">Copiar Resposta</button>
+
+<div>
+<button onclick="prevWeek()">Semana Anterior</button>
+<button onclick="nextWeek()">Próxima Semana</button>
+</div>
+</div>
 
 <!-- Semana 7 -->
-<h2>Semana 7 - Atividade 1</h2>
-<pre id="resposta24">
-Maior benefício do TMS:
-Otimização das rotas e redução de custos.
-</pre>
-<button onclick="copiar('resposta24')">Copiar</button>
+<div class="week" id="week7">
+<h2>Semana 7</h2>
+<p><strong>Atividade 1:</strong> Futuro da automação logística</p>
+<p id="week7-1">Resposta: Uso de inteligência artificial, robótica avançada e análise de dados para processos totalmente autônomos.</p>
+<button class="copy-btn" onclick="copyText('week7-1')">Copiar Resposta</button>
 
-<h2>Semana 7 - Atividade 2</h2>
-<pre id="resposta25">
-Roteirização Automatizada:
-Calcula trajetos mais eficientes considerando trânsito, distância e capacidade de carga.
-Economiza combustível, reduz desgaste da frota e aumenta pontualidade.
-</pre>
-<button onclick="copiar('resposta25')">Copiar</button>
+<p><strong>Atividade 2:</strong> Vantagens competitivas finais</p>
+<p id="week7-2">Resposta: Redução de custos, rapidez na entrega e maior satisfação do cliente.</p>
+<button class="copy-btn" onclick="copyText('week7-2')">Copiar Resposta</button>
 
-<h2>Semana 7 - Atividade 3</h2>
-<pre id="resposta26">
-Principal benefício da roteirização automatizada:
-Redução do tempo de entrega e custos operacionais.
-</pre>
-<button onclick="copiar('resposta26')">Copiar</button>
+<p><strong>Atividade 3:</strong> Conclusão</p>
+<p id="week7-3">Resposta: Automação logística é essencial para eficiência, precisão e competitividade no mercado.</p>
+<button class="copy-btn" onclick="copyText('week7-3')">Copiar Resposta</button>
 
-<h2>Semana 7 - Atividade 4</h2>
-<pre id="resposta27">
-Resultado esperado após TMS e roteirização:
-Redução nos custos de combustível e tempo de viagem.
-</pre>
-<button onclick="copiar('resposta27')">Copiar</button>
+<p><strong>Atividade 4:</strong> Planejamento contínuo</p>
+<p id="week7-4">Resposta: Revisar processos, atualizar tecnologias e treinar equipes constantemente.</p>
+<button class="copy-btn" onclick="copyText('week7-4')">Copiar Resposta</button>
 
-<a href="index.html" class="voltar">Voltar ao Menu</a>
+<div>
+<button onclick="prevWeek()">Semana Anterior</button>
+</div>
+</div>
 
 </main>
+
+<div id="copied-msg">Resposta copiada!</div>
+
+<footer>
+<button onclick="window.location.href='index.html'">Voltar ao Menu</button>
+</footer>
+
 <script>
-function copiar(id){
-  const texto = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(texto);
-  alert('Copiado para a área de transferência!');
+let currentWeek = 1;
+const totalWeeks = 7;
+function showWeek(n){
+  if(n<1)n=1;if(n>totalWeeks)n=totalWeeks;
+  for(let i=1;i<=totalWeeks;i++){ document.getElementById('week'+i).classList.remove('active'); }
+  document.getElementById('week'+n).classList.add('active');
+  currentWeek = n;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function nextWeek(){ showWeek(currentWeek+1); }
+function prevWeek(){ showWeek(currentWeek-1); }
+function copyText(id){
+  const text=document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(()=>{
+    const msg=document.getElementById('copied-msg');
+    msg.style.opacity='1'; msg.style.transform='translateY(0)';
+    setTimeout(()=>{ msg.style.opacity='0'; msg.style.transform='translateY(-20px)'; },1500);
+  });
 }
 </script>
+
 </body>
 </html>
