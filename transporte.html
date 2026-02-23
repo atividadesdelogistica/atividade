@@ -1,237 +1,271 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Transporte e Distribuição - Cursos de Logística</title>
+<title>Transporte e Distribuição</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-  body { font-family: Arial, sans-serif; background-color: #f4f6f8; color: #333; margin: 0; padding: 0; }
-  header { background-color: #2e7d32; color: #fff; text-align: center; padding: 15px 10px; position: sticky; top: 0; z-index: 1000; }
-  header h1 { margin-bottom: 5px; }
-  main { max-width: 800px; margin: 20px auto; padding: 10px; }
-  .week { display: none; background-color: #fff; padding: 15px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-  .week.active { display: block; }
-  h2 { color: #2e7d32; }
-  button { background-color: #2e7d32; color: #fff; border: none; padding: 10px 15px; margin: 5px 2px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background-color 0.3s; }
-  button:hover { background-color: #1b4d21; }
-  .copy-btn { background-color: #4caf50; }
-  .copy-btn:hover { background-color: #3e8e41; }
-  #copied-msg { position: fixed; top: 20px; right: 20px; background-color: #333; color: #fff; padding: 10px 15px; border-radius: 5px; opacity: 0; transition: opacity 0.5s, transform 0.5s; transform: translateY(-20px); z-index: 1000; }
-  footer { text-align: center; padding: 15px; font-size: 0.9em; color: #555; }
-  @media(min-width:600px){ button { margin: 10px 5px; } }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;background:#eef2ff;color:#333;}
+header{background:linear-gradient(90deg,#0f766e,#14b8a6);color:#fff;text-align:center;padding:25px 0;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+nav.top-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#0d9488;padding:12px 0;}
+nav.top-nav button{background:#14b8a6;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700;}
+.week{display:none;padding:20px;max-width:900px;margin:20px auto;animation:slide 0.4s ease;}
+.week.active{display:block;}
+.activity{background:#fff;padding:18px;border-radius:12px;margin:12px 0;box-shadow:0 4px 10px rgba(0,0,0,0.08);}
+.activity strong{color:#0d9488;display:block;margin-bottom:8px;}
+.activity button.copy{background:#14b8a6;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-weight:700;margin-top:10px;}
+.nav-week{display:flex;justify-content:space-between;margin-top:20px;gap:10px;flex-wrap:wrap;}
+.nav-week button{background:#14b8a6;padding:10px 16px;border-radius:6px;color:#fff;font-weight:700;cursor:pointer;}
+.notification{position:fixed;top:20px;right:20px;background:#14b8a6;color:#fff;padding:12px 22px;border-radius:8px;opacity:0;transform:translateY(-20px);transition:0.4s;font-weight:700;}
+@keyframes slide{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Transporte e Distribuição</h1>
-  <p>Desenvolvido por Fabiano & João Molina</p>
+<h1>Transporte e Distribuição - Respostas Semanais</h1>
 </header>
 
-<main>
+<nav class="top-nav">
+<button onclick="showWeek(1)">Semana 1</button>
+<button onclick="showWeek(2)">Semana 2</button>
+<button onclick="showWeek(3)">Semana 3</button>
+<button onclick="showWeek(4)">Semana 4</button>
+<button onclick="showWeek(5)">Semana 5</button>
+<button onclick="showWeek(6)">Semana 6</button>
+<button onclick="showWeek(7)">Semana 7</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+</nav>
 
-<!-- Semana 1 -->
-<div class="week active" id="week1">
+<!-- SEMANA 1 -->
+<div class="week" id="week1">
 <h2>Semana 1</h2>
-<p><strong>Atividade 1:</strong> Conceito de transporte na logística</p>
-<p id="week1-1">Resposta: Transporte é o movimento de produtos do ponto de origem ao destino final, garantindo a disponibilidade para o cliente.</p>
-<button class="copy-btn" onclick="copyText('week1-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Modais de transporte</p>
-<p id="week1-2">Resposta: Rodoviário, ferroviário, aquaviário, aéreo e dutoviário, cada um com características de custo, velocidade e capacidade.</p>
-<button class="copy-btn" onclick="copyText('week1-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Transporte rodoviário sustentável</p>
+<p><strong>Resposta:</strong> Um trajeto sustentável prioriza fornecedores locais, veículos movidos a biocombustíveis e cargas otimizadas para evitar viagens vazias. Isso reduz a pegada de carbono e torna a logística da escola mais eficiente e responsável.</p>
+<button class="copy" onclick="copyAnswer('Um trajeto sustentável prioriza fornecedores locais, veículos movidos a biocombustíveis e cargas otimizadas para evitar viagens vazias.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Critérios de escolha do modal</p>
-<p id="week1-3">Resposta: Custo, velocidade, confiabilidade, tipo de carga, infraestrutura e acessibilidade.</p>
-<button class="copy-btn" onclick="copyText('week1-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Sobre o modal aquaviário, é correto afirmar que:</p>
+<p><strong>Resposta:</strong> Realizado através de mares, rios, lagos e lagoas.</p>
+<button class="copy" onclick="copyAnswer('Realizado através de mares, rios, lagos e lagoas.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Indicadores de desempenho</p>
-<p id="week1-4">Resposta: Tempo de entrega, taxa de avarias, pontualidade, custo por km e nível de serviço.</p>
-<button class="copy-btn" onclick="copyText('week1-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Sobre os órgãos controladores do transporte marítimo no Brasil:</p>
+<p><strong>Resposta:</strong> ANTAQ e Marinha realizam a fiscalização e o controle.</p>
+<button class="copy" onclick="copyAnswer('ANTAQ e Marinha realizam a fiscalização e o controle.')">📋 Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Sobre a cabotagem como solução estratégica:</p>
+<p><strong>Resposta:</strong> Menor custo, poluição e transporta maiores volumes.</p>
+<button class="copy" onclick="copyAnswer('Menor custo, poluição e transporta maiores volumes.')">📋 Copiar</button></div>
+
+<div class="nav-week">
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(2)">Próxima</button>
 </div>
 </div>
 
-<!-- Semana 2 -->
+<!-- SEMANA 2 -->
 <div class="week" id="week2">
 <h2>Semana 2</h2>
-<p><strong>Atividade 1:</strong> Planejamento de rotas</p>
-<p id="week2-1">Resposta: Define os trajetos mais eficientes, considerando tempo, distância e custo.</p>
-<button class="copy-btn" onclick="copyText('week2-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Gestão de frota</p>
-<p id="week2-2">Resposta: Controle de veículos, manutenção, escalas de motoristas e utilização eficiente.</p>
-<button class="copy-btn" onclick="copyText('week2-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Escolha da transportadora</p>
+<p><strong>Resposta:</strong> Para o envio de orégano, recomenda-se o transporte rodoviário LTL (fracionado). Como a carga não ocupa um caminhão inteiro, essa modalidade permite compartilhar o frete com outros produtos, otimizando custos e cumprindo o prazo de entrega.</p>
+<button class="copy" onclick="copyAnswer('Para o envio de orégano, recomenda-se o transporte rodoviário LTL fracionado.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Transporte sustentável</p>
-<p id="week2-3">Resposta: Uso de combustíveis alternativos, veículos elétricos, roteirização inteligente e redução de emissões.</p>
-<button class="copy-btn" onclick="copyText('week2-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Para exportação de minérios, qual combinação é mais eficiente?</p>
+<p><strong>Resposta:</strong> Ferrovia + marítimo internacional.</p>
+<button class="copy" onclick="copyAnswer('Ferrovia + marítimo internacional.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Tecnologias no transporte</p>
-<p id="week2-4">Resposta: Rastreamento em tempo real, sistemas TMS, sensores e IoT para monitoramento de cargas.</p>
-<button class="copy-btn" onclick="copyText('week2-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Qual tipo de vagão é mais adequado para líquidos?</p>
+<p><strong>Resposta:</strong> Vagões-tanque.</p>
+<button class="copy" onclick="copyAnswer('Vagões-tanque.')">📋 Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Qual é o tipo de carga mais comum no modal aéreo?</p>
+<p><strong>Resposta:</strong> Cargas urgentes.</p>
+<button class="copy" onclick="copyAnswer('Cargas urgentes.')">📋 Copiar</button></div>
+
+<div class="nav-week">
+<button onclick="showWeek(1)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(3)">Próxima</button>
 </div>
-</div>
-
-<!-- Semana 3 -->
-<div class="week" id="week3">
+</div><div class="week" id="week3">
 <h2>Semana 3</h2>
-<p><strong>Atividade 1:</strong> Custos do transporte</p>
-<p id="week3-1">Resposta: Combustível, manutenção, pedágios, seguro da carga e salários de motoristas.</p>
-<button class="copy-btn" onclick="copyText('week3-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Armazenagem e transporte</p>
-<p id="week3-2">Resposta: Planejamento integrado para reduzir tempos de espera, otimizar cargas e minimizar custos.</p>
-<button class="copy-btn" onclick="copyText('week3-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>A escolha correta do modal pode influenciar diretamente no:</p>
+<p><strong>Resposta:</strong> Custo do transporte.</p>
+<button class="copy" onclick="copyAnswer('Custo do transporte.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Segurança de carga</p>
-<p id="week3-3">Resposta: Travas, cintas, embalagens resistentes, monitoramento por GPS e seguro adequado.</p>
-<button class="copy-btn" onclick="copyText('week3-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Comparativo SP para RJ</p>
+<p><strong>Resposta:</strong> Modal Rodoviário foi mais barato que o Rodoaéreo.</p>
+<button class="copy" onclick="copyAnswer('Modal Rodoviário foi mais barato que o Rodoaéreo.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Indicadores logísticos</p>
-<p id="week3-4">Resposta: Taxa de avarias, pontualidade de entregas, custo por km, eficiência de carga.</p>
-<button class="copy-btn" onclick="copyText('week3-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Custo variável?</p>
+<p><strong>Resposta:</strong> Combustível e pedágio.</p>
+<button class="copy" onclick="copyAnswer('Combustível e pedágio.')">📋 Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Taxa de roubo?</p>
+<p><strong>Resposta:</strong> TDA.</p>
+<button class="copy" onclick="copyAnswer('TDA.')">📋 Copiar</button></div>
+
+<div class="nav-week">
+<button onclick="showWeek(2)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(4)">Próxima</button>
 </div>
 </div>
 
-<!-- Semana 4 -->
 <div class="week" id="week4">
 <h2>Semana 4</h2>
-<p><strong>Atividade 1:</strong> Roteirização inteligente</p>
-<p id="week4-1">Resposta: Planejamento de rotas baseado em algoritmos para reduzir distância e tempo de entrega.</p>
-<button class="copy-btn" onclick="copyText('week4-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Entrega Just in Time</p>
-<p id="week4-2">Resposta: Entregas no momento certo para reduzir estoque e aumentar eficiência.</p>
-<button class="copy-btn" onclick="copyText('week4-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Avaria de carga</p>
+<p><strong>Resposta:</strong> Verificar dano e registrar fotos.</p>
+<button class="copy" onclick="copyAnswer('Verificar dano e registrar fotos.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Cross-docking</p>
-<p id="week4-3">Resposta: Transferência direta de produtos entre veículos, sem armazenagem intermediária.</p>
-<button class="copy-btn" onclick="copyText('week4-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Furto?</p>
+<p><strong>Resposta:</strong> Acionar seguradora.</p>
+<button class="copy" onclick="copyAnswer('Acionar seguradora.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Modal misto</p>
-<p id="week4-4">Resposta: Combinação de modais para otimizar custo e tempo de transporte.</p>
-<button class="copy-btn" onclick="copyText('week4-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Função do DACTE?</p>
+<p><strong>Resposta:</strong> Comprova o transporte.</p>
+<button class="copy" onclick="copyAnswer('Comprova o transporte.')">📋 Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Agência rodoviária?</p>
+<p><strong>Resposta:</strong> ANTT.</p>
+<button class="copy" onclick="copyAnswer('ANTT.')">📋 Copiar</button></div>
+
+<div class="nav-week">
+<button onclick="showWeek(3)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(5)">Próxima</button>
 </div>
 </div>
 
-<!-- Semana 5 -->
 <div class="week" id="week5">
 <h2>Semana 5</h2>
-<p><strong>Atividade 1:</strong> Planejamento de cargas</p>
-<p id="week5-1">Resposta: Distribuição equilibrada da carga, respeitando peso, volume e segurança.</p>
-<button class="copy-btn" onclick="copyText('week5-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Indicadores de desempenho</p>
-<p id="week5-2">Resposta: Custo por entrega, tempo de transporte, eficiência de rota e satisfação do cliente.</p>
-<button class="copy-btn" onclick="copyText('week5-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Fluxo FOB</p>
+<p><strong>Resposta:</strong> Saída até porto + navio + entrega final.</p>
+<button class="copy" onclick="copyAnswer('Saída até porto + navio + entrega final.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Redução de custos</p>
-<p id="week5-3">Resposta: Consolidação de cargas, otimização de rotas e escolha correta do modal.</p>
-<button class="copy-btn" onclick="copyText('week5-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Evitar falhas alfândega?</p>
+<p><strong>Resposta:</strong> Documentação antecipada.</p>
+<button class="copy" onclick="copyAnswer('Documentação antecipada.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Tecnologia de informação</p>
-<p id="week5-4">Resposta: Sistemas TMS, rastreamento em tempo real e dashboards de gestão.</p>
-<button class="copy-btn" onclick="copyText('week5-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Norma paletes?</p>
+<p><strong>Resposta:</strong> NIMF 15.</p>
+<button class="copy" onclick="copyAnswer('NIMF 15.')">📋 Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Peso LCL?</p>
+<p><strong>Resposta:</strong> 800 kg.</p>
+<button class="copy" onclick="copyAnswer('800 kg.')">📋 Copiar</button></div>
+
+<div class="nav-week">
+<button onclick="showWeek(4)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(6)">Próxima</button>
 </div>
 </div>
 
-<!-- Semana 6 -->
 <div class="week" id="week6">
 <h2>Semana 6</h2>
-<p><strong>Atividade 1:</strong> Transporte e sustentabilidade</p>
-<p id="week6-1">Resposta: Redução de emissões, veículos elétricos e otimização de rotas.</p>
-<button class="copy-btn" onclick="copyText('week6-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Integração com armazéns</p>
-<p id="week6-2">Resposta: Coordenação entre recebimento, armazenamento e expedição para maior eficiência.</p>
-<button class="copy-btn" onclick="copyText('week6-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Incoterm?</p>
+<p><strong>Resposta:</strong> CPT.</p>
+<button class="copy" onclick="copyAnswer('CPT.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Transporte internacional</p>
-<p id="week6-3">Resposta: Considerar modais, documentação, regulamentação e custos.</p>
-<button class="copy-btn" onclick="copyText('week6-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Preço importado?</p>
+<p><strong>Resposta:</strong> Taxas e serviços.</p>
+<button class="copy" onclick="copyAnswer('Taxas e serviços.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Indicadores de transporte</p>
-<p id="week6-4">Resposta: Taxa de atrasos, avarias, custo total e tempo médio de entrega.</p>
-<button class="copy-btn" onclick="copyText('week6-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Plano de ação</p>
+<p><strong>Resposta:</strong> Identificar portos alternativos.</p>
+<button class="copy" onclick="copyAnswer('Identificar portos alternativos.')">📋 Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Objetivo?</p>
+<p><strong>Resposta:</strong> Cumprir prazos sem custos.</p>
+<button class="copy" onclick="copyAnswer('Cumprir prazos sem custos.')">📋 Copiar</button></div>
+
+<div class="nav-week">
+<button onclick="showWeek(5)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(7)">Próxima</button>
 </div>
 </div>
 
-<!-- Semana 7 -->
 <div class="week" id="week7">
 <h2>Semana 7</h2>
-<p><strong>Atividade 1:</strong> Logística de última milha</p>
-<p id="week7-1">Resposta: Entregas finais ao cliente, focando rapidez e eficiência.</p>
-<button class="copy-btn" onclick="copyText('week7-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Planejamento de transporte contínuo</p>
-<p id="week7-2">Resposta: Revisão constante de rotas, frota e indicadores para otimização.</p>
-<button class="copy-btn" onclick="copyText('week7-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Falta de documento?</p>
+<p><strong>Resposta:</strong> Atraso no desembaraço.</p>
+<button class="copy" onclick="copyAnswer('Atraso no desembaraço.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Conclusão</p>
-<p id="week7-3">Resposta: Transporte eficiente garante disponibilidade de produtos, redução de custos e satisfação do cliente.</p>
-<button class="copy-btn" onclick="copyText('week7-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Documentação aérea</p>
+<p><strong>Resposta:</strong> Invoice + AWB + Packing List.</p>
+<button class="copy" onclick="copyAnswer('Invoice + AWB + Packing List.')">📋 Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Futuro do transporte</p>
-<p id="week7-4">Resposta: Veículos autônomos, inteligência artificial, drones e integração digital completa.</p>
-<button class="copy-btn" onclick="copyText('week7-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>AWB?</p>
+<p><strong>Resposta:</strong> Contrato de transporte.</p>
+<button class="copy" onclick="copyAnswer('Contrato de transporte.')">📋 Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>BL?</p>
+<p><strong>Resposta:</strong> Propriedade da mercadoria.</p>
+<button class="copy" onclick="copyAnswer('Propriedade da mercadoria.')">📋 Copiar</button></div>
+
+<div class="nav-week">
+<button onclick="showWeek(6)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
 </div>
 </div>
 
-</main>
-
-<div id="copied-msg">Resposta copiada!</div>
-
-<footer>
-<button onclick="window.location.href='index.html'">Voltar ao Menu</button>
-</footer>
+<div class="notification" id="notification">Resposta copiada!</div>
 
 <script>
-let currentWeek = 1;
-const totalWeeks = 7;
-function showWeek(n){
-  if(n<1)n=1;if(n>totalWeeks)n=totalWeeks;
-  for(let i=1;i<=totalWeeks;i++){ document.getElementById('week'+i).classList.remove('active'); }
-  document.getElementById('week'+n).classList.add('active');
-  currentWeek = n;
-  window.scrollTo({top:0,behavior:'smooth'});
+function showWeek(num){
+document.querySelectorAll('.week').forEach(w=>w.classList.remove('active'));
+document.getElementById('week'+num).classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
 }
-function nextWeek(){ showWeek(currentWeek+1); }
-function prevWeek(){ showWeek(currentWeek-1); }
-function copyText(id){
-  const text=document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(()=>{
-    const msg=document.getElementById('copied-msg');
-    msg.style.opacity='1'; msg.style.transform='translateY(0)';
-    setTimeout(()=>{ msg.style.opacity='0'; msg.style.transform='translateY(-20px)'; },1500);
-  });
+function copyAnswer(text){
+navigator.clipboard.writeText(text).then(()=>{
+const n=document.getElementById('notification');
+n.style.opacity=1;
+n.style.transform='translateY(0)';
+setTimeout(()=>{n.style.opacity=0;n.style.transform='translateY(-20px)';},1500);
+});
 }
+showWeek(1);
 </script>
 
 </body>
