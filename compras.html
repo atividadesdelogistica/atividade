@@ -4,136 +4,106 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Compras e Suprimentos</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f9;
-    margin: 0;
-    padding: 0;
-}
+/* RESET E TIPOGRAFIA */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Roboto', sans-serif; background: #f0f2f5; color:#333; }
+
+/* HEADER */
 header {
-    background: #2c3e50;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
+    background: linear-gradient(90deg, #2980b9, #6dd5fa);
+    color: #fff; text-align: center; padding: 25px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+header h1 { font-size: 1.8rem; }
+
+/* NAVIGAÇÃO */
 nav.top-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding: 10px 0;
-    background: #34495e;
+    display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+    background:#34495e; padding:12px 0;
 }
 nav.top-nav button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    background: #e67e22;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
+    background:#e67e22; color:#fff; border:none; padding:10px 18px;
+    border-radius:8px; cursor:pointer; font-weight:700; transition:0.3s;
 }
-nav.top-nav button:hover { background: #d35400; }
+nav.top-nav button:hover { background:#d35400; }
 
-.week {
-    display: none;
-    padding: 20px;
-    max-width: 900px;
-    margin: 20px auto;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.week.active { display: block; }
+/* SEMANAS */
+.week { display:none; padding:20px; max-width:900px; margin:20px auto; }
+.week.active { display:block; animation:fadeIn 0.6s ease-in-out; }
 
-h2 { color: #2980b9; }
-
+/* CARDS DE ATIVIDADE */
 .activity {
-    background: #ecf0f1;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
+    background:#fff; padding:18px; border-radius:12px; margin:12px 0;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08); transition:0.3s;
 }
+.activity:hover { box-shadow:0 6px 15px rgba(0,0,0,0.15); }
+.activity strong { color:#2980b9; display:block; margin-bottom:8px; font-size:1.05rem; }
+
+/* BOTÕES DE RESPOSTA */
 .activity button {
-    background: #27ae60;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 8px;
-    font-weight: bold;
-    transition: 0.3s;
+    background:#27ae60; color:#fff; border:none; padding:10px 16px;
+    border-radius:6px; cursor:pointer; font-weight:700; margin-top:10px;
+    transition:0.3s;
 }
-.activity button:hover { background: #1e8449; }
+.activity button:hover { background:#1e8449; }
 
-.notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #2ecc71;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 6px;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.5s;
-    z-index: 1000;
-}
-
+/* NAVEGAÇÃO ENTRE SEMANAS */
 .nav-week {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    gap: 10px;
-    flex-wrap: wrap;
+    display:flex; justify-content:space-between; margin-top:20px; gap:10px;
+    flex-wrap:wrap;
 }
-.nav-week button {
-    background: #2980b9;
-}
-.nav-week button:hover { background: #1c5980; }
+.nav-week button { background:#2980b9; padding:10px 16px; border-radius:6px; color:#fff; font-weight:700; }
+.nav-week button:hover { background:#1c5980; }
 
-@media (max-width: 600px){
-    nav.top-nav, .nav-week {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav.top-nav button, .nav-week button { width: 90%; }
+/* NOTIFICAÇÃO */
+.notification {
+    position:fixed; top:20px; right:20px; background:#2ecc71; color:#fff;
+    padding:12px 22px; border-radius:8px; opacity:0; pointer-events:none;
+    transition:0.5s; font-weight:700; box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ANIMAÇÃO DE FADE */
+@keyframes fadeIn { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+
+/* RESPONSIVO */
+@media(max-width:600px){
+    nav.top-nav, .nav-week { flex-direction:column; align-items:center; }
+    nav.top-nav button, .nav-week button { width:90%; }
 }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Compras e Suprimentos - Respostas Semanais</h1>
+<h1>Compras e Suprimentos - Respostas Semanais</h1>
 </header>
 
 <nav class="top-nav">
-    <button onclick="showWeek(1)">Semana 1</button>
-    <button onclick="showWeek(2)">Semana 2</button>
-    <button onclick="showWeek(3)">Semana 3</button>
-    <button onclick="showWeek(4)">Semana 4</button>
-    <button onclick="showWeek(5)">Semana 5</button>
-    <button onclick="showWeek(6)">Semana 6</button>
-    <button onclick="showWeek(7)">Semana 7</button>
-    <button onclick="window.location.href='index.html'">Menu Principal</button>
+<button onclick="showWeek(1)">Semana 1</button>
+<button onclick="showWeek(2)">Semana 2</button>
+<button onclick="showWeek(3)">Semana 3</button>
+<button onclick="showWeek(4)">Semana 4</button>
+<button onclick="showWeek(5)">Semana 5</button>
+<button onclick="showWeek(6)">Semana 6</button>
+<button onclick="showWeek(7)">Semana 7</button>
+<button onclick="window.location.href='index.html'">Menu Principal</button>
 </nav>
 
-<!-- Semana 1 -->
+<!-- SEMANA 1 -->
 <div class="week" id="week1">
 <h2>Semana 1</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Qual é o primeiro passo no processo de seleção de fornecedores?<br>
+<strong>Atividade 1:</strong> Qual é o primeiro passo no processo de seleção de fornecedores?
 <button onclick="copyAnswer('Identificação das necessidades de fornecimento.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Qual das seguintes informações NÃO é essencial para o cadastro de um fornecedor?<br>
+<strong>Atividade 2:</strong> Qual das seguintes informações NÃO é essencial para o cadastro de um fornecedor?
 <button onclick="copyAnswer('Preferências pessoais do gerente de compras.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Critérios de seleção de fornecedores (Checklist de qualidade e pontualidade):<br>
+<strong>Atividade 3:</strong> Critérios de seleção de fornecedores - Checklist:
 <button onclick="copyAnswer(`✔ Produtos dentro das especificações solicitadas
 ✔ Integridade da embalagem
 ✔ Validade adequada (quando aplicável)
@@ -146,34 +116,34 @@ h2 { color: #2980b9; }
 Justificativa: Esses pontos devem ser observados para garantir que os produtos atendam ao padrão de qualidade exigido, evitar prejuízos, desperdícios e retrabalho, manter o estoque organizado, assegurar a satisfação do cliente e garantir que o processo produtivo ou de venda não seja prejudicado por atrasos ou falhas no fornecimento.`)">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual dos seguintes indicadores NÃO é comumente utilizado para avaliar a pontualidade dos fornecedores?<br>
+<strong>Atividade 4:</strong> Qual dos seguintes indicadores NÃO é comumente utilizado para avaliar a pontualidade dos fornecedores?
 <button onclick="copyAnswer('Taxa de devoluções.')">Copiar Resposta</button>
 </div>
 <div class="nav-week">
-<button onclick="window.location.href='index.html'">Voltar ao Menu</button>
+<button onclick="window.location.href='index.html'">Menu</button>
 <button onclick="showWeek(2)">Próxima Semana</button>
 </div>
 </div>
 
-<!-- Semana 2 -->
+<!-- SEMANA 2 -->
 <div class="week" id="week2">
 <h2>Semana 2</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Critérios de seleção de fornecedores - Análise Comparativa de Cotações:<br>
+<strong>Atividade 1:</strong> Critérios de seleção de fornecedores - Análise Comparativa de Cotações:
 <button onclick="copyAnswer(`Produto/Serviço: ____________________________________________
 Quantidade: ________________________________________________
 Critérios: Preço, Custo total, Prazo de entrega, Condições de pagamento, Qualidade, Frete, Garantia, Certificações e Confiabilidade.`)">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Qual é o elemento mais importante a ser incluído em uma RFQ?<br>
+<strong>Atividade 2:</strong> Qual é o elemento mais importante a ser incluído em uma RFQ?
 <button onclick="copyAnswer('Descrição do produto/serviço.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Qual destes itens é essencial no edital de uma tomada de preços?<br>
+<strong>Atividade 3:</strong> Qual destes itens é essencial no edital de uma tomada de preços?
 <button onclick="copyAnswer('Especificações técnicas detalhadas.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual é o principal objetivo da licitação?<br>
+<strong>Atividade 4:</strong> Qual é o principal objetivo da licitação?
 <button onclick="copyAnswer('Garantir competitividade e transparência.')">Copiar Resposta</button>
 </div>
 <div class="nav-week">
@@ -183,25 +153,25 @@ Critérios: Preço, Custo total, Prazo de entrega, Condições de pagamento, Qua
 </div>
 </div>
 
-<!-- Semana 3 -->
+<!-- SEMANA 3 -->
 <div class="week" id="week3">
 <h2>Semana 3</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Contrato de Fornecimento: Preços, Prazos, Condições de Pagamento:<br>
+<strong>Atividade 1:</strong> Contrato de Fornecimento: Preços, Prazos, Condições de Pagamento
 <button onclick="copyAnswer(`Preços: Definição por produto/volume, descontos, reajustes e sazonalidade.
 Prazos: Frequência de entregas, horários, prazos máximos e penalidades.
 Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.`)">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Qual é o principal benefício de definir termos claros de pagamento em um contrato de fornecimento?<br>
+<strong>Atividade 2:</strong> Qual é o principal benefício de definir termos claros de pagamento em um contrato de fornecimento?
 <button onclick="copyAnswer('Garantia de previsibilidade financeira e fluxo de caixa.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Qual é a principal vantagem de incluir cláusulas de penalidade em contratos de fornecimento?<br>
+<strong>Atividade 3:</strong> Qual é a principal vantagem de incluir cláusulas de penalidade em contratos de fornecimento?
 <button onclick="copyAnswer('Conformidade contratual e menor risco financeiro.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual, dos itens abaixo, representa um impacto positivo da aplicação de sanções?<br>
+<strong>Atividade 4:</strong> Qual representa um impacto positivo da aplicação de sanções?
 <button onclick="copyAnswer('Cumprimento das obrigações contratuais.')">Copiar Resposta</button>
 </div>
 <div class="nav-week">
@@ -211,24 +181,23 @@ Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.`)
 </div>
 </div>
 
-<!-- Semana 4 -->
+<!-- SEMANA 4 -->
 <div class="week" id="week4">
 <h2>Semana 4</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Qual é um dos principais benefícios de se manter uma parceria estratégica de longo prazo com fornecedores?<br>
+<strong>Atividade 1:</strong> Benefício de manter parceria estratégica de longo prazo?
 <button onclick="copyAnswer('Reduzir custos operacionais.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Interfaceamento entre sistemas: mapeamento de informações<br>
-<button onclick="copyAnswer(`Benefícios: Integração de dados em tempo real e redução de erros nos pedidos.
-Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.`)">Copiar Resposta</button>
+<strong>Atividade 2:</strong> Interfaceamento entre sistemas - mapeamento:
+<button onclick="copyAnswer('Benefícios: Integração de dados em tempo real e redução de erros nos pedidos. Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Qual é a principal vantagem de usar APIs para integrar sistemas de diferentes fornecedores?<br>
+<strong>Atividade 3:</strong> Vantagem de usar APIs para integrar sistemas de diferentes fornecedores?
 <button onclick="copyAnswer('Facilitar a comunicação e a troca de dados de forma segura e estruturada.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual é a vantagem de utilizar indicadores de desempenho (KPIs) na avaliação de fornecedores?<br>
+<strong>Atividade 4:</strong> Vantagem de utilizar KPIs na avaliação de fornecedores?
 <button onclick="copyAnswer('Fornecer uma base objetiva para tomar decisões.')">Copiar Resposta</button>
 </div>
 <div class="nav-week">
@@ -238,23 +207,23 @@ Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.`)
 </div>
 </div>
 
-<!-- Semana 5 -->
+<!-- SEMANA 5 -->
 <div class="week" id="week5">
 <h2>Semana 5</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Qual alternativa abaixo não é uma ferramenta para auditorias de fornecedores?<br>
+<strong>Atividade 1:</strong> Alternativa que não é ferramenta de auditoria?
 <button onclick="copyAnswer('Relatório do prazo de pagamento.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Auditorias dos fornecedores: conceitos de melhoria contínua<br>
-<button onclick="copyAnswer('Eficiência operacional e redução de retrabalho.')">Copiar Resposta</button>
+<strong>Atividade 2:</strong> Auditorias de fornecedores - conceitos de melhoria contínua:
+<button onclick="copyAnswer('Benefícios: Eficiência operacional e redução de retrabalho. Motivo: Processos mais rápidos, econômicos e redução de desperdícios.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Entre as alternativas abaixo, qual não é um método de avaliação da melhoria contínua?<br>
+<strong>Atividade 3:</strong> Qual não é método de avaliação da melhoria contínua?
 <button onclick="copyAnswer('Diagnóstico da situação atual.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual das seguintes estratégias é mais eficaz para mitigar riscos relacionados à dependência excessiva de um fornecedor exclusivo?<br>
+<strong>Atividade 4:</strong> Estratégia eficaz para mitigar riscos de fornecedor exclusivo?
 <button onclick="copyAnswer('Diversificar a base de fornecedores.')">Copiar Resposta</button>
 </div>
 <div class="nav-week">
@@ -264,23 +233,23 @@ Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.`)
 </div>
 </div>
 
-<!-- Semana 6 -->
+<!-- SEMANA 6 -->
 <div class="week" id="week6">
 <h2>Semana 6</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Qual delas está relacionada à gestão de estoques e não à Qualidade de fornecedores?<br>
+<strong>Atividade 1:</strong> Gestão de estoques vs Qualidade?
 <button onclick="copyAnswer('Giro de estoque.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Qual dos seguintes é um benefício da inovação nos processos de fornecimento?<br>
+<strong>Atividade 2:</strong> Benefício da inovação nos processos de fornecimento?
 <button onclick="copyAnswer('Redução de custos e otimização dos recursos.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Qualidade, inovação e sustentabilidade: fornecedores<br>
-<button onclick="copyAnswer('Uso de embalagens retornáveis e otimização de rotas para reduzir CO2.')">Copiar Resposta</button>
+<strong>Atividade 3:</strong> Qualidade, inovação e sustentabilidade:
+<button onclick="copyAnswer('Práticas: Uso de embalagens retornáveis e otimização de rotas para reduzir CO2.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual dos seguintes é um dos principais benefícios da implementação de logística reversa?<br>
+<strong>Atividade 4:</strong> Benefício da logística reversa?
 <button onclick="copyAnswer('Redução de custos com novos materiais e menor impacto ambiental.')">Copiar Resposta</button>
 </div>
 <div class="nav-week">
@@ -290,23 +259,23 @@ Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.`)
 </div>
 </div>
 
-<!-- Semana 7 -->
+<!-- SEMANA 7 -->
 <div class="week" id="week7">
 <h2>Semana 7</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Estruturação de processo de compra e contrato de curto prazo:<br>
+<strong>Atividade 1:</strong> Estruturação de processo de compra e contrato de curto prazo:
 <button onclick="copyAnswer('Benefícios: Flexibilidade e menor compromisso financeiro. Riscos: Instabilidade de fornecimento e preços possivelmente mais altos.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Qual das seguintes alternativas descreve uma característica do contrato de curto prazo?<br>
+<strong>Atividade 2:</strong> Característica do contrato de curto prazo?
 <button onclick="copyAnswer('Duração limitada, ideal para demandas sazonais.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Qual alternativa apresenta características associadas a contratos de médio prazo?<br>
+<strong>Atividade 3:</strong> Características de contratos de médio prazo?
 <button onclick="copyAnswer('Fornecimento estável com renegociação após 1-3 anos.')">Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual alternativa apresenta uma característica associada a contratos de longo prazo?<br>
+<strong>Atividade 4:</strong> Característica de contratos de longo prazo?
 <button onclick="copyAnswer('Fornecimento contínuo garantido por mais de 3 anos.')">Copiar Resposta</button>
 </div>
 <div class="nav-week">
@@ -318,18 +287,18 @@ Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.`)
 <div class="notification" id="notification">Resposta copiada!</div>
 
 <script>
-function showWeek(num) {
-    document.querySelectorAll('.week').forEach(w => w.classList.remove('active'));
-    document.getElementById('week' + num).classList.add('active');
+function showWeek(num){
+    document.querySelectorAll('.week').forEach(w=>w.classList.remove('active'));
+    document.getElementById('week'+num).classList.add('active');
 }
-function copyAnswer(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        let notif = document.getElementById('notification');
-        notif.style.opacity = 1;
-        setTimeout(() => { notif.style.opacity = 0; }, 1500);
+function copyAnswer(text){
+    navigator.clipboard.writeText(text).then(()=>{
+        const notif = document.getElementById('notification');
+        notif.style.opacity=1;
+        setTimeout(()=>{ notif.style.opacity=0; },1500);
     });
 }
-// Semana 1 ativa por padrão
+// Semana inicial
 showWeek(1);
 </script>
 
