@@ -1,245 +1,321 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comércio Exterior - Cursos de Logística</title>
+<title>Comércio Exterior - Respostas</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: Arial, sans-serif; background-color: #f4f6f8; color: #333; margin: 0; padding: 0; }
-  header { background-color: #6a1b9a; color: #fff; text-align: center; padding: 15px 10px; position: sticky; top: 0; z-index: 1000; }
-  header h1 { margin-bottom: 5px; }
-  main { max-width: 800px; margin: 20px auto; padding: 10px; }
-  .week { display: none; background-color: #fff; padding: 15px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-  .week.active { display: block; }
-  h2 { color: #6a1b9a; }
-  button { background-color: #6a1b9a; color: #fff; border: none; padding: 10px 15px; margin: 5px 2px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background-color 0.3s; }
-  button:hover { background-color: #4a0f70; }
-  .copy-btn { background-color: #4caf50; }
-  .copy-btn:hover { background-color: #3e8e41; }
-  #copied-msg { position: fixed; top: 20px; right: 20px; background-color: #333; color: #fff; padding: 10px 15px; border-radius: 5px; opacity: 0; transition: opacity 0.5s, transform 0.5s; transform: translateY(-20px); z-index: 1000; }
-  footer { text-align: center; padding: 15px; font-size: 0.9em; color: #555; }
-  @media(min-width:600px){ button { margin: 10px 5px; } }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Roboto',sans-serif; background:#f4f6f8; color:#333; }
+header { background: linear-gradient(90deg,#27ae60,#2ecc71); color:#fff; text-align:center; padding:25px 0; box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+header h1{font-size:1.8rem;}
+nav.top-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#145A32;padding:12px 0;}
+nav.top-nav button{background:#16a085;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700;transition:0.3s;}
+nav.top-nav button:hover{background:#117a65;}
+.week{display:none;padding:20px;max-width:900px;margin:20px auto;}
+.week.active{display:block;animation:fadeIn 0.5s ease-in-out;}
+.activity{background:#fff;padding:18px;border-radius:12px;margin:12px 0;box-shadow:0 4px 10px rgba(0,0,0,0.08);transition:0.3s;}
+.activity:hover{box-shadow:0 6px 15px rgba(0,0,0,0.15);}
+.activity strong{color:#27ae60;display:block;margin-bottom:8px;font-size:1.05rem;}
+.activity p{margin:5px 0;}
+.activity button.copy{background:#2ecc71;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-weight:700;margin-top:10px;transition:0.3s;display:inline-flex;align-items:center;gap:6px;}
+.activity button.copy:hover{background:#27ae60;}
+.nav-week{display:flex;justify-content:space-between;margin-top:20px;gap:10px;flex-wrap:wrap;}
+.nav-week button{background:#27ae60;padding:10px 16px;border-radius:6px;color:#fff;font-weight:700;cursor:pointer;}
+.nav-week button:hover{background:#1e8449;}
+.notification{position:fixed;top:20px;right:20px;background:#2ecc71;color:#fff;padding:12px 22px;border-radius:8px;opacity:0;pointer-events:none;transition:0.5s;font-weight:700;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:600px){nav.top-nav,.nav-week{flex-direction:column;align-items:center;}nav.top-nav button,.nav-week button{width:90%;}}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Comércio Exterior</h1>
-  <p>Desenvolvido por Fabiano & João Molina</p>
+<h1>Comércio Exterior - Respostas Semanais</h1>
 </header>
 
-<main>
+<nav class="top-nav">
+<button onclick="showWeek(1)">Semana 1</button>
+<button onclick="showWeek(2)">Semana 2</button>
+<button onclick="showWeek(3)">Semana 3</button>
+<button onclick="showWeek(4)">Semana 4</button>
+<button onclick="showWeek(5)">Semana 5</button>
+<button onclick="showWeek(6)">Semana 6</button>
+<button onclick="showWeek(7)">Semana 7</button>
+<button onclick="window.location.href='index.html'">Menu Principal</button>
+</nav>
 
-<!-- Semana 1 -->
-<div class="week active" id="week1">
+<!-- ===================== SEMANA 1 ===================== -->
+<div class="week" id="week1">
 <h2>Semana 1</h2>
-<p><strong>Atividade 1:</strong> O que é comércio exterior?</p>
-<p id="week1-1">Resposta: Comércio exterior é a troca de bens e serviços entre países, incluindo exportações e importações.</p>
-<button class="copy-btn" onclick="copyText('week1-1')">Copiar Resposta</button>
-
-<p><strong>Atividade 2:</strong> Quais são os principais documentos envolvidos?</p>
-<p id="week1-2">Resposta: Fatura comercial, conhecimento de embarque, certificado de origem, nota fiscal e packing list.</p>
-<button class="copy-btn" onclick="copyText('week1-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> Diferença entre exportação e importação</p>
-<p id="week1-3">Exportação: Venda de produtos para outros países.<br>
-Importação: Compra de produtos de outros países.</p>
-<button class="copy-btn" onclick="copyText('week1-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Qual é o objetivo das barreiras tarifárias?</p>
-<p id="week1-4">Resposta: Proteger a economia nacional, controlando a entrada de produtos estrangeiros por meio de impostos e taxas.</p>
-<button class="copy-btn" onclick="copyText('week1-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>O que é importação?</p>
+<p><strong>Resposta:</strong> Comprar produtos ou serviços de fornecedores fora do país.</p>
+<button class="copy" onclick="copyAnswer('Comprar produtos ou serviços de fornecedores fora do país.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Qual é a primeira etapa do processo de importação após a seleção do fornecedor?</p>
+<p><strong>Resposta:</strong> Contrato de compra.</p>
+<button class="copy" onclick="copyAnswer('Contrato de compra.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Após a preparação dos documentos, qual é a próxima etapa?</p>
+<p><strong>Resposta:</strong> Liberação alfandegária.</p>
+<button class="copy" onclick="copyAnswer('Liberação alfandegária.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Fluxograma de importação e exportação</p>
+<p><strong>Resposta:</strong> Fornecedor Internacional → Transporte Internacional → Indústria → Cliente Atacado / Cliente Varejo → Consumidor Final.</p>
+<button class="copy" onclick="copyAnswer('Fornecedor Internacional → Transporte Internacional → Indústria → Cliente Atacado / Cliente Varejo → Consumidor Final.')">📋 Copiar Resposta</button>
+</div>
+<div class="nav-week">
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(2)">Próxima Semana</button>
 </div>
 </div>
 
-<!-- Semana 2 -->
+<!-- ===================== SEMANA 2 ===================== -->
 <div class="week" id="week2">
 <h2>Semana 2</h2>
-<p><strong>Atividade 1:</strong> Qual a importância do câmbio no comércio exterior?</p>
-<p id="week2-1">Resposta: O câmbio influencia o custo de importações e o valor das exportações, impactando lucros e competitividade.</p>
-<button class="copy-btn" onclick="copyText('week2-1')">Copiar Resposta</button>
-
-<p><strong>Atividade 2:</strong> O que são tratados comerciais?</p>
-<p id="week2-2">Resposta: Acordos entre países que definem regras, tarifas e incentivos para facilitar o comércio entre eles.</p>
-<button class="copy-btn" onclick="copyText('week2-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> Quais os riscos do comércio internacional?</p>
-<p id="week2-3">Riscos: variação cambial, barreiras comerciais, atrasos logísticos, diferenças culturais e legais.</p>
-<button class="copy-btn" onclick="copyText('week2-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> O que é logística internacional?</p>
-<p id="week2-4">Resposta: Planejamento e gestão do transporte de mercadorias entre países, incluindo frete, armazenagem e desembaraço aduaneiro.</p>
-<button class="copy-btn" onclick="copyText('week2-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Diferença entre fluxos</p>
+<p><strong>Resposta:</strong> A importação foca na entrada de mercadorias (origem externa), enquanto a exportação foca na saída (destino externo). Mudam responsabilidades logísticas e documentos (Licenciamento de Importação vs. Declaração de Exportação).</p>
+<button class="copy" onclick="copyAnswer('A importação foca na entrada de mercadorias (origem externa), enquanto a exportação foca na saída (destino externo). Mudam responsabilidades logísticas e documentos (Licenciamento de Importação vs. Declaração de Exportação).')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>O que envolve o processo de logística internacional?</p>
+<p><strong>Resposta:</strong> Planejamento, execução e controle do fluxo através das fronteiras.</p>
+<button class="copy" onclick="copyAnswer('Planejamento, execução e controle do fluxo através das fronteiras.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Vantagens da logística internacional?</p>
+<p><strong>Resposta:</strong> Acesso a novos mercados, redução de custos e vantagem competitiva.</p>
+<button class="copy" onclick="copyAnswer('Acesso a novos mercados, redução de custos e vantagem competitiva.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Por que o Follow up é importante?</p>
+<p><strong>Resposta:</strong> Garante entregas no tempo e especificações acordadas.</p>
+<button class="copy" onclick="copyAnswer('Garante entregas no tempo e especificações acordadas.')">📋 Copiar Resposta</button>
+</div>
+<div class="nav-week">
+<button onclick="showWeek(1)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(3)">Próxima Semana</button>
 </div>
 </div>
 
-<!-- Semana 3 -->
+<!-- ===================== SEMANA 3 ===================== -->
 <div class="week" id="week3">
 <h2>Semana 3</h2>
-<p><strong>Atividade 1:</strong> Qual a função da alfândega?</p>
-<p id="week3-1">Resposta: Controlar a entrada e saída de mercadorias do país, garantindo conformidade legal e arrecadação de impostos.</p>
-<button class="copy-btn" onclick="copyText('week3-1')">Copiar Resposta</button>
-
-<p><strong>Atividade 2:</strong> O que é Incoterm?</p>
-<p id="week3-2">Resposta: Termos internacionais de comércio que definem responsabilidades, custos e riscos entre comprador e vendedor.</p>
-<button class="copy-btn" onclick="copyText('week3-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> Diferença entre FOB e CIF</p>
-<p id="week3-3">FOB: Vendedor entrega no porto de embarque.<br>CIF: Vendedor cobre frete e seguro até o porto de destino.</p>
-<button class="copy-btn" onclick="copyText('week3-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Qual a importância do seguro internacional?</p>
-<p id="week3-4">Resposta: Protege a mercadoria contra perdas, danos ou extravios durante transporte internacional.</p>
-<button class="copy-btn" onclick="copyText('week3-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Simulação EXW (Ex Works)</p>
+<p><strong>Resposta:</strong> Exportador: Disponibiliza na fábrica. Importador: Contrata transporte e seguro. Transportador: Retira e leva ao destino.</p>
+<button class="copy" onclick="copyAnswer('Exportador: Disponibiliza na fábrica. Importador: Contrata transporte e seguro. Transportador: Retira e leva ao destino.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Relevância dos Incoterms?</p>
+<p><strong>Resposta:</strong> Essencial para calcular custos e elaborar contratos.</p>
+<button class="copy" onclick="copyAnswer('Essencial para calcular custos e elaborar contratos.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>O que são Incoterms?</p>
+<p><strong>Resposta:</strong> Termos que definem responsabilidades entre vendedor e comprador.</p>
+<button class="copy" onclick="copyAnswer('Termos que definem responsabilidades entre vendedor e comprador.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Qual é a principal função dos Incoterms?</p>
+<p><strong>Resposta:</strong> Especificar responsabilidades de transporte, seguro e desembaraço.</p>
+<button class="copy" onclick="copyAnswer('Especificar responsabilidades de transporte, seguro e desembaraço.')">📋 Copiar Resposta</button>
+</div>
+<div class="nav-week">
+<button onclick="showWeek(2)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(4)">Próxima Semana</button>
 </div>
 </div>
 
-<!-- Semana 4 -->
+<!-- ===================== SEMANA 4 ===================== -->
 <div class="week" id="week4">
 <h2>Semana 4</h2>
-<p><strong>Atividade 1:</strong> Quais os tipos de transporte internacional?</p>
-<p id="week4-1">Resposta: Marítimo, aéreo, ferroviário e rodoviário.</p>
-<button class="copy-btn" onclick="copyText('week4-1')">Copiar Resposta</button>
-
-<p><strong>Atividade 2:</strong> Diferença entre transporte multimodal e intermodal</p>
-<p id="week4-2">Multimodal: Único contrato e operador para diferentes modais.<br>Intermodal: Contratos separados para cada modal.</p>
-<button class="copy-btn" onclick="copyText('week4-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> O que é despacho aduaneiro?</p>
-<p id="week4-3">Resposta: Procedimento de liberação de mercadorias junto à alfândega para importação ou exportação.</p>
-<button class="copy-btn" onclick="copyText('week4-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Importância de documentos corretos</p>
-<p id="week4-4">Resposta: Evita atrasos, multas e problemas legais durante o comércio internacional.</p>
-<button class="copy-btn" onclick="copyText('week4-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Documentos Essenciais (Preenchimento)</p>
+<p><strong>Resposta:</strong> Commercial Invoice: Descrição, NCM, Valor Unitário/Total. Packing List: Peso Bruto/Líquido, volumes e detalhes da embalagem. CRT: Conhecimento de Transporte Rodoviário Internacional.</p>
+<button class="copy" onclick="copyAnswer('Commercial Invoice: Descrição, NCM, Valor Unitário/Total. Packing List: Peso Bruto/Líquido, volumes e detalhes da embalagem. CRT: Conhecimento de Transporte Rodoviário Internacional.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Documento para transporte rodoviário internacional (ex: Bolívia-Brasil)?</p>
+<p><strong>Resposta:</strong> CRT.</p>
+<button class="copy" onclick="copyAnswer('CRT.')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Documento marítimo que serve como título de propriedade?</p>
+<p><strong>Resposta:</strong> Bill of Lading (BL).</p>
+<button class="copy" onclick="copyAnswer('Bill of Lading (BL).')">📋 Copiar Resposta</button>
+</div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Documento que lista detalhadamente as mercadorias?</p>
+<p><strong>Resposta:</strong> Packing List.</p>
+<button class="copy" onclick="copyAnswer('Packing List.')">📋 Copiar Resposta</button>
+</div>
+<div class="nav-week">
+<button onclick="showWeek(3)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(5)">Próxima Semana</button>
 </div>
 </div>
 
-<!-- Semana 5 -->
+<!-- ===================== SEMANA 5 ===================== -->
 <div class="week" id="week5">
 <h2>Semana 5</h2>
-<p><strong>Atividade 1:</strong> O que é compliance em comércio exterior?</p>
-<p id="week5-1">Resposta: Conformidade com leis, regulamentos e normas internacionais, evitando riscos legais e reputacionais.</p>
-<button class="copy-btn" onclick="copyText('week5-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Vantagens de uma empresa exportadora</p>
-<p id="week5-2">Aumento de faturamento, acesso a novos mercados e fortalecimento da marca.</p>
-<button class="copy-btn" onclick="copyText('week5-2')">Copiar Resposta</button>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Simulação de Importação</p>
+<p><strong>Resposta:</strong> Incoterm: CIF (Cost, Insurance and Freight). Justificativa: O fornecedor assume custo e seguro até o porto, reduzindo o risco inicial do importador.</p>
+<button class="copy" onclick="copyAnswer('Incoterm: CIF (Cost, Insurance and Freight). Justificativa: O fornecedor assume custo e seguro até o porto, reduzindo o risco inicial do importador.')">📋 Copiar Resposta</button>
+</div>
 
-<p><strong>Atividade 3:</strong> Desafios do comércio internacional</p>
-<p id="week5-3">Riscos cambiais, barreiras legais, diferenças culturais e logísticas.</p>
-<button class="copy-btn" onclick="copyText('week5-3')">Copiar Resposta</button>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Função dos Incoterms?</p>
+<p><strong>Resposta:</strong> Definir obrigações mútuas em formato universal.</p>
+<button class="copy" onclick="copyAnswer('Definir obrigações mútuas em formato universal.')">📋 Copiar Resposta</button>
+</div>
 
-<p><strong>Atividade 4:</strong> O que é carta de crédito?</p>
-<p id="week5-4">Resposta: Garantia bancária de pagamento ao vendedor mediante apresentação de documentos corretos.</p>
-<button class="copy-btn" onclick="copyText('week5-4')">Copiar Resposta</button>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Papel do exportador?</p>
+<p><strong>Resposta:</strong> Vender mercadorias para outros países.</p>
+<button class="copy" onclick="copyAnswer('Vender mercadorias para outros países.')">📋 Copiar Resposta</button>
+</div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Papel do operador logístico?</p>
+<p><strong>Resposta:</strong> Coordenar a entrega da origem até o destino final.</p>
+<button class="copy" onclick="copyAnswer('Coordenar a entrega da origem até o destino final.')">📋 Copiar Resposta</button>
+</div>
+
+<div class="nav-week">
+<button onclick="showWeek(4)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(6)">Próxima Semana</button>
 </div>
 </div>
 
-<!-- Semana 6 -->
+<!-- ===================== SEMANA 6 ===================== -->
 <div class="week" id="week6">
 <h2>Semana 6</h2>
-<p><strong>Atividade 1:</strong> O que é importação temporária?</p>
-<p id="week6-1">Resposta: Entrada de mercadorias para uso específico por tempo limitado, sem pagamento de tributos, desde que retornem ao exterior.</p>
-<button class="copy-btn" onclick="copyText('week6-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Tipos de importadores</p>
-<p id="week6-2">Direto, indireto e por encomenda.</p>
-<button class="copy-btn" onclick="copyText('week6-2')">Copiar Resposta</button>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Relatório de Conferência</p>
+<p><strong>Resposta:</strong> Verificação da Invoice comparada ao Pedido de Compra, identificação de divergências de valores e recomendação de correção antes do pagamento.</p>
+<button class="copy" onclick="copyAnswer('Verificação da Invoice comparada ao Pedido de Compra, identificação de divergências de valores e recomendação de correção antes do pagamento.')">📋 Copiar Resposta</button>
+</div>
 
-<p><strong>Atividade 3:</strong> Principais acordos comerciais</p>
-<p id="week6-3">Mercosul, Nafta, União Europeia, Acordo de Livre Comércio entre Brasil e países da Ásia.</p>
-<button class="copy-btn" onclick="copyText('week6-3')">Copiar Resposta</button>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Função da balança comercial?</p>
+<p><strong>Resposta:</strong> Comparar o valor total de exportações e importações de um país.</p>
+<button class="copy" onclick="copyAnswer('Comparar o valor total de exportações e importações de um país.')">📋 Copiar Resposta</button>
+</div>
 
-<p><strong>Atividade 4:</strong> Benefícios de exportar</p>
-<p id="week6-4">Ampliação do mercado, aumento de receitas e fortalecimento da competitividade internacional.</p>
-<button class="copy-btn" onclick="copyText('week6-4')">Copiar Resposta</button>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Pagamento com maior segurança para o exportador?</p>
+<p><strong>Resposta:</strong> Carta de Crédito.</p>
+<button class="copy" onclick="copyAnswer('Carta de Crédito.')">📋 Copiar Resposta</button>
+</div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Importância dos dados de comércio exterior?</p>
+<p><strong>Resposta:</strong> Medem a competitividade internacional e auxiliam na definição de políticas econômicas e comerciais.</p>
+<button class="copy" onclick="copyAnswer('Medem a competitividade internacional e auxiliam na definição de políticas econômicas e comerciais.')">📋 Copiar Resposta</button>
+</div>
+
+<div class="nav-week">
+<button onclick="showWeek(5)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(7)">Próxima Semana</button>
 </div>
 </div>
 
-<!-- Semana 7 -->
+<!-- ===================== SEMANA 7 ===================== -->
 <div class="week" id="week7">
 <h2>Semana 7</h2>
-<p><strong>Atividade 1:</strong> O que é logística internacional?</p>
-<p id="week7-1">Resposta: Planejamento e gestão do transporte, armazenamento e distribuição de mercadorias entre países.</p>
-<button class="copy-btn" onclick="copyText('week7-1')">Copiar Resposta</button>
 
-<p><strong>Atividade 2:</strong> Documentos para exportação</p>
-<p id="week7-2">Fatura comercial, packing list, certificado de origem, conhecimento de embarque e seguro internacional.</p>
-<button class="copy-btn" onclick="copyText('week7-2')">Copiar Resposta</button>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Roteiro: Exportação de Soja</p>
+<p><strong>Resposta:</strong> Fluxo: Exportador → Transporte Interno → Alfândega → Transporte Marítimo → Alfândega de Destino → Cliente. NCM da Soja: 1201.90.00.</p>
+<button class="copy" onclick="copyAnswer('Fluxo: Exportador → Transporte Interno → Alfândega → Transporte Marítimo → Alfândega de Destino → Cliente. NCM da Soja: 1201.90.00.')">📋 Copiar Resposta</button>
+</div>
 
-<p><strong>Atividade 3:</strong> Principais desafios da exportação</p>
-<p id="week7-3">Legislação, barreiras tarifárias, logística e diferença cultural.</p>
-<button class="copy-btn" onclick="copyText('week7-3')">Copiar Resposta</button>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Importância da armazenagem internacional?</p>
+<p><strong>Resposta:</strong> Facilitar o despacho aduaneiro, reduzir custos logísticos e agilizar a distribuição.</p>
+<button class="copy" onclick="copyAnswer('Facilitar o despacho aduaneiro, reduzir custos logísticos e agilizar a distribuição.')">📋 Copiar Resposta</button>
+</div>
 
-<p><strong>Atividade 4:</strong> Qual a importância do planejamento em comércio exterior?</p>
-<p id="week7-4">Resposta: Reduz riscos, garante cumprimento de prazos e otimiza custos.</p>
-<button class="copy-btn" onclick="copyText('week7-4')">Copiar Resposta</button>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Importância do NCM?</p>
+<p><strong>Resposta:</strong> Essencial para classificação fiscal correta e cálculo de impostos.</p>
+<button class="copy" onclick="copyAnswer('Essencial para classificação fiscal correta e cálculo de impostos.')">📋 Copiar Resposta</button>
+</div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Principais impostos na importação para o Brasil?</p>
+<p><strong>Resposta:</strong> ICMS, IPI, COFINS e Imposto de Importação (II).</p>
+<button class="copy" onclick="copyAnswer('ICMS, IPI, COFINS e Imposto de Importação (II).')">📋 Copiar Resposta</button>
+</div>
+
+<div class="nav-week">
+<button onclick="showWeek(6)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
 </div>
 </div>
 
-</main>
-
-<div id="copied-msg">Resposta copiada!</div>
-
-<footer>
-<button onclick="window.location.href='index.html'">Voltar ao Menu</button>
-</footer>
+<div class="notification" id="notification">Resposta copiada!</div>
 
 <script>
-let currentWeek = 1;
-const totalWeeks = 7;
-
-function showWeek(n){
-  if(n<1) n=1;
-  if(n>totalWeeks) n=totalWeeks;
-  for(let i=1;i<=totalWeeks;i++){
-    document.getElementById('week'+i).classList.remove('active');
-  }
-  document.getElementById('week'+n).classList.add('active');
-  currentWeek = n;
-  window.scrollTo({top:0,behavior:'smooth'});
+function showWeek(num){
+    document.querySelectorAll('.week').forEach(w=>w.classList.remove('active'));
+    document.getElementById('week'+num).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function nextWeek(){ showWeek(currentWeek+1); }
-function prevWeek(){ showWeek(currentWeek-1); }
-
-function copyText(id){
-  const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(()=>{
-    const msg = document.getElementById('copied-msg');
-    msg.style.opacity = '1';
-    msg.style.transform = 'translateY(0)';
-    setTimeout(()=>{ msg.style.opacity='0'; msg.style.transform='translateY(-20px)'; },1500);
-  });
+function copyAnswer(text){
+    navigator.clipboard.writeText(text).then(()=>{
+        const notif = document.getElementById('notification');
+        notif.style.opacity=1;
+        setTimeout(()=>{notif.style.opacity=0;},1500);
+    });
 }
+
+// Semana inicial
+showWeek(1);
 </script>
 
 </body>
