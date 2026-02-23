@@ -1,245 +1,245 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logística Reversa - Cursos de Logística</title>
+<title>Logística Reversa - Respostas</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: Arial, sans-serif; background-color: #f4f6f8; color: #333; margin: 0; padding: 0; }
-  header { background-color: #2e7d32; color: #fff; text-align: center; padding: 15px 10px; position: sticky; top: 0; z-index: 1000; }
-  header h1 { margin-bottom: 5px; }
-  main { max-width: 800px; margin: 20px auto; padding: 10px; }
-  .week { display: none; background-color: #fff; padding: 15px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-  .week.active { display: block; }
-  h2 { color: #2e7d32; }
-  button { background-color: #2e7d32; color: #fff; border: none; padding: 10px 15px; margin: 5px 2px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background-color 0.3s; }
-  button:hover { background-color: #1b4f21; }
-  .copy-btn { background-color: #4caf50; }
-  .copy-btn:hover { background-color: #3e8e41; }
-  #copied-msg { position: fixed; top: 20px; right: 20px; background-color: #333; color: #fff; padding: 10px 15px; border-radius: 5px; opacity: 0; transition: opacity 0.5s, transform 0.5s; transform: translateY(-20px); z-index: 1000; }
-  footer { text-align: center; padding: 15px; font-size: 0.9em; color: #555; }
-  @media(min-width:600px){ button { margin: 10px 5px; } }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;background:#eef3f9;color:#333;}
+header{background:linear-gradient(90deg,#2980b9,#3498db);color:#fff;text-align:center;padding:25px 0;}
+nav.top-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#1f618d;padding:12px 0;}
+nav.top-nav button{background:#5dade2;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700;}
+.week{display:none;padding:20px;max-width:900px;margin:20px auto;}
+.week.active{display:block;}
+.activity{background:#fff;padding:18px;border-radius:12px;margin:12px 0;box-shadow:0 4px 10px rgba(0,0,0,0.08);}
+.activity strong{color:#2980b9;display:block;margin-bottom:8px;}
+.activity button.copy{background:#3498db;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;margin-top:10px;}
+.nav-week{display:flex;justify-content:space-between;margin-top:20px;}
+.nav-week button{background:#2980b9;padding:10px 16px;border-radius:6px;color:#fff;font-weight:700;cursor:pointer;}
+.notification{position:fixed;top:20px;right:20px;background:#3498db;color:#fff;padding:12px 22px;border-radius:8px;opacity:0;transition:0.5s;font-weight:700;}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Logística Reversa</h1>
-  <p>Desenvolvido por Fabiano & João Molina</p>
+<h1>Logística Reversa, Qualidade e Meio Ambiente</h1>
 </header>
 
-<main>
+<nav class="top-nav">
+<button onclick="showWeek(1)">Semana 1</button>
+<button onclick="showWeek(2)">Semana 2</button>
+<button onclick="showWeek(3)">Semana 3</button>
+<button onclick="showWeek(4)">Semana 4</button>
+<button onclick="showWeek(5)">Semana 5</button>
+<button onclick="showWeek(6)">Semana 6</button>
+<button onclick="showWeek(7)">Semana 7</button>
+<button onclick="window.location.href='index.html'">Menu Principal</button>
+</nav>
 
-<!-- Semana 1 -->
-<div class="week active" id="week1">
-<h2>Semana 1</h2>
-<p><strong>Atividade 1:</strong> O que é logística reversa?</p>
-<p id="week1-1">Resposta: Logística reversa é o processo de planejar, implementar e controlar o fluxo de produtos retornáveis, resíduos ou materiais recicláveis, do ponto de consumo de volta ao ponto de origem, para reaproveitamento, reciclagem ou descarte correto.</p>
-<button class="copy-btn" onclick="copyText('week1-1')">Copiar Resposta</button>
+<!-- SEMANA 1 -->
+<div class="week" id="week1"><h2>Semana 1</h2>
 
-<p><strong>Atividade 2:</strong> Quais os principais objetivos da logística reversa?</p>
-<p id="week1-2">Resposta: Reduzir impactos ambientais, reaproveitar materiais, diminuir custos e atender legislações ambientais.</p>
-<button class="copy-btn" onclick="copyText('week1-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1:</strong>
+<p>Análise ISO 9001, 14001 e 28000</p>
+<p><strong>Resposta:</strong> ISO 9001 garante qualidade; ISO 14001 reduz impactos ambientais; ISO 28000 garante segurança logística.</p>
+<button class="copy" onclick="copyAnswer('ISO 9001 garante qualidade; ISO 14001 reduz impactos ambientais; ISO 28000 garante segurança logística.')">Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Diferencie logística reversa e logística tradicional</p>
-<p id="week1-3">Logística tradicional: Fluxo de produtos do fornecedor ao cliente.<br>
-Logística reversa: Fluxo de produtos do cliente de volta ao fornecedor ou destino correto.</p>
-<button class="copy-btn" onclick="copyText('week1-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2:</strong>
+<p>O que uma instrução de trabalho precisa explicar?</p>
+<p><strong>Resposta:</strong> O passo a passo para fazer a tarefa corretamente.</p>
+<button class="copy" onclick="copyAnswer('O passo a passo para fazer a tarefa corretamente.')">Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Benefícios da logística reversa</p>
-<p id="week1-4">Resposta: Redução de resíduos, economia de recursos, sustentabilidade e imagem positiva da empresa.</p>
-<button class="copy-btn" onclick="copyText('week1-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3:</strong>
+<p>Durante auditoria o auditor verifica se:</p>
+<p><strong>Resposta:</strong> As tarefas seguem o passo a passo da instrução.</p>
+<button class="copy" onclick="copyAnswer('As tarefas seguem o passo a passo da instrução.')">Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
+<div class="activity"><strong>Atividade 4:</strong>
+<p>Por que instruções são importantes?</p>
+<p><strong>Resposta:</strong> Garantem qualidade e padronização.</p>
+<button class="copy" onclick="copyAnswer('Garantem qualidade e padronização.')">Copiar</button></div>
 
-<!-- Semana 2 -->
-<div class="week" id="week2">
-<h2>Semana 2</h2>
-<p><strong>Atividade 1:</strong> Quais os tipos de logística reversa?</p>
-<p id="week2-1">Resposta: Pós-consumo (devolução de produtos usados), pós-venda (devolução por defeito) e de resíduos industriais.</p>
-<button class="copy-btn" onclick="copyText('week2-1')">Copiar Resposta</button>
+<div class="nav-week">
+<button onclick="showWeek(2)">Próxima</button></div></div>
 
-<p><strong>Atividade 2:</strong> Exemplos de logística reversa</p>
-<p id="week2-2">Resposta: Retorno de embalagens, eletrônicos para reciclagem, devolução de produtos danificados ou vencidos.</p>
-<button class="copy-btn" onclick="copyText('week2-2')">Copiar Resposta</button>
+<!-- SEMANA 2 -->
+<div class="week" id="week2"><h2>Semana 2</h2>
 
-<p><strong>Atividade 3:</strong> Qual o papel da sustentabilidade?</p>
-<p id="week2-3">Resposta: Diminuir impactos ambientais e promover o uso consciente de recursos.</p>
-<button class="copy-btn" onclick="copyText('week2-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1:</strong>
+<p>Ciclo de vida do pneu</p>
+<p><strong>Resposta:</strong> Extração, produção, distribuição, uso e logística reversa.</p>
+<button class="copy" onclick="copyAnswer('Extração, produção, distribuição, uso e logística reversa.')">Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Indicadores de desempenho em logística reversa</p>
-<p id="week2-4">Resposta: Percentual de produtos retornados, tempo de processamento, custo por retorno e taxa de reaproveitamento.</p>
-<button class="copy-btn" onclick="copyText('week2-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2:</strong>
+<p>O que é ACV?</p>
+<p><strong>Resposta:</strong> Avaliação dos impactos ambientais do produto.</p>
+<button class="copy" onclick="copyAnswer('Avaliação dos impactos ambientais do produto.')">Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
+<div class="activity"><strong>Atividade 3:</strong>
+<p>Etapa de transformação de matéria-prima?</p>
+<p><strong>Resposta:</strong> Produção.</p>
+<button class="copy" onclick="copyAnswer('Produção.')">Copiar</button></div>
 
-<!-- Semana 3 -->
-<div class="week" id="week3">
-<h2>Semana 3</h2>
-<p><strong>Atividade 1:</strong> Quais legislações impactam a logística reversa?</p>
-<p id="week3-1">Resposta: Leis ambientais, políticas de resíduos sólidos e normas de responsabilidade compartilhada do ciclo de vida do produto.</p>
-<button class="copy-btn" onclick="copyText('week3-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 4:</strong>
+<p>Por que seguir instrução?</p>
+<p><strong>Resposta:</strong> Reduz impacto ambiental.</p>
+<button class="copy" onclick="copyAnswer('Reduz impacto ambiental.')">Copiar</button></div>
 
-<p><strong>Atividade 2:</strong> Qual a importância da conscientização do consumidor?</p>
-<p id="week3-2">Resposta: Incentiva a devolução de produtos e materiais, aumentando a eficiência da logística reversa.</p>
-<button class="copy-btn" onclick="copyText('week3-2')">Copiar Resposta</button>
+<div class="nav-week">
+<button onclick="showWeek(1)">Anterior</button>
+<button onclick="showWeek(3)">Próxima</button></div></div>
 
-<p><strong>Atividade 3:</strong> Tecnologias usadas na logística reversa</p>
-<p id="week3-3">RFID, rastreamento por QR code, softwares de gestão de devoluções e ERP.</p>
-<button class="copy-btn" onclick="copyText('week3-3')">Copiar Resposta</button>
+<!-- SEMANA 3 -->
+<div class="week" id="week3"><h2>Semana 3</h2>
 
-<p><strong>Atividade 4:</strong> Benefícios financeiros</p>
-<p id="week3-4">Resposta: Redução de custos com materiais, transporte e descarte, além da possibilidade de lucro com produtos reaproveitados.</p>
-<button class="copy-btn" onclick="copyText('week3-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1:</strong>
+<p>Garrafas PET são:</p>
+<p><strong>Resposta:</strong> Resíduo reciclável.</p>
+<button class="copy" onclick="copyAnswer('Resíduo reciclável.')">Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
+<div class="activity"><strong>Atividade 2:</strong>
+<p>Diferença entre lixo e resíduo?</p>
+<p><strong>Resposta:</strong> Resíduo pode ser reaproveitado.</p>
+<button class="copy" onclick="copyAnswer('Resíduo pode ser reaproveitado.')">Copiar</button></div>
 
-<!-- Semana 4 -->
-<div class="week" id="week4">
-<h2>Semana 4</h2>
-<p><strong>Atividade 1:</strong> Etapas da logística reversa</p>
-<p id="week4-1">Resposta: Coleta, triagem, transporte, processamento e destinação final ou reutilização.</p>
-<button class="copy-btn" onclick="copyText('week4-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3:</strong>
+<p>Classificação por origem?</p>
+<p><strong>Resposta:</strong> Industrial, hospitalar e doméstico.</p>
+<button class="copy" onclick="copyAnswer('Industrial, hospitalar e doméstico.')">Copiar</button></div>
 
-<p><strong>Atividade 2:</strong> Diferença entre retorno e reciclagem</p>
-<p id="week4-2">Retorno: Produto volta para reparo ou reuso.<br>Reciclagem: Produto é transformado em matéria-prima.</p>
-<button class="copy-btn" onclick="copyText('week4-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 4:</strong>
+<p>Produção consciente?</p>
+<p><strong>Resposta:</strong> Reduz desperdícios.</p>
+<button class="copy" onclick="copyAnswer('Reduz desperdícios.')">Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Logística reversa na indústria eletrônica</p>
-<p id="week4-3">Resposta: Recolhimento de celulares, baterias e computadores para descarte correto ou reaproveitamento de peças.</p>
-<button class="copy-btn" onclick="copyText('week4-3')">Copiar Resposta</button>
+<div class="nav-week">
+<button onclick="showWeek(2)">Anterior</button>
+<button onclick="showWeek(4)">Próxima</button></div></div>
 
-<p><strong>Atividade 4:</strong> Impactos ambientais positivos</p>
-<p id="week4-4">Resposta: Redução da poluição, economia de recursos naturais e menor quantidade de resíduos em aterros.</p>
-<button class="copy-btn" onclick="copyText('week4-4')">Copiar Resposta</button>
+<!-- SEMANA 4 -->
+<div class="week" id="week4"><h2>Semana 4</h2>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
+<div class="activity"><strong>Atividade 1:</strong>
+<p>Objetivo ISO 9001?</p>
+<p><strong>Resposta:</strong> Satisfação do cliente.</p>
+<button class="copy" onclick="copyAnswer('Satisfação do cliente.')">Copiar</button></div>
 
-<!-- Semana 5 -->
-<div class="week" id="week5">
-<h2>Semana 5</h2>
-<p><strong>Atividade 1:</strong> Logística reversa no setor de embalagens</p>
-<p id="week5-1">Resposta: Retorno de embalagens plásticas, vidro e papelão para reutilização ou reciclagem.</p>
-<button class="copy-btn" onclick="copyText('week5-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2:</strong>
+<p>Recebimento atende ISO?</p>
+<p><strong>Resposta:</strong> Verificar conformidade.</p>
+<button class="copy" onclick="copyAnswer('Verificar conformidade.')">Copiar</button></div>
 
-<p><strong>Atividade 2:</strong> Logística reversa no setor automotivo</p>
-<p id="week5-2">Resposta: Reaproveitamento de peças, baterias e pneus, e descarte correto de resíduos industriais.</p>
-<button class="copy-btn" onclick="copyText('week5-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3:</strong>
+<p>Distribuição alinhada?</p>
+<p><strong>Resposta:</strong> Entrega no prazo.</p>
+<button class="copy" onclick="copyAnswer('Entrega no prazo.')">Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Principais desafios</p>
-<p id="week5-3">Resposta: Custo de transporte, conscientização de clientes e planejamento eficiente do retorno de produtos.</p>
-<button class="copy-btn" onclick="copyText('week5-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 4:</strong>
+<p>ESG ajuda como?</p>
+<p><strong>Resposta:</strong> Sustentabilidade e confiança.</p>
+<button class="copy" onclick="copyAnswer('Sustentabilidade e confiança.')">Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Indicadores de sucesso</p>
-<p id="week5-4">Resposta: Percentual de produtos retornados, tempo de ciclo de retorno e taxa de reaproveitamento.</p>
-<button class="copy-btn" onclick="copyText('week5-4')">Copiar Resposta</button>
+<div class="nav-week">
+<button onclick="showWeek(3)">Anterior</button>
+<button onclick="showWeek(5)">Próxima</button></div></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
+<!-- SEMANA 5 -->
+<div class="week" id="week5"><h2>Semana 5</h2>
 
-<!-- Semana 6 -->
-<div class="week" id="week6">
-<h2>Semana 6</h2>
-<p><strong>Atividade 1:</strong> Logística reversa e responsabilidade social</p>
-<p id="week6-1">Resposta: Demonstra compromisso da empresa com o meio ambiente e com a sociedade.</p>
-<button class="copy-btn" onclick="copyText('week6-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1:</strong>
+<p>O que fazer com aço?</p>
+<p><strong>Resposta:</strong> Reciclar.</p>
+<button class="copy" onclick="copyAnswer('Reciclar.')">Copiar</button></div>
 
-<p><strong>Atividade 2:</strong> Custos evitados</p>
-<p id="week6-2">Resposta: Menor gasto com descarte e compra de matéria-prima nova.</p>
-<button class="copy-btn" onclick="copyText('week6-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2:</strong>
+<p>Economia linear?</p>
+<p><strong>Resposta:</strong> Extrair, produzir, consumir e descartar.</p>
+<button class="copy" onclick="copyAnswer('Extrair, produzir, consumir e descartar.')">Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Como planejar a logística reversa?</p>
-<p id="week6-3">Resposta: Mapear produtos retornáveis, definir rotas e parceiros, monitorar indicadores e treinar equipe.</p>
-<button class="copy-btn" onclick="copyText('week6-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3:</strong>
+<p>Economia circular?</p>
+<p><strong>Resposta:</strong> Prolongar vida útil.</p>
+<button class="copy" onclick="copyAnswer('Prolongar vida útil.')">Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Tecnologias utilizadas</p>
-<p id="week6-4">Resposta: Softwares de rastreamento, ERP, códigos de barras e RFID.</p>
-<button class="copy-btn" onclick="copyText('week6-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 4:</strong>
+<p>Cuidado no transporte?</p>
+<p><strong>Resposta:</strong> Separar materiais.</p>
+<button class="copy" onclick="copyAnswer('Separar materiais.')">Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
+<div class="nav-week">
+<button onclick="showWeek(4)">Anterior</button>
+<button onclick="showWeek(6)">Próxima</button></div></div>
 
-<!-- Semana 7 -->
-<div class="week" id="week7">
-<h2>Semana 7</h2>
-<p><strong>Atividade 1:</strong> Benefícios gerais da logística reversa</p>
-<p id="week7-1">Resposta: Sustentabilidade, redução de custos, imagem positiva e conformidade legal.</p>
-<button class="copy-btn" onclick="copyText('week7-1')">Copiar Resposta</button>
+<!-- SEMANA 6 -->
+<div class="week" id="week6"><h2>Semana 6</h2>
 
-<p><strong>Atividade 2:</strong> Como medir resultados?</p>
-<p id="week7-2">Resposta: Por indicadores de retorno, reaproveitamento e tempo de ciclo da logística reversa.</p>
-<button class="copy-btn" onclick="copyText('week7-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1:</strong>
+<p>Melhorar logística reversa?</p>
+<p><strong>Resposta:</strong> Devolução de embalagens.</p>
+<button class="copy" onclick="copyAnswer('Devolução de embalagens.')">Copiar</button></div>
 
-<p><strong>Atividade 3:</strong> Logística reversa e competitividade</p>
-<p id="week7-3">Resposta: Empresas com práticas sustentáveis ganham vantagem competitiva e fidelização de clientes.</p>
-<button class="copy-btn" onclick="copyText('week7-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2:</strong>
+<p>Impacto embalagens?</p>
+<p><strong>Resposta:</strong> Poluição ambiental.</p>
+<button class="copy" onclick="copyAnswer('Poluição ambiental.')">Copiar</button></div>
 
-<p><strong>Atividade 4:</strong> Conclusão</p>
-<p id="week7-4">Resposta: Logística reversa é estratégica, traz benefícios ambientais, financeiros e sociais.</p>
-<button class="copy-btn" onclick="copyText('week7-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3:</strong>
+<p>Desafio embalagens retornáveis?</p>
+<p><strong>Resposta:</strong> Rastreamento.</p>
+<button class="copy" onclick="copyAnswer('Rastreamento.')">Copiar</button></div>
 
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-</div>
-</div>
+<div class="activity"><strong>Atividade 4:</strong>
+<p>Desafio agrotóxicos?</p>
+<p><strong>Resposta:</strong> Risco de contaminação.</p>
+<button class="copy" onclick="copyAnswer('Risco de contaminação.')">Copiar</button></div>
 
-</main>
+<div class="nav-week">
+<button onclick="showWeek(5)">Anterior</button>
+<button onclick="showWeek(7)">Próxima</button></div></div>
 
-<div id="copied-msg">Resposta copiada!</div>
+<!-- SEMANA 7 -->
+<div class="week" id="week7"><h2>Semana 7</h2>
 
-<footer>
-<button onclick="window.location.href='index.html'">Voltar ao Menu</button>
-</footer>
+<div class="activity"><strong>Atividade 1:</strong>
+<p>Decreto 10.240/2020?</p>
+<p><strong>Resposta:</strong> Fluxo reverso de eletroeletrônicos.</p>
+<button class="copy" onclick="copyAnswer('Fluxo reverso de eletroeletrônicos.')">Copiar</button></div>
+
+<div class="activity"><strong>Atividade 2:</strong>
+<p>Destino correto evita?</p>
+<p><strong>Resposta:</strong> Contaminação ambiental.</p>
+<button class="copy" onclick="copyAnswer('Contaminação ambiental.')">Copiar</button></div>
+
+<div class="activity"><strong>Atividade 3:</strong>
+<p>Logística reversa é fundamental pois:</p>
+<p><strong>Resposta:</strong> Orienta ações compartilhadas.</p>
+<button class="copy" onclick="copyAnswer('Orienta ações compartilhadas.')">Copiar</button></div>
+
+<div class="activity"><strong>Atividade 4:</strong>
+<p>Descarte eletrônico?</p>
+<p><strong>Resposta:</strong> Ecopontos.</p>
+<button class="copy" onclick="copyAnswer('Ecopontos.')">Copiar</button></div>
+
+<div class="nav-week">
+<button onclick="showWeek(6)">Anterior</button></div></div>
+
+<div class="notification" id="notification">Resposta copiada!</div>
 
 <script>
-let currentWeek = 1;
-const totalWeeks = 7;
-
-function showWeek(n){
-  if(n<1) n=1;
-  if(n>totalWeeks) n=totalWeeks;
-  for(let i=1;i<=totalWeeks;i++){
-    document.getElementById('week'+i).classList.remove('active');
-  }
-  document.getElementById('week'+n).classList.add('active');
-  currentWeek = n;
-  window.scrollTo({top:0,behavior:'smooth'});
+function showWeek(num){
+document.querySelectorAll('.week').forEach(w=>w.classList.remove('active'));
+document.getElementById('week'+num).classList.add('active');
 }
-
-function nextWeek(){ showWeek(currentWeek+1); }
-function prevWeek(){ showWeek(currentWeek-1); }
-
-function copyText(id){
-  const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(()=>{
-    const msg = document.getElementById('copied-msg');
-    msg.style.opacity = '1';
-    msg.style.transform = 'translateY(0)';
-    setTimeout(()=>{ msg.style.opacity='0'; msg.style.transform='translateY(-20px)'; },1500);
-  });
+function copyAnswer(text){
+navigator.clipboard.writeText(text).then(()=>{
+const notif=document.getElementById('notification');
+notif.style.opacity=1;
+setTimeout(()=>{notif.style.opacity=0;},1500);
+});
 }
+showWeek(1);
 </script>
 
 </body>
