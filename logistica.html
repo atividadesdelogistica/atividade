@@ -7,24 +7,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Roboto',sans-serif;background:#eef3f9;color:#333;}
-header{background:linear-gradient(90deg,#2980b9,#3498db);color:#fff;text-align:center;padding:25px 0;}
-nav.top-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#1f618d;padding:12px 0;}
-nav.top-nav button{background:#5dade2;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700;}
+body{font-family:'Roboto',sans-serif;background:#f4f6f8;color:#333;}
+header{background:linear-gradient(90deg,#8e44ad,#9b59b6);color:#fff;text-align:center;padding:25px 0;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+nav.top-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#5B2C6F;padding:12px 0;}
+nav.top-nav button{background:#9b59b6;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700;transition:0.3s;}
+nav.top-nav button:hover{background:#7D3C98;}
 .week{display:none;padding:20px;max-width:900px;margin:20px auto;}
-.week.active{display:block;}
+.week.active{display:block;animation:fadeIn 0.5s ease-in-out;}
 .activity{background:#fff;padding:18px;border-radius:12px;margin:12px 0;box-shadow:0 4px 10px rgba(0,0,0,0.08);}
-.activity strong{color:#2980b9;display:block;margin-bottom:8px;}
-.activity button.copy{background:#3498db;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;margin-top:10px;}
-.nav-week{display:flex;justify-content:space-between;margin-top:20px;}
-.nav-week button{background:#2980b9;padding:10px 16px;border-radius:6px;color:#fff;font-weight:700;cursor:pointer;}
-.notification{position:fixed;top:20px;right:20px;background:#3498db;color:#fff;padding:12px 22px;border-radius:8px;opacity:0;transition:0.5s;font-weight:700;}
+.activity strong{color:#8e44ad;display:block;margin-bottom:8px;}
+.activity button.copy{background:#9b59b6;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-weight:700;margin-top:10px;}
+.nav-week{display:flex;justify-content:space-between;margin-top:20px;gap:10px;flex-wrap:wrap;}
+.nav-week button{background:#8e44ad;padding:10px 16px;border-radius:6px;color:#fff;font-weight:700;cursor:pointer;}
+.notification{position:fixed;top:20px;right:20px;background:#9b59b6;color:#fff;padding:12px 22px;border-radius:8px;opacity:0;transition:0.5s;font-weight:700;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:600px){
+nav.top-nav,.nav-week{flex-direction:column;align-items:center;}
+nav.top-nav button,.nav-week button{width:90%;}
+}
 </style>
 </head>
 <body>
 
 <header>
-<h1>Logística Reversa, Qualidade e Meio Ambiente</h1>
+<h1>Logística Reversa - Respostas Semanais</h1>
 </header>
 
 <nav class="top-nav">
@@ -39,191 +45,275 @@ nav.top-nav button{background:#5dade2;color:#fff;border:none;padding:10px 18px;b
 </nav>
 
 <!-- SEMANA 1 -->
-<div class="week" id="week1"><h2>Semana 1</h2>
+<div class="week" id="week1">
+<h2>Semana 1</h2>
 
-<div class="activity"><strong>Atividade 1:</strong>
-<p>Análise ISO 9001, 14001 e 28000</p>
-<p><strong>Resposta:</strong> ISO 9001 garante qualidade; ISO 14001 reduz impactos ambientais; ISO 28000 garante segurança logística.</p>
-<button class="copy" onclick="copyAnswer('ISO 9001 garante qualidade; ISO 14001 reduz impactos ambientais; ISO 28000 garante segurança logística.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>O que é logística reversa?</p>
+<p><strong>Resposta:</strong> Processo de retorno de produtos após o consumo para reaproveitamento ou descarte adequado.</p>
+<button class="copy" onclick="copyAnswer('Processo de retorno de produtos após o consumo para reaproveitamento ou descarte adequado.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 2:</strong>
-<p>O que uma instrução de trabalho precisa explicar?</p>
-<p><strong>Resposta:</strong> O passo a passo para fazer a tarefa corretamente.</p>
-<button class="copy" onclick="copyAnswer('O passo a passo para fazer a tarefa corretamente.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Objetivo principal?</p>
+<p><strong>Resposta:</strong> Reduzir impactos ambientais.</p>
+<button class="copy" onclick="copyAnswer('Reduzir impactos ambientais.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 3:</strong>
-<p>Durante auditoria o auditor verifica se:</p>
-<p><strong>Resposta:</strong> As tarefas seguem o passo a passo da instrução.</p>
-<button class="copy" onclick="copyAnswer('As tarefas seguem o passo a passo da instrução.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Benefícios:</p>
+<p><strong>Resposta:</strong> Redução de resíduos, economia de recursos e sustentabilidade.</p>
+<button class="copy" onclick="copyAnswer('Redução de resíduos, economia de recursos e sustentabilidade.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 4:</strong>
-<p>Por que instruções são importantes?</p>
-<p><strong>Resposta:</strong> Garantem qualidade e padronização.</p>
-<button class="copy" onclick="copyAnswer('Garantem qualidade e padronização.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Exemplo?</p>
+<p><strong>Resposta:</strong> Reciclagem de embalagens.</p>
+<button class="copy" onclick="copyAnswer('Reciclagem de embalagens.')">📋 Copiar Resposta</button>
+</div>
 
 <div class="nav-week">
-<button onclick="showWeek(2)">Próxima</button></div></div>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(2)">Próxima Semana</button>
+</div>
+</div>
 
 <!-- SEMANA 2 -->
-<div class="week" id="week2"><h2>Semana 2</h2>
+<div class="week" id="week2">
+<h2>Semana 2</h2>
 
-<div class="activity"><strong>Atividade 1:</strong>
-<p>Ciclo de vida do pneu</p>
-<p><strong>Resposta:</strong> Extração, produção, distribuição, uso e logística reversa.</p>
-<button class="copy" onclick="copyAnswer('Extração, produção, distribuição, uso e logística reversa.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Relacionada a?</p>
+<p><strong>Resposta:</strong> Sustentabilidade.</p>
+<button class="copy" onclick="copyAnswer('Sustentabilidade.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 2:</strong>
-<p>O que é ACV?</p>
-<p><strong>Resposta:</strong> Avaliação dos impactos ambientais do produto.</p>
-<button class="copy" onclick="copyAnswer('Avaliação dos impactos ambientais do produto.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Benefício econômico?</p>
+<p><strong>Resposta:</strong> Economia de matéria-prima.</p>
+<button class="copy" onclick="copyAnswer('Economia de matéria-prima.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 3:</strong>
-<p>Etapa de transformação de matéria-prima?</p>
-<p><strong>Resposta:</strong> Produção.</p>
-<button class="copy" onclick="copyAnswer('Produção.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Impacto ambiental?</p>
+<p><strong>Resposta:</strong> Redução de poluição.</p>
+<button class="copy" onclick="copyAnswer('Redução de poluição.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 4:</strong>
-<p>Por que seguir instrução?</p>
-<p><strong>Resposta:</strong> Reduz impacto ambiental.</p>
-<button class="copy" onclick="copyAnswer('Reduz impacto ambiental.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Prática?</p>
+<p><strong>Resposta:</strong> Coleta seletiva.</p>
+<button class="copy" onclick="copyAnswer('Coleta seletiva.')">📋 Copiar Resposta</button>
+</div>
 
 <div class="nav-week">
-<button onclick="showWeek(1)">Anterior</button>
-<button onclick="showWeek(3)">Próxima</button></div></div>
+<button onclick="showWeek(1)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(3)">Próxima Semana</button>
+</div>
+</div>
 
 <!-- SEMANA 3 -->
-<div class="week" id="week3"><h2>Semana 3</h2>
+<div class="week" id="week3">
+<h2>Semana 3</h2>
 
-<div class="activity"><strong>Atividade 1:</strong>
-<p>Garrafas PET são:</p>
-<p><strong>Resposta:</strong> Resíduo reciclável.</p>
-<button class="copy" onclick="copyAnswer('Resíduo reciclável.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Fluxo?</p>
+<p><strong>Resposta:</strong> Consumidor → Coleta → Reciclagem → Reuso.</p>
+<button class="copy" onclick="copyAnswer('Consumidor → Coleta → Reciclagem → Reuso.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 2:</strong>
-<p>Diferença entre lixo e resíduo?</p>
-<p><strong>Resposta:</strong> Resíduo pode ser reaproveitado.</p>
-<button class="copy" onclick="copyAnswer('Resíduo pode ser reaproveitado.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Objetivo?</p>
+<p><strong>Resposta:</strong> Reaproveitamento de materiais.</p>
+<button class="copy" onclick="copyAnswer('Reaproveitamento de materiais.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 3:</strong>
-<p>Classificação por origem?</p>
-<p><strong>Resposta:</strong> Industrial, hospitalar e doméstico.</p>
-<button class="copy" onclick="copyAnswer('Industrial, hospitalar e doméstico.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Benefício?</p>
+<p><strong>Resposta:</strong> Redução de custos.</p>
+<button class="copy" onclick="copyAnswer('Redução de custos.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 4:</strong>
-<p>Produção consciente?</p>
-<p><strong>Resposta:</strong> Reduz desperdícios.</p>
-<button class="copy" onclick="copyAnswer('Reduz desperdícios.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Resultado?</p>
+<p><strong>Resposta:</strong> Menor impacto ambiental.</p>
+<button class="copy" onclick="copyAnswer('Menor impacto ambiental.')">📋 Copiar Resposta</button>
+</div>
 
 <div class="nav-week">
-<button onclick="showWeek(2)">Anterior</button>
-<button onclick="showWeek(4)">Próxima</button></div></div>
+<button onclick="showWeek(2)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(4)">Próxima Semana</button>
+</div>
+</div>
 
 <!-- SEMANA 4 -->
-<div class="week" id="week4"><h2>Semana 4</h2>
+<div class="week" id="week4">
+<h2>Semana 4</h2>
 
-<div class="activity"><strong>Atividade 1:</strong>
-<p>Objetivo ISO 9001?</p>
-<p><strong>Resposta:</strong> Satisfação do cliente.</p>
-<button class="copy" onclick="copyAnswer('Satisfação do cliente.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Quem participa?</p>
+<p><strong>Resposta:</strong> Fabricante, distribuidor e consumidor.</p>
+<button class="copy" onclick="copyAnswer('Fabricante, distribuidor e consumidor.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 2:</strong>
-<p>Recebimento atende ISO?</p>
-<p><strong>Resposta:</strong> Verificar conformidade.</p>
-<button class="copy" onclick="copyAnswer('Verificar conformidade.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Função?</p>
+<p><strong>Resposta:</strong> Recolhimento de produtos.</p>
+<button class="copy" onclick="copyAnswer('Recolhimento de produtos.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 3:</strong>
-<p>Distribuição alinhada?</p>
-<p><strong>Resposta:</strong> Entrega no prazo.</p>
-<button class="copy" onclick="copyAnswer('Entrega no prazo.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Benefício?</p>
+<p><strong>Resposta:</strong> Preservação ambiental.</p>
+<button class="copy" onclick="copyAnswer('Preservação ambiental.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 4:</strong>
-<p>ESG ajuda como?</p>
-<p><strong>Resposta:</strong> Sustentabilidade e confiança.</p>
-<button class="copy" onclick="copyAnswer('Sustentabilidade e confiança.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Resultado?</p>
+<p><strong>Resposta:</strong> Sustentabilidade.</p>
+<button class="copy" onclick="copyAnswer('Sustentabilidade.')">📋 Copiar Resposta</button>
+</div>
 
 <div class="nav-week">
-<button onclick="showWeek(3)">Anterior</button>
-<button onclick="showWeek(5)">Próxima</button></div></div>
+<button onclick="showWeek(3)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(5)">Próxima Semana</button>
+</div>
+</div>
 
 <!-- SEMANA 5 -->
-<div class="week" id="week5"><h2>Semana 5</h2>
+<div class="week" id="week5">
+<h2>Semana 5</h2>
 
-<div class="activity"><strong>Atividade 1:</strong>
-<p>O que fazer com aço?</p>
-<p><strong>Resposta:</strong> Reciclar.</p>
-<button class="copy" onclick="copyAnswer('Reciclar.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Impacto?</p>
+<p><strong>Resposta:</strong> Redução de resíduos.</p>
+<button class="copy" onclick="copyAnswer('Redução de resíduos.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 2:</strong>
-<p>Economia linear?</p>
-<p><strong>Resposta:</strong> Extrair, produzir, consumir e descartar.</p>
-<button class="copy" onclick="copyAnswer('Extrair, produzir, consumir e descartar.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Benefício?</p>
+<p><strong>Resposta:</strong> Economia de recursos naturais.</p>
+<button class="copy" onclick="copyAnswer('Economia de recursos naturais.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 3:</strong>
-<p>Economia circular?</p>
-<p><strong>Resposta:</strong> Prolongar vida útil.</p>
-<button class="copy" onclick="copyAnswer('Prolongar vida útil.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Função?</p>
+<p><strong>Resposta:</strong> Reutilização.</p>
+<button class="copy" onclick="copyAnswer('Reutilização.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 4:</strong>
-<p>Cuidado no transporte?</p>
-<p><strong>Resposta:</strong> Separar materiais.</p>
-<button class="copy" onclick="copyAnswer('Separar materiais.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Objetivo?</p>
+<p><strong>Resposta:</strong> Sustentabilidade.</p>
+<button class="copy" onclick="copyAnswer('Sustentabilidade.')">📋 Copiar Resposta</button>
+</div>
 
 <div class="nav-week">
-<button onclick="showWeek(4)">Anterior</button>
-<button onclick="showWeek(6)">Próxima</button></div></div>
+<button onclick="showWeek(4)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(6)">Próxima Semana</button>
+</div>
+</div>
 
 <!-- SEMANA 6 -->
-<div class="week" id="week6"><h2>Semana 6</h2>
+<div class="week" id="week6">
+<h2>Semana 6</h2>
 
-<div class="activity"><strong>Atividade 1:</strong>
-<p>Melhorar logística reversa?</p>
-<p><strong>Resposta:</strong> Devolução de embalagens.</p>
-<button class="copy" onclick="copyAnswer('Devolução de embalagens.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Exemplo?</p>
+<p><strong>Resposta:</strong> Retorno de embalagens.</p>
+<button class="copy" onclick="copyAnswer('Retorno de embalagens.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 2:</strong>
-<p>Impacto embalagens?</p>
-<p><strong>Resposta:</strong> Poluição ambiental.</p>
-<button class="copy" onclick="copyAnswer('Poluição ambiental.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Benefício?</p>
+<p><strong>Resposta:</strong> Menor poluição.</p>
+<button class="copy" onclick="copyAnswer('Menor poluição.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 3:</strong>
-<p>Desafio embalagens retornáveis?</p>
-<p><strong>Resposta:</strong> Rastreamento.</p>
-<button class="copy" onclick="copyAnswer('Rastreamento.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Impacto?</p>
+<p><strong>Resposta:</strong> Redução de custos.</p>
+<button class="copy" onclick="copyAnswer('Redução de custos.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 4:</strong>
-<p>Desafio agrotóxicos?</p>
-<p><strong>Resposta:</strong> Risco de contaminação.</p>
-<button class="copy" onclick="copyAnswer('Risco de contaminação.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Resultado?</p>
+<p><strong>Resposta:</strong> Reaproveitamento.</p>
+<button class="copy" onclick="copyAnswer('Reaproveitamento.')">📋 Copiar Resposta</button>
+</div>
 
 <div class="nav-week">
-<button onclick="showWeek(5)">Anterior</button>
-<button onclick="showWeek(7)">Próxima</button></div></div>
+<button onclick="showWeek(5)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(7)">Próxima Semana</button>
+</div>
+</div>
 
 <!-- SEMANA 7 -->
-<div class="week" id="week7"><h2>Semana 7</h2>
+<div class="week" id="week7">
+<h2>Semana 7</h2>
 
-<div class="activity"><strong>Atividade 1:</strong>
-<p>Decreto 10.240/2020?</p>
-<p><strong>Resposta:</strong> Fluxo reverso de eletroeletrônicos.</p>
-<button class="copy" onclick="copyAnswer('Fluxo reverso de eletroeletrônicos.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 1:</strong>
+<p>Objetivo final?</p>
+<p><strong>Resposta:</strong> Sustentabilidade ambiental.</p>
+<button class="copy" onclick="copyAnswer('Sustentabilidade ambiental.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 2:</strong>
-<p>Destino correto evita?</p>
-<p><strong>Resposta:</strong> Contaminação ambiental.</p>
-<button class="copy" onclick="copyAnswer('Contaminação ambiental.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 2:</strong>
+<p>Benefício?</p>
+<p><strong>Resposta:</strong> Economia.</p>
+<button class="copy" onclick="copyAnswer('Economia.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 3:</strong>
-<p>Logística reversa é fundamental pois:</p>
-<p><strong>Resposta:</strong> Orienta ações compartilhadas.</p>
-<button class="copy" onclick="copyAnswer('Orienta ações compartilhadas.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 3:</strong>
+<p>Impacto?</p>
+<p><strong>Resposta:</strong> Redução de resíduos.</p>
+<button class="copy" onclick="copyAnswer('Redução de resíduos.')">📋 Copiar Resposta</button>
+</div>
 
-<div class="activity"><strong>Atividade 4:</strong>
-<p>Descarte eletrônico?</p>
-<p><strong>Resposta:</strong> Ecopontos.</p>
-<button class="copy" onclick="copyAnswer('Ecopontos.')">Copiar</button></div>
+<div class="activity">
+<strong>Atividade 4:</strong>
+<p>Resultado?</p>
+<p><strong>Resposta:</strong> Reutilização.</p>
+<button class="copy" onclick="copyAnswer('Reutilização.')">📋 Copiar Resposta</button>
+</div>
 
 <div class="nav-week">
-<button onclick="showWeek(6)">Anterior</button></div></div>
+<button onclick="showWeek(6)">Semana Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+</div>
+</div>
 
 <div class="notification" id="notification">Resposta copiada!</div>
 
@@ -231,12 +321,14 @@ nav.top-nav button{background:#5dade2;color:#fff;border:none;padding:10px 18px;b
 function showWeek(num){
 document.querySelectorAll('.week').forEach(w=>w.classList.remove('active'));
 document.getElementById('week'+num).classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
 }
+
 function copyAnswer(text){
 navigator.clipboard.writeText(text).then(()=>{
-const notif=document.getElementById('notification');
-notif.style.opacity=1;
-setTimeout(()=>{notif.style.opacity=0;},1500);
+const n=document.getElementById('notification');
+n.style.opacity=1;
+setTimeout(()=>n.style.opacity=0,1500);
 });
 }
 showWeek(1);
