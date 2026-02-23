@@ -3,75 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Compras e Suprimentos</title>
+<title>Compras e Suprimentos - Respostas</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* RESET E TIPOGRAFIA */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Roboto', sans-serif; background: #f0f2f5; color:#333; }
-
-/* HEADER */
-header {
-    background: linear-gradient(90deg, #2980b9, #6dd5fa);
-    color: #fff; text-align: center; padding: 25px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-header h1 { font-size: 1.8rem; }
-
-/* NAVIGAÇÃO */
-nav.top-nav {
-    display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
-    background:#34495e; padding:12px 0;
-}
-nav.top-nav button {
-    background:#e67e22; color:#fff; border:none; padding:10px 18px;
-    border-radius:8px; cursor:pointer; font-weight:700; transition:0.3s;
-}
-nav.top-nav button:hover { background:#d35400; }
-
-/* SEMANAS */
-.week { display:none; padding:20px; max-width:900px; margin:20px auto; }
-.week.active { display:block; animation:fadeIn 0.6s ease-in-out; }
-
-/* CARDS DE ATIVIDADE */
-.activity {
-    background:#fff; padding:18px; border-radius:12px; margin:12px 0;
-    box-shadow:0 4px 10px rgba(0,0,0,0.08); transition:0.3s;
-}
-.activity:hover { box-shadow:0 6px 15px rgba(0,0,0,0.15); }
-.activity strong { color:#2980b9; display:block; margin-bottom:8px; font-size:1.05rem; }
-
-/* BOTÕES DE RESPOSTA */
-.activity button {
-    background:#27ae60; color:#fff; border:none; padding:10px 16px;
-    border-radius:6px; cursor:pointer; font-weight:700; margin-top:10px;
-    transition:0.3s;
-}
-.activity button:hover { background:#1e8449; }
-
-/* NAVEGAÇÃO ENTRE SEMANAS */
-.nav-week {
-    display:flex; justify-content:space-between; margin-top:20px; gap:10px;
-    flex-wrap:wrap;
-}
-.nav-week button { background:#2980b9; padding:10px 16px; border-radius:6px; color:#fff; font-weight:700; }
-.nav-week button:hover { background:#1c5980; }
-
-/* NOTIFICAÇÃO */
-.notification {
-    position:fixed; top:20px; right:20px; background:#2ecc71; color:#fff;
-    padding:12px 22px; border-radius:8px; opacity:0; pointer-events:none;
-    transition:0.5s; font-weight:700; box-shadow:0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* ANIMAÇÃO DE FADE */
-@keyframes fadeIn { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
-
-/* RESPONSIVO */
-@media(max-width:600px){
-    nav.top-nav, .nav-week { flex-direction:column; align-items:center; }
-    nav.top-nav button, .nav-week button { width:90%; }
-}
+body { font-family:'Roboto',sans-serif; background:#f4f6f8; color:#333; }
+header { background: linear-gradient(90deg,#2980b9,#6dd5fa); color:#fff; text-align:center; padding:25px 0; box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+header h1{font-size:1.8rem;}
+nav.top-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#34495e;padding:12px 0;}
+nav.top-nav button{background:#e67e22;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700;transition:0.3s;}
+nav.top-nav button:hover{background:#d35400;}
+.week{display:none;padding:20px;max-width:900px;margin:20px auto;}
+.week.active{display:block;animation:fadeIn 0.5s ease-in-out;}
+.activity{background:#fff;padding:18px;border-radius:12px;margin:12px 0;box-shadow:0 4px 10px rgba(0,0,0,0.08);transition:0.3s;}
+.activity:hover{box-shadow:0 6px 15px rgba(0,0,0,0.15);}
+.activity strong{color:#2980b9;display:block;margin-bottom:8px;font-size:1.05rem;}
+.activity p{margin:5px 0;}
+.activity button.copy{background:#27ae60;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-weight:700;margin-top:10px;transition:0.3s;display:inline-flex;align-items:center;gap:6px;}
+.activity button.copy:hover{background:#1e8449;}
+.nav-week{display:flex;justify-content:space-between;margin-top:20px;gap:10px;flex-wrap:wrap;}
+.nav-week button{background:#2980b9;padding:10px 16px;border-radius:6px;color:#fff;font-weight:700;cursor:pointer;}
+.nav-week button:hover{background:#1c5980;}
+.notification{position:fixed;top:20px;right:20px;background:#2ecc71;color:#fff;padding:12px 22px;border-radius:8px;opacity:0;pointer-events:none;transition:0.5s;font-weight:700;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@media(max-width:600px){nav.top-nav,.nav-week{flex-direction:column;align-items:center;}nav.top-nav button,.nav-week button{width:90%;}}
 </style>
 </head>
 <body>
@@ -95,16 +50,33 @@ nav.top-nav button:hover { background:#d35400; }
 <div class="week" id="week1">
 <h2>Semana 1</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Qual é o primeiro passo no processo de seleção de fornecedores?
-<button onclick="copyAnswer('Identificação das necessidades de fornecimento.')">Copiar Resposta</button>
+<strong>Atividade 1:</strong>
+<p>Qual é o primeiro passo no processo de seleção de fornecedores?</p>
+<p><strong>Resposta:</strong> Identificação das necessidades de fornecimento.</p>
+<button class="copy" onclick="copyAnswer('Identificação das necessidades de fornecimento.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Qual das seguintes informações NÃO é essencial para o cadastro de um fornecedor?
-<button onclick="copyAnswer('Preferências pessoais do gerente de compras.')">Copiar Resposta</button>
+<strong>Atividade 2:</strong>
+<p>Qual das seguintes informações NÃO é essencial para o cadastro de um fornecedor?</p>
+<p><strong>Resposta:</strong> Preferências pessoais do gerente de compras.</p>
+<button class="copy" onclick="copyAnswer('Preferências pessoais do gerente de compras.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Critérios de seleção de fornecedores - Checklist:
-<button onclick="copyAnswer(`✔ Produtos dentro das especificações solicitadas
+<strong>Atividade 3:</strong>
+<p>Elabore um checklist dos pontos que devem ser observados sobre qualidade e pontualidade no recebimento de mercadorias:</p>
+<p><strong>Resposta:</strong>
+✔ Produtos dentro das especificações solicitadas<br>
+✔ Integridade da embalagem<br>
+✔ Validade adequada (quando aplicável)<br>
+✔ Conformidade com normas e certificações<br>
+✔ Quantidade correta entregue<br>
+✔ Cumprimento do prazo de entrega<br>
+✔ Frequência de atrasos<br>
+✔ Condições de transporte adequadas<br>
+✔ Comunicação prévia em caso de imprevistos<br>
+Justificativa: Esses pontos devem ser observados para garantir que os produtos atendam ao padrão de qualidade exigido, evitar prejuízos, desperdícios e retrabalho, manter o estoque organizado, assegurar a satisfação do cliente e garantir que o processo produtivo ou de venda não seja prejudicado por atrasos ou falhas no fornecimento.
+</p>
+<button class="copy" onclick="copyAnswer(`✔ Produtos dentro das especificações solicitadas
 ✔ Integridade da embalagem
 ✔ Validade adequada (quando aplicável)
 ✔ Conformidade com normas e certificações
@@ -113,11 +85,13 @@ nav.top-nav button:hover { background:#d35400; }
 ✔ Frequência de atrasos
 ✔ Condições de transporte adequadas
 ✔ Comunicação prévia em caso de imprevistos
-Justificativa: Esses pontos devem ser observados para garantir que os produtos atendam ao padrão de qualidade exigido, evitar prejuízos, desperdícios e retrabalho, manter o estoque organizado, assegurar a satisfação do cliente e garantir que o processo produtivo ou de venda não seja prejudicado por atrasos ou falhas no fornecimento.`)">Copiar Resposta</button>
+Justificativa: Esses pontos devem ser observados para garantir que os produtos atendam ao padrão de qualidade exigido, evitar prejuízos, desperdícios e retrabalho, manter o estoque organizado, assegurar a satisfação do cliente e garantir que o processo produtivo ou de venda não seja prejudicado por atrasos ou falhas no fornecimento.`)">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual dos seguintes indicadores NÃO é comumente utilizado para avaliar a pontualidade dos fornecedores?
-<button onclick="copyAnswer('Taxa de devoluções.')">Copiar Resposta</button>
+<strong>Atividade 4:</strong>
+<p>Qual dos seguintes indicadores NÃO é comumente utilizado para avaliar a pontualidade dos fornecedores?</p>
+<p><strong>Resposta:</strong> Taxa de devoluções.</p>
+<button class="copy" onclick="copyAnswer('Taxa de devoluções.')">📋 Copiar Resposta</button>
 </div>
 <div class="nav-week">
 <button onclick="window.location.href='index.html'">Menu</button>
@@ -129,22 +103,28 @@ Justificativa: Esses pontos devem ser observados para garantir que os produtos a
 <div class="week" id="week2">
 <h2>Semana 2</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Critérios de seleção de fornecedores - Análise Comparativa de Cotações:
-<button onclick="copyAnswer(`Produto/Serviço: ____________________________________________
-Quantidade: ________________________________________________
-Critérios: Preço, Custo total, Prazo de entrega, Condições de pagamento, Qualidade, Frete, Garantia, Certificações e Confiabilidade.`)">Copiar Resposta</button>
+<strong>Atividade 1:</strong>
+<p>Critérios de seleção de fornecedores - Análise Comparativa de Cotações:</p>
+<p><strong>Resposta:</strong> Produto/Serviço, Quantidade, Critérios: Preço, Custo total, Prazo de entrega, Condições de pagamento, Qualidade, Frete, Garantia, Certificações e Confiabilidade.</p>
+<button class="copy" onclick="copyAnswer('Produto/Serviço, Quantidade, Critérios: Preço, Custo total, Prazo de entrega, Condições de pagamento, Qualidade, Frete, Garantia, Certificações e Confiabilidade.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Qual é o elemento mais importante a ser incluído em uma RFQ?
-<button onclick="copyAnswer('Descrição do produto/serviço.')">Copiar Resposta</button>
+<strong>Atividade 2:</strong>
+<p>Qual é o elemento mais importante a ser incluído em uma RFQ?</p>
+<p><strong>Resposta:</strong> Descrição do produto/serviço.</p>
+<button class="copy" onclick="copyAnswer('Descrição do produto/serviço.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Qual destes itens é essencial no edital de uma tomada de preços?
-<button onclick="copyAnswer('Especificações técnicas detalhadas.')">Copiar Resposta</button>
+<strong>Atividade 3:</strong>
+<p>Qual destes itens é essencial no edital de uma tomada de preços?</p>
+<p><strong>Resposta:</strong> Especificações técnicas detalhadas.</p>
+<button class="copy" onclick="copyAnswer('Especificações técnicas detalhadas.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual é o principal objetivo da licitação?
-<button onclick="copyAnswer('Garantir competitividade e transparência.')">Copiar Resposta</button>
+<strong>Atividade 4:</strong>
+<p>Qual é o principal objetivo da licitação?</p>
+<p><strong>Resposta:</strong> Garantir competitividade e transparência.</p>
+<button class="copy" onclick="copyAnswer('Garantir competitividade e transparência.')">📋 Copiar Resposta</button>
 </div>
 <div class="nav-week">
 <button onclick="showWeek(1)">Semana Anterior</button>
@@ -157,22 +137,28 @@ Critérios: Preço, Custo total, Prazo de entrega, Condições de pagamento, Qua
 <div class="week" id="week3">
 <h2>Semana 3</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Contrato de Fornecimento: Preços, Prazos, Condições de Pagamento
-<button onclick="copyAnswer(`Preços: Definição por produto/volume, descontos, reajustes e sazonalidade.
-Prazos: Frequência de entregas, horários, prazos máximos e penalidades.
-Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.`)">Copiar Resposta</button>
+<strong>Atividade 1:</strong>
+<p>Contrato de Fornecimento: Preços, Prazos, Condições de Pagamento</p>
+<p><strong>Resposta:</strong> Preços: Definição por produto/volume, descontos, reajustes e sazonalidade. Prazos: Frequência de entregas, horários, prazos máximos e penalidades. Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.</p>
+<button class="copy" onclick="copyAnswer('Preços: Definição por produto/volume, descontos, reajustes e sazonalidade. Prazos: Frequência de entregas, horários, prazos máximos e penalidades. Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Qual é o principal benefício de definir termos claros de pagamento em um contrato de fornecimento?
-<button onclick="copyAnswer('Garantia de previsibilidade financeira e fluxo de caixa.')">Copiar Resposta</button>
+<strong>Atividade 2:</strong>
+<p>Qual é o principal benefício de definir termos claros de pagamento em um contrato de fornecimento?</p>
+<p><strong>Resposta:</strong> Garantia de previsibilidade financeira e fluxo de caixa.</p>
+<button class="copy" onclick="copyAnswer('Garantia de previsibilidade financeira e fluxo de caixa.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Qual é a principal vantagem de incluir cláusulas de penalidade em contratos de fornecimento?
-<button onclick="copyAnswer('Conformidade contratual e menor risco financeiro.')">Copiar Resposta</button>
+<strong>Atividade 3:</strong>
+<p>Qual é a principal vantagem de incluir cláusulas de penalidade em contratos de fornecimento?</p>
+<p><strong>Resposta:</strong> Conformidade contratual e menor risco financeiro.</p>
+<button class="copy" onclick="copyAnswer('Conformidade contratual e menor risco financeiro.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Qual representa um impacto positivo da aplicação de sanções?
-<button onclick="copyAnswer('Cumprimento das obrigações contratuais.')">Copiar Resposta</button>
+<strong>Atividade 4:</strong>
+<p>Qual representa um impacto positivo da aplicação de sanções?</p>
+<p><strong>Resposta:</strong> Cumprimento das obrigações contratuais.</p>
+<button class="copy" onclick="copyAnswer('Cumprimento das obrigações contratuais.')">📋 Copiar Resposta</button>
 </div>
 <div class="nav-week">
 <button onclick="showWeek(2)">Semana Anterior</button>
@@ -180,25 +166,32 @@ Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.`)
 <button onclick="showWeek(4)">Próxima Semana</button>
 </div>
 </div>
-
 <!-- SEMANA 4 -->
 <div class="week" id="week4">
 <h2>Semana 4</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Benefício de manter parceria estratégica de longo prazo?
-<button onclick="copyAnswer('Reduzir custos operacionais.')">Copiar Resposta</button>
+<strong>Atividade 1:</strong>
+<p>Qual é um dos principais benefícios de se manter uma parceria estratégica de longo prazo com fornecedores?</p>
+<p><strong>Resposta:</strong> Reduzir custos operacionais.</p>
+<button class="copy" onclick="copyAnswer('Reduzir custos operacionais.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Interfaceamento entre sistemas - mapeamento:
-<button onclick="copyAnswer('Benefícios: Integração de dados em tempo real e redução de erros nos pedidos. Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.')">Copiar Resposta</button>
+<strong>Atividade 2:</strong>
+<p>Interfaceamento entre sistemas: mapeamento de informações</p>
+<p><strong>Resposta:</strong> Benefícios: Integração de dados em tempo real e redução de erros nos pedidos. Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.</p>
+<button class="copy" onclick="copyAnswer('Benefícios: Integração de dados em tempo real e redução de erros nos pedidos. Impacto: Melhor controle de estoque e aumento da eficiência no abastecimento.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Vantagem de usar APIs para integrar sistemas de diferentes fornecedores?
-<button onclick="copyAnswer('Facilitar a comunicação e a troca de dados de forma segura e estruturada.')">Copiar Resposta</button>
+<strong>Atividade 3:</strong>
+<p>Qual é a principal vantagem de usar APIs para integrar sistemas de diferentes fornecedores?</p>
+<p><strong>Resposta:</strong> Facilitar a comunicação e a troca de dados de forma segura e estruturada.</p>
+<button class="copy" onclick="copyAnswer('Facilitar a comunicação e a troca de dados de forma segura e estruturada.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Vantagem de utilizar KPIs na avaliação de fornecedores?
-<button onclick="copyAnswer('Fornecer uma base objetiva para tomar decisões.')">Copiar Resposta</button>
+<strong>Atividade 4:</strong>
+<p>Qual é a vantagem de utilizar indicadores de desempenho (KPIs) na avaliação de fornecedores?</p>
+<p><strong>Resposta:</strong> Fornecer uma base objetiva para tomar decisões.</p>
+<button class="copy" onclick="copyAnswer('Fornecer uma base objetiva para tomar decisões.')">📋 Copiar Resposta</button>
 </div>
 <div class="nav-week">
 <button onclick="showWeek(3)">Semana Anterior</button>
@@ -211,20 +204,28 @@ Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.`)
 <div class="week" id="week5">
 <h2>Semana 5</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Alternativa que não é ferramenta de auditoria?
-<button onclick="copyAnswer('Relatório do prazo de pagamento.')">Copiar Resposta</button>
+<strong>Atividade 1:</strong>
+<p>Qual alternativa abaixo não é uma ferramenta para auditorias de fornecedores?</p>
+<p><strong>Resposta:</strong> Relatório do prazo de pagamento.</p>
+<button class="copy" onclick="copyAnswer('Relatório do prazo de pagamento.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Auditorias de fornecedores - conceitos de melhoria contínua:
-<button onclick="copyAnswer('Benefícios: Eficiência operacional e redução de retrabalho. Motivo: Processos mais rápidos, econômicos e redução de desperdícios.')">Copiar Resposta</button>
+<strong>Atividade 2:</strong>
+<p>Auditorias dos fornecedores: conceitos de melhoria contínua</p>
+<p><strong>Resposta:</strong> Benefícios: Eficiência operacional e redução de retrabalho. Motivo: Processos mais rápidos, econômicos e redução de desperdícios.</p>
+<button class="copy" onclick="copyAnswer('Benefícios: Eficiência operacional e redução de retrabalho. Motivo: Processos mais rápidos, econômicos e redução de desperdícios.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Qual não é método de avaliação da melhoria contínua?
-<button onclick="copyAnswer('Diagnóstico da situação atual.')">Copiar Resposta</button>
+<strong>Atividade 3:</strong>
+<p>Entre as alternativas abaixo, qual não é um método de avaliação da melhoria contínua?</p>
+<p><strong>Resposta:</strong> Diagnóstico da situação atual.</p>
+<button class="copy" onclick="copyAnswer('Diagnóstico da situação atual.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Estratégia eficaz para mitigar riscos de fornecedor exclusivo?
-<button onclick="copyAnswer('Diversificar a base de fornecedores.')">Copiar Resposta</button>
+<strong>Atividade 4:</strong>
+<p>Qual das seguintes estratégias é mais eficaz para mitigar riscos relacionados à dependência excessiva de um fornecedor exclusivo?</p>
+<p><strong>Resposta:</strong> Diversificar a base de fornecedores.</p>
+<button class="copy" onclick="copyAnswer('Diversificar a base de fornecedores.')">📋 Copiar Resposta</button>
 </div>
 <div class="nav-week">
 <button onclick="showWeek(4)">Semana Anterior</button>
@@ -237,20 +238,28 @@ Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.`)
 <div class="week" id="week6">
 <h2>Semana 6</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Gestão de estoques vs Qualidade?
-<button onclick="copyAnswer('Giro de estoque.')">Copiar Resposta</button>
+<strong>Atividade 1:</strong>
+<p>Qual delas está relacionada à gestão de estoques e não à qualidade de fornecedores?</p>
+<p><strong>Resposta:</strong> Giro de estoque.</p>
+<button class="copy" onclick="copyAnswer('Giro de estoque.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Benefício da inovação nos processos de fornecimento?
-<button onclick="copyAnswer('Redução de custos e otimização dos recursos.')">Copiar Resposta</button>
+<strong>Atividade 2:</strong>
+<p>Qual dos seguintes é um benefício da inovação nos processos de fornecimento?</p>
+<p><strong>Resposta:</strong> Redução de custos e otimização dos recursos.</p>
+<button class="copy" onclick="copyAnswer('Redução de custos e otimização dos recursos.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Qualidade, inovação e sustentabilidade:
-<button onclick="copyAnswer('Práticas: Uso de embalagens retornáveis e otimização de rotas para reduzir CO2.')">Copiar Resposta</button>
+<strong>Atividade 3:</strong>
+<p>Qualidade, inovação e sustentabilidade: fornecedores</p>
+<p><strong>Resposta:</strong> Práticas: Uso de embalagens retornáveis e otimização de rotas para reduzir CO2.</p>
+<button class="copy" onclick="copyAnswer('Práticas: Uso de embalagens retornáveis e otimização de rotas para reduzir CO2.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Benefício da logística reversa?
-<button onclick="copyAnswer('Redução de custos com novos materiais e menor impacto ambiental.')">Copiar Resposta</button>
+<strong>Atividade 4:</strong>
+<p>Qual dos seguintes é um dos principais benefícios da implementação de logística reversa?</p>
+<p><strong>Resposta:</strong> Redução de custos com novos materiais e menor impacto ambiental.</p>
+<button class="copy" onclick="copyAnswer('Redução de custos com novos materiais e menor impacto ambiental.')">📋 Copiar Resposta</button>
 </div>
 <div class="nav-week">
 <button onclick="showWeek(5)">Semana Anterior</button>
@@ -263,27 +272,34 @@ Pagamento: Prazos (ex: 30 dias), formas (PIX, boleto), multas e notas fiscais.`)
 <div class="week" id="week7">
 <h2>Semana 7</h2>
 <div class="activity">
-<strong>Atividade 1:</strong> Estruturação de processo de compra e contrato de curto prazo:
-<button onclick="copyAnswer('Benefícios: Flexibilidade e menor compromisso financeiro. Riscos: Instabilidade de fornecimento e preços possivelmente mais altos.')">Copiar Resposta</button>
+<strong>Atividade 1:</strong>
+<p>Estruturação de processo de compra e contrato de curto prazo</p>
+<p><strong>Resposta:</strong> Benefícios: Flexibilidade e menor compromisso financeiro. Riscos: Instabilidade de fornecimento e preços possivelmente mais altos.</p>
+<button class="copy" onclick="copyAnswer('Benefícios: Flexibilidade e menor compromisso financeiro. Riscos: Instabilidade de fornecimento e preços possivelmente mais altos.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 2:</strong> Característica do contrato de curto prazo?
-<button onclick="copyAnswer('Duração limitada, ideal para demandas sazonais.')">Copiar Resposta</button>
+<strong>Atividade 2:</strong>
+<p>Qual das seguintes alternativas descreve uma característica do contrato de curto prazo?</p>
+<p><strong>Resposta:</strong> Duração limitada, ideal para demandas sazonais.</p>
+<button class="copy" onclick="copyAnswer('Duração limitada, ideal para demandas sazonais.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 3:</strong> Características de contratos de médio prazo?
-<button onclick="copyAnswer('Fornecimento estável com renegociação após 1-3 anos.')">Copiar Resposta</button>
+<strong>Atividade 3:</strong>
+<p>Qual alternativa apresenta características associadas a contratos de médio prazo?</p>
+<p><strong>Resposta:</strong> Fornecimento estável com renegociação após 1-3 anos.</p>
+<button class="copy" onclick="copyAnswer('Fornecimento estável com renegociação após 1-3 anos.')">📋 Copiar Resposta</button>
 </div>
 <div class="activity">
-<strong>Atividade 4:</strong> Característica de contratos de longo prazo?
-<button onclick="copyAnswer('Fornecimento contínuo garantido por mais de 3 anos.')">Copiar Resposta</button>
+<strong>Atividade 4:</strong>
+<p>Qual alternativa apresenta uma característica associada a contratos de longo prazo?</p>
+<p><strong>Resposta:</strong> Fornecimento contínuo garantido por mais de 3 anos.</p>
+<button class="copy" onclick="copyAnswer('Fornecimento contínuo garantido por mais de 3 anos.')">📋 Copiar Resposta</button>
 </div>
 <div class="nav-week">
 <button onclick="showWeek(6)">Semana Anterior</button>
 <button onclick="window.location.href='index.html'">Menu</button>
 </div>
 </div>
-
 <div class="notification" id="notification">Resposta copiada!</div>
 
 <script>
@@ -293,14 +309,12 @@ function showWeek(num){
 }
 function copyAnswer(text){
     navigator.clipboard.writeText(text).then(()=>{
-        const notif = document.getElementById('notification');
+        const notif=document.getElementById('notification');
         notif.style.opacity=1;
-        setTimeout(()=>{ notif.style.opacity=0; },1500);
+        setTimeout(()=>{notif.style.opacity=0;},1500);
     });
 }
-// Semana inicial
 showWeek(1);
 </script>
-
 </body>
 </html>
