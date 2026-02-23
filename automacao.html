@@ -1,237 +1,236 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automação Logística - Cursos de Logística</title>
+<title>Automação Logística</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-  body { font-family: Arial, sans-serif; background-color: #f4f6f8; color: #333; margin: 0; padding: 0; }
-  header { background-color: #1565c0; color: #fff; text-align: center; padding: 15px 10px; position: sticky; top: 0; z-index: 1000; }
-  header h1 { margin-bottom: 5px; }
-  main { max-width: 800px; margin: 20px auto; padding: 10px; }
-  .week { display: none; background-color: #fff; padding: 15px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-  .week.active { display: block; }
-  h2 { color: #1565c0; }
-  button { background-color: #1565c0; color: #fff; border: none; padding: 10px 15px; margin: 5px 2px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background-color 0.3s; }
-  button:hover { background-color: #0d3d84; }
-  .copy-btn { background-color: #4caf50; }
-  .copy-btn:hover { background-color: #3e8e41; }
-  #copied-msg { position: fixed; top: 20px; right: 20px; background-color: #333; color: #fff; padding: 10px 15px; border-radius: 5px; opacity: 0; transition: opacity 0.5s, transform 0.5s; transform: translateY(-20px); z-index: 1000; }
-  footer { text-align: center; padding: 15px; font-size: 0.9em; color: #555; }
-  @media(min-width:600px){ button { margin: 10px 5px; } }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;background:#eef2f7;color:#333;}
+header{background:linear-gradient(90deg,#6d28d9,#8b5cf6);color:#fff;text-align:center;padding:25px 0;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+nav.top-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#5b21b6;padding:12px 0;}
+nav.top-nav button{background:#8b5cf6;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700;}
+.week{display:none;padding:20px;max-width:900px;margin:20px auto;animation:slide 0.4s ease;}
+.week.active{display:block;}
+.activity{background:#fff;padding:18px;border-radius:12px;margin:12px 0;box-shadow:0 4px 10px rgba(0,0,0,0.08);}
+.activity strong{color:#6d28d9;display:block;margin-bottom:8px;}
+.activity button.copy{background:#8b5cf6;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-weight:700;margin-top:10px;}
+.nav-week{display:flex;justify-content:space-between;margin-top:20px;gap:10px;flex-wrap:wrap;}
+.nav-week button{background:#8b5cf6;padding:10px 16px;border-radius:6px;color:#fff;font-weight:700;cursor:pointer;}
+.notification{position:fixed;top:20px;right:20px;background:#8b5cf6;color:#fff;padding:12px 22px;border-radius:8px;opacity:0;transform:translateY(-20px);transition:0.4s;font-weight:700;}
+@keyframes slide{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Automação Logística</h1>
-  <p>Desenvolvido por Fabiano & João Molina</p>
+<h1>Automação Logística - Respostas Semanais</h1>
 </header>
 
-<main>
+<nav class="top-nav">
+<button onclick="showWeek(1)">Semana 1</button>
+<button onclick="showWeek(2)">Semana 2</button>
+<button onclick="showWeek(3)">Semana 3</button>
+<button onclick="showWeek(4)">Semana 4</button>
+<button onclick="showWeek(5)">Semana 5</button>
+<button onclick="showWeek(6)">Semana 6</button>
+<button onclick="showWeek(7)">Semana 7</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+</nav>
 
-<!-- Semana 1 -->
-<div class="week active" id="week1">
+<!-- SEMANA 1 -->
+<div class="week" id="week1">
 <h2>Semana 1</h2>
-<p><strong>Atividade 1:</strong> O que é automação logística?</p>
-<p id="week1-1">Resposta: Automação logística é a aplicação de tecnologias e sistemas automatizados para otimizar processos de armazenamento, movimentação, separação e distribuição de produtos.</p>
-<button class="copy-btn" onclick="copyText('week1-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Qual dispositivo identifica materiais?</p>
+<p><strong>Resposta:</strong> Leitor de código de barras.</p>
+<button class="copy" onclick="copyAnswer('Leitor de código de barras.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Funções da logística?</p>
+<p><strong>Resposta:</strong> Transporte e armazenagem.</p>
+<button class="copy" onclick="copyAnswer('Transporte e armazenagem.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Otimizar fluxos?</p>
+<p><strong>Resposta:</strong> Planejamento.</p>
+<button class="copy" onclick="copyAnswer('Planejamento.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Painel Agronegócio?</p>
+<p><strong>Resposta:</strong> Integra tecnologia e transporte.</p>
+<button class="copy" onclick="copyAnswer('Integra tecnologia e transporte.')">📋 Copiar</button></div>
+<div class="nav-week">
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(2)">Próxima</button>
+</div></div>
 
-<p><strong>Atividade 2:</strong> Benefícios da automação logística</p>
-<p id="week1-2">Resposta: Redução de erros, aumento de produtividade, melhor controle de estoque, redução de custos e maior agilidade nos processos.</p>
-<button class="copy-btn" onclick="copyText('week1-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> Exemplos de automação</p>
-<p id="week1-3">Resposta: Esteiras automáticas, robôs de separação, sistemas WMS, transportadores automatizados e leitores de código de barras.</p>
-<button class="copy-btn" onclick="copyText('week1-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Indicadores em automação logística</p>
-<p id="week1-4">Resposta: Taxa de acertos nos pedidos, tempo de processamento, produtividade por hora e custo por operação.</p>
-<button class="copy-btn" onclick="copyText('week1-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
-
-<!-- Semana 2 -->
+<!-- SEMANA 2 -->
 <div class="week" id="week2">
 <h2>Semana 2</h2>
-<p><strong>Atividade 1:</strong> Sistemas de Gestão</p>
-<p id="week2-1">Resposta: WMS (Warehouse Management System) gerencia estoques e processos internos, enquanto ERP integra toda a operação logística com a empresa.</p>
-<button class="copy-btn" onclick="copyText('week2-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Característica da Indústria 4.0?</p>
+<p><strong>Resposta:</strong> Integração digital.</p>
+<button class="copy" onclick="copyAnswer('Integração digital.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Tecnologias da Logística 4.0?</p>
+<p><strong>Resposta:</strong> IA e Big Data.</p>
+<button class="copy" onclick="copyAnswer('IA e Big Data.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Sustentabilidade?</p>
+<p><strong>Resposta:</strong> Redução de emissões.</p>
+<button class="copy" onclick="copyAnswer('Redução de emissões.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Automação melhora?</p>
+<p><strong>Resposta:</strong> Eficiência operacional.</p>
+<button class="copy" onclick="copyAnswer('Eficiência operacional.')">📋 Copiar</button></div>
+<div class="nav-week">
+<button onclick="showWeek(1)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(3)">Próxima</button>
+</div></div>
 
-<p><strong>Atividade 2:</strong> Tipos de automação</p>
-<p id="week2-2">Resposta: Automação de armazém, separação de pedidos, transporte interno e controle de inventário.</p>
-<button class="copy-btn" onclick="copyText('week2-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> Benefícios financeiros</p>
-<p id="week2-3">Resposta: Redução de mão de obra, aumento de produtividade, redução de perdas e melhor utilização do espaço.</p>
-<button class="copy-btn" onclick="copyText('week2-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Integração com tecnologias</p>
-<p id="week2-4">Resposta: Sensores, IoT, inteligência artificial e softwares de gestão logística.</p>
-<button class="copy-btn" onclick="copyText('week2-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
-
-<!-- Semana 3 -->
+<!-- SEMANA 3 -->
 <div class="week" id="week3">
 <h2>Semana 3</h2>
-<p><strong>Atividade 1:</strong> Automação e segurança</p>
-<p id="week3-1">Resposta: Sensores de presença, barreiras de segurança e protocolos de operação reduzem riscos de acidentes.</p>
-<button class="copy-btn" onclick="copyText('week3-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Armazém de grãos?</p>
+<p><strong>Resposta:</strong> Silo.</p>
+<button class="copy" onclick="copyAnswer('Silo.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Picking usa?</p>
+<p><strong>Resposta:</strong> Pedido do cliente.</p>
+<button class="copy" onclick="copyAnswer('Pedido do cliente.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Função do WMS?</p>
+<p><strong>Resposta:</strong> Gerenciar estoque.</p>
+<button class="copy" onclick="copyAnswer('Gerenciar estoque.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Automação no estoque?</p>
+<p><strong>Resposta:</strong> Controle rápido.</p>
+<button class="copy" onclick="copyAnswer('Controle rápido.')">📋 Copiar</button></div>
+<div class="nav-week">
+<button onclick="showWeek(2)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(4)">Próxima</button>
+</div></div>
 
-<p><strong>Atividade 2:</strong> Indicadores de desempenho</p>
-<p id="week3-2">Resposta: Taxa de erro, tempo de ciclo, custo por pedido e produtividade do equipamento.</p>
-<button class="copy-btn" onclick="copyText('week3-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> Vantagens competitivas</p>
-<p id="week3-3">Resposta: Entregas mais rápidas, menor custo operacional e aumento da confiabilidade.</p>
-<button class="copy-btn" onclick="copyText('week3-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Exemplo prático</p>
-<p id="week3-4">Resposta: Robôs picking em e-commerce aceleram separação de pedidos, reduzindo tempo e erro.</p>
-<button class="copy-btn" onclick="copyText('week3-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
-
-<!-- Semana 4 -->
+<!-- SEMANA 4 -->
 <div class="week" id="week4">
 <h2>Semana 4</h2>
-<p><strong>Atividade 1:</strong> Planejamento da automação</p>
-<p id="week4-1">Resposta: Mapear processos, identificar gargalos, definir tecnologias e treinar equipe.</p>
-<button class="copy-btn" onclick="copyText('week4-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Código de barras serve?</p>
+<p><strong>Resposta:</strong> Identificação.</p>
+<button class="copy" onclick="copyAnswer('Identificação.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 2</strong>
+<p>RFID permite?</p>
+<p><strong>Resposta:</strong> Leitura sem contato.</p>
+<button class="copy" onclick="copyAnswer('Leitura sem contato.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Benefício?</p>
+<p><strong>Resposta:</strong> Redução de erros.</p>
+<button class="copy" onclick="copyAnswer('Redução de erros.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Automação melhora?</p>
+<p><strong>Resposta:</strong> Produtividade.</p>
+<button class="copy" onclick="copyAnswer('Produtividade.')">📋 Copiar</button></div>
+<div class="nav-week">
+<button onclick="showWeek(3)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(5)">Próxima</button>
+</div></div>
 
-<p><strong>Atividade 2:</strong> Custos envolvidos</p>
-<p id="week4-2">Resposta: Investimento inicial em equipamentos, manutenção e treinamento de pessoal.</p>
-<button class="copy-btn" onclick="copyText('week4-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> Redução de erros</p>
-<p id="week4-3">Resposta: Sistemas automatizados diminuem falhas humanas e retrabalho.</p>
-<button class="copy-btn" onclick="copyText('week4-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Integração com transporte</p>
-<p id="week4-4">Resposta: Rastreamento em tempo real e roteirização eficiente reduzem atrasos.</p>
-<button class="copy-btn" onclick="copyText('week4-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
-
-<!-- Semana 5 -->
+<!-- SEMANA 5 -->
 <div class="week" id="week5">
 <h2>Semana 5</h2>
-<p><strong>Atividade 1:</strong> Tecnologias emergentes</p>
-<p id="week5-1">Resposta: Robótica avançada, drones, inteligência artificial e análise de big data.</p>
-<button class="copy-btn" onclick="copyText('week5-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Robôs AMR?</p>
+<p><strong>Resposta:</strong> Movimentação automática.</p>
+<button class="copy" onclick="copyAnswer('Movimentação automática.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Robótica no estoque?</p>
+<p><strong>Resposta:</strong> Uso otimizado.</p>
+<button class="copy" onclick="copyAnswer('Uso otimizado.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Indicador?</p>
+<p><strong>Resposta:</strong> Tempo de ciclo.</p>
+<button class="copy" onclick="copyAnswer('Tempo de ciclo.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Automação reduz?</p>
+<p><strong>Resposta:</strong> Custos.</p>
+<button class="copy" onclick="copyAnswer('Custos.')">📋 Copiar</button></div>
+<div class="nav-week">
+<button onclick="showWeek(4)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(6)">Próxima</button>
+</div></div>
 
-<p><strong>Atividade 2:</strong> Manutenção preditiva</p>
-<p id="week5-2">Resposta: Monitoramento contínuo de equipamentos para prevenir falhas e paradas inesperadas.</p>
-<button class="copy-btn" onclick="copyText('week5-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> KPIs importantes</p>
-<p id="week5-3">Resposta: Disponibilidade do equipamento, tempo de ciclo e acuracidade dos pedidos.</p>
-<button class="copy-btn" onclick="copyText('week5-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Benefícios sociais</p>
-<p id="week5-4">Resposta: Reduz esforço físico, aumenta segurança e permite realocação estratégica de colaboradores.</p>
-<button class="copy-btn" onclick="copyText('week5-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
-
-<!-- Semana 6 -->
+<!-- SEMANA 6 -->
 <div class="week" id="week6">
 <h2>Semana 6</h2>
-<p><strong>Atividade 1:</strong> Automação e sustentabilidade</p>
-<p id="week6-1">Resposta: Redução de consumo energético e otimização de recursos.</p>
-<button class="copy-btn" onclick="copyText('week6-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Drones servem?</p>
+<p><strong>Resposta:</strong> Inventário rápido.</p>
+<button class="copy" onclick="copyAnswer('Inventário rápido.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 2</strong>
+<p>IoT permite?</p>
+<p><strong>Resposta:</strong> Monitoramento.</p>
+<button class="copy" onclick="copyAnswer('Monitoramento.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Realidade aumentada?</p>
+<p><strong>Resposta:</strong> Picking rápido.</p>
+<button class="copy" onclick="copyAnswer('Picking rápido.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Benefício?</p>
+<p><strong>Resposta:</strong> Eficiência.</p>
+<button class="copy" onclick="copyAnswer('Eficiência.')">📋 Copiar</button></div>
+<div class="nav-week">
+<button onclick="showWeek(5)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(7)">Próxima</button>
+</div></div>
 
-<p><strong>Atividade 2:</strong> Integração com WMS e ERP</p>
-<p id="week6-2">Resposta: Coordena estoques, pedidos e transportes de forma centralizada.</p>
-<button class="copy-btn" onclick="copyText('week6-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> Automação e e-commerce</p>
-<p id="week6-3">Resposta: Separação rápida de pedidos, maior acuracidade e redução de tempo de entrega.</p>
-<button class="copy-btn" onclick="copyText('week6-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Exemplo de sucesso</p>
-<p id="week6-4">Resposta: Armazéns automatizados da Amazon, com robôs Kiva para picking e transporte interno.</p>
-<button class="copy-btn" onclick="copyText('week6-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-<button onclick="nextWeek()">Próxima Semana</button>
-</div>
-</div>
-
-<!-- Semana 7 -->
+<!-- SEMANA 7 -->
 <div class="week" id="week7">
 <h2>Semana 7</h2>
-<p><strong>Atividade 1:</strong> Futuro da automação logística</p>
-<p id="week7-1">Resposta: Uso de inteligência artificial, robótica avançada e análise de dados para processos totalmente autônomos.</p>
-<button class="copy-btn" onclick="copyText('week7-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>TMS?</p>
+<p><strong>Resposta:</strong> Otimização de rotas.</p>
+<button class="copy" onclick="copyAnswer('Otimização de rotas.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Roteirização?</p>
+<p><strong>Resposta:</strong> Entrega rápida.</p>
+<button class="copy" onclick="copyAnswer('Entrega rápida.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Resultado?</p>
+<p><strong>Resposta:</strong> Menor custo.</p>
+<button class="copy" onclick="copyAnswer('Menor custo.')">📋 Copiar</button></div>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Benefício final?</p>
+<p><strong>Resposta:</strong> Eficiência logística.</p>
+<button class="copy" onclick="copyAnswer('Eficiência logística.')">📋 Copiar</button></div>
+<div class="nav-week">
+<button onclick="showWeek(6)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+</div></div>
 
-<p><strong>Atividade 2:</strong> Vantagens competitivas finais</p>
-<p id="week7-2">Resposta: Redução de custos, rapidez na entrega e maior satisfação do cliente.</p>
-<button class="copy-btn" onclick="copyText('week7-2')">Copiar Resposta</button>
-
-<p><strong>Atividade 3:</strong> Conclusão</p>
-<p id="week7-3">Resposta: Automação logística é essencial para eficiência, precisão e competitividade no mercado.</p>
-<button class="copy-btn" onclick="copyText('week7-3')">Copiar Resposta</button>
-
-<p><strong>Atividade 4:</strong> Planejamento contínuo</p>
-<p id="week7-4">Resposta: Revisar processos, atualizar tecnologias e treinar equipes constantemente.</p>
-<button class="copy-btn" onclick="copyText('week7-4')">Copiar Resposta</button>
-
-<div>
-<button onclick="prevWeek()">Semana Anterior</button>
-</div>
-</div>
-
-</main>
-
-<div id="copied-msg">Resposta copiada!</div>
-
-<footer>
-<button onclick="window.location.href='index.html'">Voltar ao Menu</button>
-</footer>
+<div class="notification" id="notification">Resposta copiada!</div>
 
 <script>
-let currentWeek = 1;
-const totalWeeks = 7;
-function showWeek(n){
-  if(n<1)n=1;if(n>totalWeeks)n=totalWeeks;
-  for(let i=1;i<=totalWeeks;i++){ document.getElementById('week'+i).classList.remove('active'); }
-  document.getElementById('week'+n).classList.add('active');
-  currentWeek = n;
-  window.scrollTo({top:0,behavior:'smooth'});
+function showWeek(num){
+document.querySelectorAll('.week').forEach(w=>w.classList.remove('active'));
+document.getElementById('week'+num).classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
 }
-function nextWeek(){ showWeek(currentWeek+1); }
-function prevWeek(){ showWeek(currentWeek-1); }
-function copyText(id){
-  const text=document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(()=>{
-    const msg=document.getElementById('copied-msg');
-    msg.style.opacity='1'; msg.style.transform='translateY(0)';
-    setTimeout(()=>{ msg.style.opacity='0'; msg.style.transform='translateY(-20px)'; },1500);
-  });
+function copyAnswer(text){
+navigator.clipboard.writeText(text).then(()=>{
+const n=document.getElementById('notification');
+n.style.opacity=1;
+n.style.transform='translateY(0)';
+setTimeout(()=>{n.style.opacity=0;n.style.transform='translateY(-20px)';},1500);
+});
 }
+showWeek(1);
 </script>
 
 </body>
