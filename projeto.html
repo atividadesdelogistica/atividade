@@ -1,334 +1,272 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projeto Multidisciplinar em Logística</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-
-  header {
-    background-color: #6a1b9a; /* Cor diferenciada para Projeto */
-    color: #fff;
-    text-align: center;
-    padding: 15px 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  header h1 {
-    margin-bottom: 5px;
-  }
-
-  main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 10px;
-  }
-
-  .week {
-    display: none;
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-
-  .week.active {
-    display: block;
-  }
-
-  h2 {
-    color: #6a1b9a;
-  }
-
-  button {
-    background-color: #6a1b9a;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    margin: 5px 2px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-
-  button:hover {
-    background-color: #4a148c;
-  }
-
-  .copy-btn {
-    background-color: #4caf50;
-  }
-
-  .copy-btn:hover {
-    background-color: #3e8e41;
-  }
-
-  #copied-msg {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.5s, transform 0.5s;
-    transform: translateY(-20px);
-    z-index: 1000;
-  }
-
-  footer {
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
-    color: #555;
-  }
-
-  @media(min-width: 600px) {
-    button {
-      margin: 10px 5px;
-    }
-  }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;background:#fefce8;color:#333;}
+header{background:linear-gradient(90deg,#78350f,#f97316);color:#fff;text-align:center;padding:25px 0;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+nav.top-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;background:#c2410c;padding:12px 0;}
+nav.top-nav button{background:#f97316;color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:700;}
+.week{display:none;padding:20px;max-width:900px;margin:20px auto;animation:slide 0.4s ease;}
+.week.active{display:block;}
+.activity{background:#fff;padding:18px;border-radius:12px;margin:12px 0;box-shadow:0 4px 10px rgba(0,0,0,0.08);}
+.activity strong{color:#c2410c;display:block;margin-bottom:8px;}
+.activity button.copy{background:#f97316;color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-weight:700;margin-top:10px;}
+.nav-week{display:flex;justify-content:space-between;margin-top:20px;gap:10px;flex-wrap:wrap;}
+.nav-week button{background:#f97316;padding:10px 16px;border-radius:6px;color:#fff;font-weight:700;cursor:pointer;}
+.notification{position:fixed;top:20px;right:20px;background:#f97316;color:#fff;padding:12px 22px;border-radius:8px;opacity:0;transform:translateY(-20px);transition:0.4s;font-weight:700;}
+@keyframes slide{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Projeto Multidisciplinar em Logística</h1>
-  <p>Desenvolvido por Fabiano & João Molina</p>
+<h1>Projeto Multidisciplinar em Logística - Respostas Semanais</h1>
 </header>
 
-<main>
-  <!-- Semana 1 -->
-  <div class="week active" id="week1">
-    <h2>Semana 1</h2>
-    <p><strong>Atividade 1:</strong> Ideias para o Projeto</p>
-    <p>Resposta: O projeto pode focar na integração entre logística e sustentabilidade (Logística Reversa), uso de tecnologias como WMS/IoT para controle de estoque ou automação de armazéns para reduzir custos e atrasos.</p>
-    <button class="copy-btn" onclick="copyText('week1-1')">Copiar Resposta</button>
+<nav class="top-nav">
+<button onclick="showWeek(1)">Semana 1</button>
+<button onclick="showWeek(2)">Semana 2</button>
+<button onclick="showWeek(3)">Semana 3</button>
+<button onclick="showWeek(4)">Semana 4</button>
+<button onclick="showWeek(5)">Semana 5</button>
+<button onclick="showWeek(6)">Semana 6</button>
+<button onclick="showWeek(7)">Semana 7</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+</nav>
 
-    <p><strong>Atividade 2:</strong> Em qual fase é desenvolvido o Termo de Abertura do Projeto (TAP)?</p>
-    <p>Resposta: Iniciação.</p>
-    <button class="copy-btn" onclick="copyText('week1-2')">Copiar Resposta</button>
+<!-- SEMANA 1 -->
+<div class="week" id="week1">
+<h2>Semana 1</h2>
 
-    <p><strong>Atividade 3:</strong> Qual é a atividade principal na fase de Monitoramento e Controle?</p>
-    <p>Resposta: Controlar o escopo, o cronograma e os custos.</p>
-    <button class="copy-btn" onclick="copyText('week1-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Ideias para o Projeto</p>
+<p><strong>Resposta:</strong> O projeto pode focar na integração entre logística e sustentabilidade (Logística Reversa), no uso de tecnologias como WMS/IoT para controle de estoque ou na automação de armazéns para reduzir custos e atrasos operacionais.</p>
+<button class="copy" onclick="copyAnswer('O projeto pode focar na integração entre logística e sustentabilidade (Logística Reversa), no uso de tecnologias como WMS/IoT para controle de estoque ou na automação de armazéns para reduzir custos e atrasos operacionais.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 4:</strong> Qual é a melhor definição de um projeto, segundo o PMBOK?</p>
-    <p>Resposta: Esforço temporário para criar algo único.</p>
-    <button class="copy-btn" onclick="copyText('week1-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Em qual fase é desenvolvido o Termo de Abertura do Projeto (TAP)?</p>
+<p><strong>Resposta:</strong> Iniciação.</p>
+<button class="copy" onclick="copyAnswer('Iniciação.')">📋 Copiar</button></div>
 
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Qual é a atividade principal na fase de Monitoramento e Controle?</p>
+<p><strong>Resposta:</strong> Controlar o escopo, o cronograma e os custos.</p>
+<button class="copy" onclick="copyAnswer('Controlar o escopo, o cronograma e os custos.')">📋 Copiar</button></div>
 
-  <!-- Semana 2 -->
-  <div class="week" id="week2">
-    <h2>Semana 2</h2>
-    <p><strong>Atividade 1:</strong> Matriz CSD</p>
-    <p>Resposta: Organiza o que sabemos (Certezas), o que supomos (Suposições) e o que ainda precisamos descobrir (Dúvidas) para validar hipóteses no início do projeto.</p>
-    <button class="copy-btn" onclick="copyText('week2-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Qual é a melhor definição de um projeto, segundo o PMBOK?</p>
+<p><strong>Resposta:</strong> Esforço temporário para criar algo único.</p>
+<button class="copy" onclick="copyAnswer('Esforço temporário para criar algo único.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 2:</strong> Qual é o principal objetivo da fase de Empatia?</p>
-    <p>Resposta: Compreender as necessidades e os sentimentos dos usuários.</p>
-    <button class="copy-btn" onclick="copyText('week2-2')">Copiar Resposta</button>
+<div class="nav-week">
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(2)">Próxima</button>
+</div></div>
 
-    <p><strong>Atividade 3:</strong> Qual destas questões NÃO faz parte do mapa de empatia?</p>
-    <p>Resposta: O que o usuário não ouve?</p>
-    <button class="copy-btn" onclick="copyText('week2-3')">Copiar Resposta</button>
+<!-- SEMANA 2 -->
+<div class="week" id="week2">
+<h2>Semana 2</h2>
 
-    <p><strong>Atividade 4:</strong> Qual é a função principal das dúvidas na Matriz CSD?</p>
-    <p>Resposta: Identificar e explorar incertezas que precisam ser resolvidas.</p>
-    <button class="copy-btn" onclick="copyText('week2-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Matriz CSD</p>
+<p><strong>Resposta:</strong> Organiza o que sabemos (Certezas), supomos (Suposições) e precisamos descobrir (Dúvidas) para validar hipóteses e reduzir incertezas.</p>
+<button class="copy" onclick="copyAnswer('Organiza o que sabemos (Certezas), supomos (Suposições) e precisamos descobrir (Dúvidas) para validar hipóteses e reduzir incertezas.')">📋 Copiar</button></div>
 
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Objetivo da fase de Empatia?</p>
+<p><strong>Resposta:</strong> Compreender as necessidades e os sentimentos dos usuários.</p>
+<button class="copy" onclick="copyAnswer('Compreender as necessidades e os sentimentos dos usuários.')">📋 Copiar</button></div>
 
-  <!-- Semana 3 -->
-  <div class="week" id="week3">
-    <h2>Semana 3</h2>
-    <p><strong>Atividade 1:</strong> Qual componente identifica os principais envolvidos?</p>
-    <p>Resposta: Partes interessadas (Stakeholders).</p>
-    <button class="copy-btn" onclick="copyText('week3-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Questão que NÃO faz parte do mapa de empatia?</p>
+<p><strong>Resposta:</strong> O que o usuário não ouve?</p>
+<button class="copy" onclick="copyAnswer('O que o usuário não ouve?')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 2:</strong> Qual é a importância de uma justificativa clara?</p>
-    <p>Resposta: Para explicar a necessidade e o impacto do projeto.</p>
-    <button class="copy-btn" onclick="copyText('week3-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Função principal das dúvidas na Matriz CSD?</p>
+<p><strong>Resposta:</strong> Identificar e explorar incertezas que precisam ser resolvidas.</p>
+<button class="copy" onclick="copyAnswer('Identificar e explorar incertezas que precisam ser resolvidas.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 3:</strong> Método SMART</p>
-    <p>Resposta: Específico, Mensurável, Atingível, Relevante e Temporal. Ex: "Reduzir o tempo de picking em 15% até dezembro de 2026".</p>
-    <button class="copy-btn" onclick="copyText('week3-3')">Copiar Resposta</button>
+<div class="nav-week">
+<button onclick="showWeek(1)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(3)">Próxima</button>
+</div></div>
 
-    <p><strong>Atividade 4:</strong> Qual exemplo segue o método SMART?</p>
-    <p>Resposta: Reduzir custos operacionais em 10% nos próximos seis meses.</p>
-    <button class="copy-btn" onclick="copyText('week3-4')">Copiar Resposta</button>
+<!-- SEMANA 3 -->
+<div class="week" id="week3">
+<h2>Semana 3</h2>
 
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Componente que identifica os principais envolvidos?</p>
+<p><strong>Resposta:</strong> Partes interessadas (Stakeholders).</p>
+<button class="copy" onclick="copyAnswer('Partes interessadas (Stakeholders).')">📋 Copiar</button></div>
 
-  <!-- Semana 4 -->
-  <div class="week" id="week4">
-    <h2>Semana 4</h2>
-    <p><strong>Atividade 1:</strong> Mapeamento de Stakeholders</p>
-    <p>Resposta: Mapear stakeholders conforme sua influência e interesse.</p>
-    <button class="copy-btn" onclick="copyText('week4-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Importância de uma justificativa clara?</p>
+<p><strong>Resposta:</strong> Para explicar a necessidade e o impacto do projeto.</p>
+<button class="copy" onclick="copyAnswer('Para explicar a necessidade e o impacto do projeto.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 2:</strong> Qual o objetivo da descrição do produto no escopo?</p>
-    <p>Resposta: Detalhar o que será entregue e suas funcionalidades principais.</p>
-    <button class="copy-btn" onclick="copyText('week4-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Método SMART</p>
+<p><strong>Resposta:</strong> O objetivo do projeto deve ser Específico, Mensurável, Atingível, Relevante e Temporal, ex: "Reduzir o tempo de picking em 15% até dezembro de 2026".</p>
+<button class="copy" onclick="copyAnswer('O objetivo do projeto deve ser Específico, Mensurável, Atingível, Relevante e Temporal, ex: "Reduzir o tempo de picking em 15% até dezembro de 2026".')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 3:</strong> Qual a função da matriz de stakeholders?</p>
-    <p>Resposta: Organizar stakeholders com base em sua influência e interesse.</p>
-    <button class="copy-btn" onclick="copyText('week4-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Exemplo de objetivo SMART?</p>
+<p><strong>Resposta:</strong> Reduzir custos operacionais em 10% nos próximos seis meses.</p>
+<button class="copy" onclick="copyAnswer('Reduzir custos operacionais em 10% nos próximos seis meses.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 4:</strong> Estratégia para stakeholders com baixa influência e baixo interesse?</p>
-    <p>Resposta: Monitorar e manter relações profissionais.</p>
-    <button class="copy-btn" onclick="copyText('week4-4')">Copiar Resposta</button>
+<div class="nav-week">
+<button onclick="showWeek(2)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(4)">Próxima</button>
+</div></div>
 
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
+<!-- SEMANA 4 -->
+<div class="week" id="week4">
+<h2>Semana 4</h2>
 
-  <!-- Semana 5 -->
-  <div class="week" id="week5">
-    <h2>Semana 5</h2>
-    <p><strong>Atividade 1:</strong> Ana usou questionário para dados numéricos. Que tipo de coleta é?</p>
-    <p>Resposta: Quantitativa.</p>
-    <button class="copy-btn" onclick="copyText('week5-1')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Mapeamento de Stakeholders</p>
+<p><strong>Resposta:</strong> Devem ser mapeados conforme influência e interesse, criando estratégias para manter todos informados e engajados.</p>
+<button class="copy" onclick="copyAnswer('Devem ser mapeados conforme influência e interesse, criando estratégias para manter todos informados e engajados.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 2:</strong> Requisito que pode ser deixado para o futuro? (MoSCoW)</p>
-    <p>Resposta: Poderia ter (Could have).</p>
-    <button class="copy-btn" onclick="copyText('week5-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Objetivo da descrição do produto no escopo?</p>
+<p><strong>Resposta:</strong> Detalhar o que será entregue e suas funcionalidades principais.</p>
+<button class="copy" onclick="copyAnswer('Detalhar o que será entregue e suas funcionalidades principais.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 3:</strong> Matriz MoSCoW</p>
-    <p>Resposta: Priorização do que o projeto DEVE ter, DEVERIA ter, PODERIA ter e NÃO TERÁ.</p>
-    <button class="copy-btn" onclick="copyText('week5-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Função da matriz de stakeholders?</p>
+<p><strong>Resposta:</strong> Organizar stakeholders com base em sua influência e interesse.</p>
+<button class="copy" onclick="copyAnswer('Organizar stakeholders com base em sua influência e interesse.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 4:</strong> Qual opção de coleta entende as prioridades dos stakeholders?</p>
-    <p>Resposta: Entrevista.</p>
-    <button class="copy-btn" onclick="copyText('week5-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Estratégia para stakeholders com baixa influência e baixo interesse?</p>
+<p><strong>Resposta:</strong> Monitorar e manter relações profissionais.</p>
+<button class="copy" onclick="copyAnswer('Monitorar e manter relações profissionais.')">📋 Copiar</button></div>
 
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
+<div class="nav-week">
+<button onclick="showWeek(3)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(5)">Próxima</button>
+</div></div>
 
-  <!-- Semana 6 -->
-  <div class="week" id="week6">
-    <h2>Semana 6</h2>
-    <p><strong>Atividade 1:</strong> Plano de Ação para Riscos</p>
-    <p>Resposta: Estratégia de mitigação, responsável definido e prazo claro.</p>
-    <button class="copy-btn" onclick="copyText('week6-1')">Copiar Resposta</button>
+<!-- SEMANA 5 -->
+<div class="week" id="week5">
+<h2>Semana 5</h2>
 
-    <p><strong>Atividade 2:</strong> Qual é a definição de risco segundo o PMBOK?</p>
-    <p>Resposta: Evento ou condição incerta que pode afetar o projeto.</p>
-    <button class="copy-btn" onclick="copyText('week6-2')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Coleta de dados numéricos (ex: questionário de Ana)</p>
+<p><strong>Resposta:</strong> Quantitativa.</p>
+<button class="copy" onclick="copyAnswer('Quantitativa.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 3:</strong> O que é uma matriz SWOT?</p>
-    <p>Resposta: Análise de forças, fraquezas, oportunidades e ameaças.</p>
-    <button class="copy-btn" onclick="copyText('week6-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Requisito que pode ser deixado para o futuro? (MoSCoW)</p>
+<p><strong>Resposta:</strong> Poderia ter (Could have).</p>
+<button class="copy" onclick="copyAnswer('Poderia ter (Could have).')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 4:</strong> Qual é um exemplo de risco relacionado a orçamento?</p>
-    <p>Resposta: Custos inesperados.</p>
-    <button class="copy-btn" onclick="copyText('week6-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Matriz MoSCoW</p>
+<p><strong>Resposta:</strong> Prioriza DEVE ter, DEVERIA ter, PODERIA ter e NÃO TERÁ, ajudando a gerenciar tempo e recursos.</p>
+<button class="copy" onclick="copyAnswer('Prioriza DEVE ter, DEVERIA ter, PODERIA ter e NÃO TERÁ, ajudando a gerenciar tempo e recursos.')">📋 Copiar</button></div>
 
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-      <button onclick="nextWeek()">Próxima Semana</button>
-    </div>
-  </div>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Opção de coleta que entende prioridades dos stakeholders?</p>
+<p><strong>Resposta:</strong> Entrevista.</p>
+<button class="copy" onclick="copyAnswer('Entrevista.')">📋 Copiar</button></div>
 
-  <!-- Semana 7 -->
-  <div class="week" id="week7">
-    <h2>Semana 7</h2>
-    <p><strong>Atividade 1:</strong> Qual é a importância de sequenciar as atividades?</p>
-    <p>Resposta: Determinar a ordem correta das tarefas e identificar dependências.</p>
-    <button class="copy-btn" onclick="copyText('week7-1')">Copiar Resposta</button>
+<div class="nav-week">
+<button onclick="showWeek(4)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(6)">Próxima</button>
+</div></div>
 
-    <p><strong>Atividade 2:</strong> Qual é o objetivo principal de se criar um cronograma?</p>
-    <p>Resposta: Organizar e planejar as atividades.</p>
-    <button class="copy-btn" onclick="copyText('week7-2')">Copiar Resposta</button>
+<!-- SEMANA 6 -->
+<div class="week" id="week6">
+<h2>Semana 6</h2>
 
-    <p><strong>Atividade 3:</strong> Qual destes NÃO é um elemento principal do cronograma?</p>
-    <p>Resposta: Avaliação dos riscos.</p>
-    <button class="copy-btn" onclick="copyText('week7-3')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 1</strong>
+<p>Plano de Ação para Riscos</p>
+<p><strong>Resposta:</strong> Todo risco deve ter estratégia de mitigação, responsável definido e prazo para agir em imprevistos.</p>
+<button class="copy" onclick="copyAnswer('Todo risco deve ter estratégia de mitigação, responsável definido e prazo para agir em imprevistos.')">📋 Copiar</button></div>
 
-    <p><strong>Atividade 4:</strong> Cronograma e Gráfico de Gantt</p>
-    <p>Resposta: Representação visual com datas, responsáveis e custos, permitindo controlar o avanço do projeto.</p>
-    <button class="copy-btn" onclick="copyText('week7-4')">Copiar Resposta</button>
+<div class="activity"><strong>Atividade 2</strong>
+<p>Definição de risco segundo o PMBOK?</p>
+<p><strong>Resposta:</strong> Evento ou condição incerta que pode afetar o projeto.</p>
+<button class="copy" onclick="copyAnswer('Evento ou condição incerta que pode afetar o projeto.')">📋 Copiar</button></div>
 
-    <div>
-      <button onclick="prevWeek()">Semana Anterior</button>
-    </div>
-  </div>
-</main>
+<div class="activity"><strong>Atividade 3</strong>
+<p>Matriz SWOT</p>
+<p><strong>Resposta:</strong> Análise de forças, fraquezas, oportunidades e ameaças.</p>
+<button class="copy" onclick="copyAnswer('Análise de forças, fraquezas, oportunidades e ameaças.')">📋 Copiar</button></div>
 
-<div id="copied-msg">Resposta copiada!</div>
+<div class="activity"><strong>Atividade 4</strong>
+<p>Exemplo de risco relacionado a orçamento?</p>
+<p><strong>Resposta:</strong> Custos inesperados.</p>
+<button class="copy" onclick="copyAnswer('Custos inesperados.')">📋 Copiar</button></div>
 
-<footer>
-  <button onclick="window.location.href='index.html'">Voltar ao Menu</button>
-</footer>
+<div class="nav-week">
+<button onclick="showWeek(5)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+<button onclick="showWeek(7)">Próxima</button>
+</div></div>
+
+<!-- SEMANA 7 -->
+<div class="week" id="week7">
+<h2>Semana 7</h2>
+
+<div class="activity"><strong>Atividade 1</strong>
+<p>Importância de sequenciar atividades?</p>
+<p><strong>Resposta:</strong> Determinar a ordem correta e identificar dependências.</p>
+<button class="copy" onclick="copyAnswer('Determinar a ordem correta e identificar dependências.')">📋 Copiar</button></div>
+
+<div class="activity"><strong>Atividade 2</strong>
+<p>Objetivo principal de criar cronograma?</p>
+<p><strong>Resposta:</strong> Organizar e planejar atividades.</p>
+<button class="copy" onclick="copyAnswer('Organizar e planejar atividades.')">📋 Copiar</button></div>
+
+<div class="activity"><strong>Atividade 3</strong>
+<p>Elemento que NÃO é principal do cronograma?</p>
+<p><strong>Resposta:</strong> Avaliação dos riscos.</p>
+<button class="copy" onclick="copyAnswer('Avaliação dos riscos.')">📋 Copiar</button></div>
+
+<div class="activity"><strong>Atividade 4</strong>
+<p>Cronograma e Gráfico de Gantt</p>
+<p><strong>Resposta:</strong> Representação visual do cronograma com datas, responsáveis, custos, permitindo controle total do avanço do projeto.</p>
+<button class="copy" onclick="copyAnswer('Representação visual do cronograma com datas, responsáveis, custos, permitindo controle total do avanço do projeto.')">📋 Copiar</button></div>
+
+<div class="nav-week">
+<button onclick="showWeek(6)">Anterior</button>
+<button onclick="window.location.href='index.html'">Menu</button>
+</div></div>
+
+<div class="notification" id="notification">Resposta copiada!</div>
 
 <script>
-let currentWeek = 1;
-const totalWeeks = 7;
-
-function showWeek(n){
-  for(let i=1;i<=totalWeeks;i++){
-    document.getElementById('week'+i).classList.remove('active');
-  }
-  document.getElementById('week'+n).classList.add('active');
-  currentWeek = n;
-  window.scrollTo({ top: 0, behavior: 'smooth' }); // volta pro topo
+function showWeek(num){
+document.querySelectorAll('.week').forEach(w=>w.classList.remove('active'));
+document.getElementById('week'+num).classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
 }
-
-function nextWeek(){
-  if(currentWeek < totalWeeks){
-    showWeek(currentWeek+1);
-  }
+function copyAnswer(text){
+navigator.clipboard.writeText(text).then(()=>{
+const n=document.getElementById('notification');
+n.style.opacity=1;
+n.style.transform='translateY(0)';
+setTimeout(()=>{n.style.opacity=0;n.style.transform='translateY(-20px)';},1500);
+});
 }
-
-function prevWeek(){
-  if(currentWeek > 1){
-    showWeek(currentWeek-1);
-  }
-}
-
-function copyText(id){
-  const weekDiv = document.getElementById(id);
-  const text = weekDiv ? weekDiv.innerText : '';
-  navigator.clipboard.writeText(text).then(()=>{
-    const msg = document.getElementById('copied-msg');
-    msg.style.opacity = '1';
-    msg.style.transform = 'translateY(0)';
-    setTimeout(()=>{
-      msg.style.opacity = '0';
-      msg.style.transform = 'translateY(-20px)';
-    },1500);
-  });
-}
+showWeek(1);
 </script>
+
 </body>
 </html>
